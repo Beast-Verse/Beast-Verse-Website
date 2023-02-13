@@ -14,7 +14,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className='text-blue-300 text-8xl text-center font-extrabold'>Beast Verse rocks</h1>
+      <h2 className='text-cyan-400 bg-slate-700 text-center text-9xl font-bold'>Hello </h2>
     </>
   )
 }
