@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Landing from "../components/landing"
-import { useEffect } from "react";
+import { useEffect } from "react"
+// import AOS from "aos"
 
 // import 'aos-animations/dist/animations.min.css';
 // import 'aos-animations/dist/animations.min.js';
@@ -11,9 +12,9 @@ import { useEffect } from "react";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init();
-  }, [])
+  // useEffect(() => {
+  //   AOS.init();
+  // }, [])
 
   return (
     <>
