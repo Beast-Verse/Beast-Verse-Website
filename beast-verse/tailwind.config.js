@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       
     },
+    fontFamily: {
+      Ruslan:['Ruslan Display', 'sans-serif'],
+    },
   },
   plugins: [],
 }
