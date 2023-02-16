@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Landing from "../components/landing"
 import { useEffect } from "react"
-import Secondsec from "../components/secondsec"
+import Buttonsec from "../components/buttonsec"
 // import AOS from "aos"
 
 // import 'aos-animations/dist/animations.min.css';
@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
       <div className='bg-slate-800'>
       <Landing/>
-      <Secondsec/>
+      <Buttonsec/>
       </div>
     </>
   )
