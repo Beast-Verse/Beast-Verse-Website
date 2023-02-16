@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Landing from "../components/landing"
 import { useEffect } from "react"
+import Secondsec from "../components/secondsec"
 // import AOS from "aos"
 
 // import 'aos-animations/dist/animations.min.css';
@@ -32,9 +33,10 @@ export default function Home() {
 <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
 
       </Head>
-      {/* <h2 className='text-cyan-400 bg-slate-700 text-center text-9xl font-bold'>Hello </h2> */}
+      <div className='bg-slate-800'>
       <Landing/>
-
+      <Secondsec/>
+      </div>
     </>
   )
 }

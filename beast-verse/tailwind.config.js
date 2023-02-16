@@ -9,7 +9,10 @@ module.exports = {
     },
     fontFamily: {
       Ruslan:['Ruslan Display', 'sans-serif'],
+      Monstserrat: ['Montserrat', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-textshadow')
+  ],
 }
