@@ -4,7 +4,15 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",],
   theme: {
-    extend: {},
+    extend: {
+      
+    },
+    fontFamily: {
+      Ruslan:['Ruslan Display', 'sans-serif'],
+      Monstserrat: ['Montserrat', 'sans-serif'],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-textshadow')
+  ],
 }
