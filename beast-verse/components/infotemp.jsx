@@ -1,24 +1,33 @@
 import React from "react";
 import Image from "next/image";
-import Forest from "../assets/Forest.png"
+import { motion } from "framer-motion"
+import { useRef } from "react";
 
 function Infotemp(props){
-    return <div className="bg-gray-900 h-[50vw]">
+
+    const scrollRef = useRef(null)
+    return <div className="bg-slate-900 h-[50vw]">
 
     <div>
 
-    <div className="w-[40%] relative left-[10vw] top-[6vw]">
-        <div className="z-10 relative">
-    <h1 className="text-[3.5vw] font-Monstserrat font-medium text-white">{props.first} <span className={props.color}>{props.second}</span></h1>
-    <p className="leading-loose mt-4 text-[1.1vw] font-Montserrat text-white">{props.description}</p>
+    <motion.div initial={{ opacity: 0, x:-200 }}
+        whileInView={{ opacity: 1, x:0, transition:{duration: 1.3} }}
+        viewport={{ root: scrollRef }} className="w-[40%] relative left-[10vw] top-[6vw]">
+    
+    <div className="z-10 relative">
+    <h1 className="drop-shadow-wxl text-[3.5vw] font-Monstserrat font-medium text-white">{props.first} <span className={props.color}>{props.second}</span></h1>
+    <p className="leading-loose mt-4 text-[1.1vw] font-Montserrat text-white drop-shadow-wxl ">{props.description}</p>
     </div>
-    <div className="w-full h-[30vw] bg-slate-800 relative bottom-[30vw] rounded-2xl z-0 blur-3xl"></div>
-    </div>  
 
-    <div className="bg-slate-800 blur-3xl w-[20vw] h-[20vw] relative bottom-[45vw] left-[68vw]">
 
-    </div>
-    <Image src={Forest} className="relative w-[40vw]"></Image>
+    </motion.div>  
+
+
+    <motion.div initial={{ opacity: 0, x: 300 }}
+        whileInView={{ opacity: 1, x:0, transition:{duration: 1.3} }}
+        viewport={{ root: scrollRef }}>
+    <Image src={props.image} className="relative w-[25vw] bottom-[20vw] left-[65vw] drop-shadow-pic"></Image>
+    </motion.div>
 
 
     </div>
