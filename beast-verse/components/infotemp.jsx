@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion"
 import { useRef } from "react";
 
+
 function Infotemp(props){
 
     const scrollRef = useRef(null)
@@ -28,7 +29,6 @@ function Infotemp(props){
         viewport={{ root: scrollRef }}>
     <Image src={props.image} className="relative w-[25vw] bottom-[20vw] left-[65vw] drop-shadow-pic"></Image>
     </motion.div>
-
 
     </div>
 

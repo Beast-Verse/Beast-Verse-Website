@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       dropShadow: {
         'wxl': '0 30px 30px rgba(203, 213, 225, 0.8)',
-        'pic': '0 30px 30px rgba(203, 213, 225, 0.4)',      
+        'pic': '0 30px 30px rgba(203, 213, 225, 0.3)',      
       }
     },
     fontFamily: {
