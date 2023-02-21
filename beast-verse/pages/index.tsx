@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Landing from "../components/landing"
 import { useEffect } from "react"
 import Buttonsec from "../components/buttonsec"
+import Howtoplay from "../components/howtoplay"
 // import AOS from "aos"
 
 // import 'aos-animations/dist/animations.min.css';
@@ -36,6 +37,7 @@ export default function Home() {
       <div className='bg-slate-800'>
       <Landing/>
       <Buttonsec/>
+      <Howtoplay/>
       </div>
     </>
   )
