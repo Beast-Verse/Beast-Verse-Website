@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion"
-import { useRef } from "react";
+
 
 
 function Infotemp(props){
