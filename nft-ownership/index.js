@@ -24,8 +24,7 @@ const main = async () => {
     const trait = meta.traits == undefined ? "mk" : meta.traits;
 
     if(trait.length == 0){
-
-      continue;
+        continue;
     }
 
     
