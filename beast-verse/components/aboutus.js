@@ -3,7 +3,7 @@ import Image from "next/image";
 import Ice from "../assets/Ice.png"
 
 function AboutUs(){
-    return <div  className="ml-[2vw] bg-slate-900 ">
+    return <div  className="pl-[2vw] w-screen pt-10 bg-slate-900 ">
 
         <h2 className="text-[5vw] font-Monstserrat font-semibold mb-10 text-white">About Us</h2>
 
@@ -14,7 +14,7 @@ function AboutUs(){
             </div>
 
             <div className="mx-auto">
-                <Image src={Ice} className="w-[30vw]"></Image>
+                <Image src={Ice} className="w-[30vw] relative bottom-[4vw]"></Image>
             </div>
         </div>
     </div>
