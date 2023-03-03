@@ -8,7 +8,10 @@ module.exports = {
       dropShadow: {
         'wxl': '0 30px 30px rgba(203, 213, 225, 0.8)',
         'pic': '0 30px 30px rgba(203, 213, 225, 0.3)',      
-      }
+      },
+      scale: {
+        '-100': '-1',
+    }
     },
     fontFamily: {
       Ruslan:['Ruslan Display', 'sans-serif'],

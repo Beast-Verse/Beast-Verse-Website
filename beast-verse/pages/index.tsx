@@ -28,8 +28,8 @@ export default function Home() {
         <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
 
       </Head>
-      <div className=' bg-gradient-to-br from-blue-700 to-blue-500 h-[100vh] pt-5 '>
-        <div className='container'>
+      <div className=' bg-gradient-to-b from-blue-800 to-blue-500 h-[120vh] w-full pt-5 overflow-x-clip'>
+        <div className='container mx-auto'>
           <Navbar/>
           <Landing/>
           <AboutUs/>
