@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Landing from "../components/Landing"
 import Navbar from "../components/Navbar"
 import { useEffect } from "react"
+import AboutUs from "../components/aboutus"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,6 +31,7 @@ export default function Home() {
       <div className=' bg-gradient-to-br from-blue-700 to-blue-500 h-[100vh] pt-5'>
         <Navbar/>
         <Landing/>
+        <AboutUs/>
       </div>
       
     </>

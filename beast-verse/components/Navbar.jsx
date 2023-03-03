@@ -18,7 +18,7 @@ export default function Navbar() {
                 <li className='hover:text-blue-700 cursor-pointer'>Marketplace</li>
                 <li className='hover:text-blue-700 cursor-pointer'>Buy Eggs</li>
                 <li className='hover:text-blue-700 cursor-pointer'>About Us</li>
-                <li className='bg-gradient-to-br from-blue-600 to-blue-400 hover:to-blue-600 hover:from-blue-500 text-white p-2 rounded-lg cursor-pointer'>Pre-Register</li>
+                <li className='bg-gradient-to-br from-blue-600 to-blue-400 hover:to-blue-600 hover:from-blue-500 text-white py-4 px-7 rounded-lg cursor-pointer'>Play Now</li>
             </ul>
         </div>
     </motion.div>
