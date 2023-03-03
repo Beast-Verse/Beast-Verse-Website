@@ -19,11 +19,15 @@ export default function Navbar() {
                 <Image src={logo} alt="bv_logo" className='w-24' />
             </div>
             <ul className='flex flex-row gap-5 font-Monstserrat font-bold text-blue-400 items-center'>
+
                 <li className='hover:text-blue-600 cursor-pointer'>Home</li>
                 <li className='hover:text-blue-600 cursor-pointer'>Marketplace</li>
                 <li className='hover:text-blue-600 cursor-pointer'>Buy Eggs</li>
                 <li className='hover:text-blue-600 cursor-pointer'>About Us</li>
                 <li className='bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-4 px-7 rounded-lg cursor-pointer'>Pre-Register</li>
+
+                
+
             </ul>
         </div>
     </motion.div>
