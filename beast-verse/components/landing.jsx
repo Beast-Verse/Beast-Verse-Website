@@ -13,7 +13,7 @@ import Clouds from '../assets/clouds.png'
 
 export default function Landing() {
   return (
-    <>
+    <div className=' overflow-x-hidden w-[100vw]'>
         {/* background */}
         <motion.div
             initial={{filter: 'blur(0px)'}}
@@ -120,18 +120,20 @@ export default function Landing() {
         </motion.div>
 
         {/* clouds */}
+        <div className='w-[100vw] overflow-x-hidden'>
+            <motion.div
+            >
+                <Image src={Clouds} alt="bv_logo" className='absolute left-[-60%] top-[-5%] z-30' />
+            </motion.div>
+            
+            <motion.div
+            >
+                <Image src={Clouds} alt="bv_logo" className='absolute right-[-60%] top-[-5%] z-30 -scale-x-100' />
+            </motion.div>
+        </div>
         
-        <motion.div
-        >
-            <Image src={Clouds} alt="bv_logo" className='absolute left-[-60%] top-[-5%] z-30' />
-        </motion.div>
         
-        <motion.div
-        >
-            <Image src={Clouds} alt="bv_logo" className='absolute right-[-60%] top-[-5%] z-30 -scale-x-100' />
-        </motion.div>
-        
-    </>
+    </div>
     
   )
 }
