@@ -1,5 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
+import logo from '../assets/logo.png'
+import Image from 'next/image'
 
 export default function Navbar() {
   return (
@@ -9,9 +11,9 @@ export default function Navbar() {
     animate={{y: 0}}
 
     className='bg-white w-[70%] container mx-auto rounded-xl drop-shadow-xl'>
-        <div className='p-4 px-5 flex flex-row justify-between items-center'>
+        <div className='p-4 px-5 flex flex-row justify-between items-center max-h-20'>
             <div className='font-black font-Montserrat text-xl text-blue-900 leading-none cursor-pointer'>
-                Logo Here
+                <Image src={logo} alt="bv_logo" className='w-24' />
             </div>
             <ul className='flex flex-row gap-5 font-Monstserrat font-bold text-blue-400 items-center'>
                 <li className='hover:text-blue-700 cursor-pointer'>Home</li>
