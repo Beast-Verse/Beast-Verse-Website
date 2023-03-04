@@ -29,10 +29,10 @@ export default function Home() {
 
       </Head>
       <div className=' bg-gradient-to-br from-blue-700 to-blue-500 h-[100vh] pt-5 '>
-        <div className='container mx-auto'>
+        <div className=''>
           <Navbar/>
           <Landing/>
-          {/* <AboutUs/> */}
+          <AboutUs/>
         </div>
       </div>
     </>
