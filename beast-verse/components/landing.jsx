@@ -123,12 +123,12 @@ export default function Landing() {
         <div className='w-[100vw] overflow-x-hidden'>
             <motion.div
             >
-                <Image src={Clouds} alt="bv_logo" className='absolute left-[-60%] top-[-5%] z-30' />
+                <Image src={Clouds} alt="bv_logo" className='absolute 2xl:left-[-40%] left-[-60%] top-[-5%] z-30' />
             </motion.div>
             
             <motion.div
             >
-                <Image src={Clouds} alt="bv_logo" className='absolute right-[-60%] top-[-5%] z-30 -scale-x-100' />
+                <Image src={Clouds} alt="bv_logo" className='absolute 2xl:right-[-40%] right-[-60%] top-[-5%] z-30 -scale-x-100' />
             </motion.div>
         </div>
         
