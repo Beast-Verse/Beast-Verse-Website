@@ -38,9 +38,9 @@ export default function Home() {
       </div>
 
       <div className='bg-gradient-to-br from-blue-700 to-blue-500 h-[100vh] pt-5 md:hidden'>
-          <div className='container mx-auto text-center text-white font-semibold font-Monstserrat h-[80vh] flex flex-col items-center justify-center'>
-            Not Available For Smart-Phones Yet!
-          </div>
+        <div className='container mx-auto text-center text-white font-semibold font-Monstserrat h-[80vh] flex flex-col items-center justify-center'>
+          Not Available For Smart-Phones Yet!
+        </div>
       </div>
     </>
   )
