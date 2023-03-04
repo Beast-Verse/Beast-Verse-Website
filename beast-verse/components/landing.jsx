@@ -107,7 +107,7 @@ export default function Landing() {
                 ease: 'easeInOut'
             }}
 
-        className='container mx-auto flex flex-col justify-center items-center mt-28 z-20 relative'>
+        className='container mx-auto flex flex-col justify-center items-center mt-28 z-20 relative p-10'>
             <Image src={logo} alt="bv_logo" className='w-[40%]' />
             <div className='flex flex-row gap-4'>
                 <motion.button
