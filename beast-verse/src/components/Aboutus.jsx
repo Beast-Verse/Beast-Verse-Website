@@ -6,23 +6,44 @@ import Right from "../assets/Right.png"
 // import Image from "react/Image"
 function AboutUs(){
     // const scrollRef = useRef(null)
-    const { scrollY } = useScroll();
+    
     
     const ref = useRef(null);
-  const isInView = useInView(ref);
-console.log(isInView);
-    const move = useTransform(
-        scrollY,
-        [-1, 0, 1],
-        [0,0, -200],
-        { clamp: false }
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        // offset: ["end end", "start start"]
+      });
+
+
+//   const isInView = useInView(ref);
+// console.log(isInView);
+
+
+    const move1 = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, -600],
+        // { clamp: false }
+    );
+
+    const scale = useTransform(
+        scrollYProgress,
+        [0,1],
+        [1, 1]
+    )
+
+    const move2 = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, 600],
+        // { clamp: false }
     )
 //   const scaleX = useSpring(scrollYProgress, {
 //     x:1000});
 
-    return (<div  className="pl-[2vw] w-screen pt-10 bg-black ">
+    return (<div className="pl-[2vw] w-screen pt-10 bg-black ">
 {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
-<motion.div className="origin-top-left fixed top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ x: move}}/>
+<motion.div className="origin-top-left fixed z-auto top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/>
         <h2 className="text-[4.5vw] font-Montserrat font-semibold text-white">What is <span className="font-Ruslan">Beast Verse</span></h2>
 
         <div className="grid grid-flow-col grid-cols-2">
@@ -37,11 +58,10 @@ console.log(isInView);
         </div>
 
         <div>
-            <div style={{ overflow: "scroll" }}>
-            <motion.img ref={ref} style={{ transform: isInView ? "none" : move, transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"}}
-        viewport={{ once:true }} src={Left} className="w-full h-full"></motion.img>
-        <motion.img  initial={{ x:0}} whileFocus={{ scale: 1.2 }}
-        whileInView={{ x:move, transition:{duration: 3} }}
+            <div style={{overflow: "scroll" }}>
+            <motion.img ref={ref} style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s", scale: scale}}
+        viewport={{ once:true }} src={Left} ></motion.img>
+        <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s", scale: scale }}
         viewport={{ once:true }} src={Right} className="relative max-[1440px]:bottom-[55vw] min-[1441px]:bottom-[54.2vw]"></motion.img>
             </div>
         </div>
