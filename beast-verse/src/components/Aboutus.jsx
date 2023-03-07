@@ -22,7 +22,7 @@ console.log(scrollYProgress);
     const move1 = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, -600],
+        [0, -800],
         // { clamp: false }
     );
 
@@ -35,7 +35,7 @@ console.log(scrollYProgress);
     const move2 = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, 600],
+        [0, 800],
         // { clamp: false }
     )
 //   const scaleX = useSpring(scrollYProgress, {
