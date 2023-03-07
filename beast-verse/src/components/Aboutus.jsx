@@ -58,7 +58,7 @@ console.log(scrollYProgress);
         </div>
 
         <div>
-            <div ref={ref} style={{overflow: "scroll" }}>
+            <div ref={ref} style={{overflow: "scroll"}}>
             <motion.img style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}}
         viewport={{ once:true }} src={Left} ></motion.img>
         <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }}
