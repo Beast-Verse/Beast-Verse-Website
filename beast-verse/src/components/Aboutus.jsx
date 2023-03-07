@@ -3,6 +3,7 @@ import Ice from "../assets/Ice.png"
 import { motion, useScroll, useInView, useTransform } from "framer-motion";
 import Left from "../assets/left.png"
 import Right from "../assets/Right.png"
+import Manila from "../assets/Manila.png"
 // import Image from "react/Image"
 function AboutUs(){
     // const scrollRef = useRef(null)
@@ -58,11 +59,13 @@ console.log(scrollYProgress);
         </div>
 
         <div>
-            <div ref={ref} style={{}} className="flex">
-            <motion.img style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}}
-        viewport={{ once:true }} className="" src={Left} ></motion.img>
-        <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }}
-        viewport={{ once:true }} src={Right} className="relative min-[1280px]:right-[98vw] min-[2000px]:right-[90vw]"></motion.img>
+            <div ref={ref} className="flex pt-[20rem] mx-auto">
+                <motion.img style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}} viewport={{ once:true }} className=" relative z-10" src={Left} ></motion.img>
+                
+                <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }} viewport={{ once:true }} src={Right} className="z-10 relative min-[1280px]:right-[98vw] min-[2000px]:right-[90vw]"></motion.img>
+            </div>
+            <div className="flex relative bottom-[55vw]">
+            <motion.img src={Manila} className="w-[80%] mx-auto relative z-0"></motion.img>
             </div>
         </div>
     </div>)

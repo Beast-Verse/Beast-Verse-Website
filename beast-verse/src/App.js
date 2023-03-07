@@ -8,7 +8,7 @@ import Landing from "./components/landing"
 function App() {
 
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
 
       <Navbar/>
       <Landing/>

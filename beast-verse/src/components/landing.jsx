@@ -2,136 +2,49 @@ import React from 'react'
 import {motion} from 'framer-motion'
 
 import logo from '../assets/logo.png'
-import Desert from '../assets/Desert.png'
-import Forest from '../assets/Forest.png'
-import Ice from '../assets/Ice.png'
-import Swamp from '../assets/Swamp.png'
-import Volcano from '../assets/Volcano.png'
-import Clouds from '../assets/clouds.png'
+import Desert from '../assets/landing/Desert.png'
+import Forest from '../assets/landing/Forest.png'
+import Ice from '../assets/landing/Ice.png'
+import Swamp from '../assets/landing/Swamp.png'
+import Volcano from '../assets/landing/Volcano.png'
+import Base from "../assets/landing/Base clouds.png"
+import LBBack from "../assets/landing/LBBack.png"
+import LBFront from "../assets/landing/LBFront.png"
+import LUBack from "../assets/landing/LUBack.png"
+import LUFront from "../assets/landing/LUFront.png"
+import RBBack from "../assets/landing/RBBack.png"
+import RBFront from "../assets/landing/RBFront.png"
+import RUFront from "../assets/landing/RUFront.png"
+import RUBack from "../assets/landing/RUFBack.png"
+import Sky from "../assets/landing/Sky.png"
+import Main from "../assets/landing/Main Cloud.png"
 
 
 export default function Landing() {
   return (
-    <div className=' overflow-x-hidden w-[100vw]'>
+    <div className=' overflow-x-hidden w-[100vw] flex'>
         {/* background */}
-        <motion.div
-            initial={{filter: 'blur(0px)'}}
-            animate={{filter: 'blur(5px)'}}
-            transition={{
-                duration: 2,
-                ease: 'easeInOut'
-            }}
-        className='grid grid-flow-col grid-rows-4 justify-center items-center absolute w-full z-10'>
-            <motion.div
-            animate={{
-                y: [0, 10, -5, 0]
-              }}
-              transition={{
-                duration: 6,
-                ease: "easeInOut",
-                // times: [0, 0.2, 0.5, 1],
-                repeat: Infinity
-              }}
-            
-              className='w-[13%] absolute top-80 left-0'>
-                <img src={Forest} alt=""/>
-            </motion.div>
-            <motion.div
-            animate={{
-                y: [0, 5, -10, 0]
-              }}
-              transition={{
-                duration: 6,
-                ease: "easeInOut",
-                // times: [0, 0.2, 0.5, 1],
-                repeat: Infinity
-              }}
-            
-            className='w-[15%] absolute top-10 right-40'>
-                <img src={Desert} alt=""/>
-            </motion.div>
-            <motion.div
-            animate={{
-                y: [0, 15, -10, 0]
-              }}
-              transition={{
-                duration: 6,
-                ease: "easeInOut",
-                // times: [0, 0.2, 0.5, 1],
-                repeat: Infinity
-              }}
-            
-              className='w-[15%] top-0 left-0 absolute'>
-                <img src={Ice} alt=""/>
-            </motion.div>
+        <img src={Sky} className='relative top-0 left-0'></img>
+        <img src={LUBack} className='absolute top-[5.56rem] left-0'></img>
+        <img src={Desert} className='absolute top-[5.56rem] left-0'></img>
+        <img src={LUFront} className='absolute top-[5.56rem] left-0'></img>
 
-            <motion.div
-            animate={{
-                y: [0, 5, -15, 0]
-              }}
-              transition={{
-                duration: 6,
-                ease: "easeInOut",
-                // times: [0, 0.2, 0.5, 1],
-                repeat: Infinity
-              }}
-            
-              className='w-[40%] absolute top-10 left-40'>
-                <img src={Swamp} alt=""/>
-            </motion.div>
+        <img src={Volcano} className='absolute top-[5.56rem] left-0'></img>
+        <img src={Main} className='absolute top-[5.56rem] left-0'></img>
 
-            <motion.div
-            animate={{
-                y: [0, 25, -10, 0]
-              }}
-              transition={{
-                duration: 6,
-                ease: "easeInOut",
-                // times: [0, 0.2, 0.5, 1],
-                repeat: Infinity
-              }}
-            
-              className='w-[25%] absolute top-56 right-32'>
-                <img src={Volcano} alt=""/>
-            </motion.div>
-        </motion.div>
-
-        {/* foregroud */}
-        <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{
-                duration: 2,
-                delay: 2,
-                ease: 'easeInOut'
-            }}
-
-        className='container mx-auto flex flex-col justify-center items-center mt-28 z-20 relative p-10'>
-            <img src={logo} alt="bv_logo" className='w-[40%]' />
-            <div className='flex flex-row gap-4'>
-                <motion.button
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-
-                className='border-white hover:border-green-900 border-2 shadow-xl hover:shadow-sm font-bold text-2xl bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-4 px-16 rounded-lg cursor-pointer'>Pre-Register</motion.button>
-                {/* <button className='border-white hover:border-purple-900 border-2 shadow-xl hover:shadow-sm font-bold text-lg bg-gradient-to-br from-purple-800 to-purple-500 hover:to-purple-600 hover:from-purple-500 text-white py-4 px-7 rounded-lg cursor-pointer'>Join Discord</button> */}
-            </div>
-        </motion.div>
-
-        {/* clouds */}
-        <div className='w-[100vw] overflow-x-hidden'>
-            <motion.div
-            >
-                <img src={Clouds} alt="bv_logo" className='absolute 2xl:left-[-40%] left-[-60%] top-[-5%] z-30' />
-            </motion.div>
-            
-            <motion.div
-            >
-                <img src={Clouds} alt="bv_logo" className='absolute 2xl:right-[-40%] right-[-60%] top-[-5%] z-30 -scale-x-100' />
-            </motion.div>
-        </div>
         
-        
+        <img src={Base} className='absolute top-[5.56rem] left-0'></img>
+
+        <img src={LBBack} className='absolute top-[5.56rem] left-0'></img>
+        <img src={Forest} className='absolute top-[5.56rem] left-0'></img>
+        <img src={LBFront} className='absolute top-[5.56rem] left-0'></img>
+
+        <img src={RBBack} className='absolute top-[2rem] left-0'></img>
+        <img src={Swamp} className='absolute top-0 left-0'></img>
+        <img src={RBFront} className='absolute top-[.56rem] left-0'></img>
+        <img src={RUBack} className='absolute top-[5.56rem] left-0'></img>
+        <img src={Ice} className='absolute top-[5.56rem] left-0'></img>
+        <img src={RUFront} className='absolute top-[5.56rem] left-0'></img>
     </div>
     
   )
