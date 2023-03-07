@@ -58,11 +58,11 @@ console.log(scrollYProgress);
         </div>
 
         <div>
-            <div ref={ref} style={{overflow: "scroll"}}>
+            <div ref={ref} style={{}} className="flex">
             <motion.img style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}}
-        viewport={{ once:true }} src={Left} ></motion.img>
+        viewport={{ once:true }} className="" src={Left} ></motion.img>
         <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }}
-        viewport={{ once:true }} src={Right} className="relative max-[1440px]:bottom-[55vw] min-[1441px]:bottom-[54.2vw]"></motion.img>
+        viewport={{ once:true }} src={Right} className="relative right-[98vw]"></motion.img>
             </div>
         </div>
     </div>)
