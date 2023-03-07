@@ -11,9 +11,9 @@ function AboutUs(){
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        // offset: ["end end", "start start"]
+        offset: ["start start", "end end"]
       });
-
+console.log(scrollYProgress);
 
 //   const isInView = useInView(ref);
 // console.log(isInView);
@@ -29,7 +29,7 @@ function AboutUs(){
     const scale = useTransform(
         scrollYProgress,
         [0,1],
-        [1, 1]
+        [1, 1.3]
     )
 
     const move2 = useTransform(
@@ -43,7 +43,7 @@ function AboutUs(){
 
     return (<div className="pl-[2vw] w-screen pt-10 bg-black ">
 {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
-<motion.div className="origin-top-left fixed z-auto top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/>
+<motion.div className="origin-top-left fixed z-50 top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/>
         <h2 className="text-[4.5vw] font-Montserrat font-semibold text-white">What is <span className="font-Ruslan">Beast Verse</span></h2>
 
         <div className="grid grid-flow-col grid-cols-2">
@@ -58,10 +58,10 @@ function AboutUs(){
         </div>
 
         <div>
-            <div style={{overflow: "scroll" }}>
-            <motion.img ref={ref} style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s", scale: scale}}
+            <div ref={{ref}} style={{overflow: "scroll" }}>
+            <motion.img style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}}
         viewport={{ once:true }} src={Left} ></motion.img>
-        <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s", scale: scale }}
+        <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }}
         viewport={{ once:true }} src={Right} className="relative max-[1440px]:bottom-[55vw] min-[1441px]:bottom-[54.2vw]"></motion.img>
             </div>
         </div>
