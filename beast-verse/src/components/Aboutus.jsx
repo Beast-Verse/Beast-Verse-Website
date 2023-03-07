@@ -62,7 +62,7 @@ console.log(scrollYProgress);
             <motion.img style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}}
         viewport={{ once:true }} className="" src={Left} ></motion.img>
         <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }}
-        viewport={{ once:true }} src={Right} className="relative right-[98vw]"></motion.img>
+        viewport={{ once:true }} src={Right} className="relative min-[1280px]:right-[98vw] min-[2000px]:right-[90vw]"></motion.img>
             </div>
         </div>
     </div>)
