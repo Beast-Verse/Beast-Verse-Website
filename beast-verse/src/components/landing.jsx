@@ -7,7 +7,7 @@ import Forest from '../assets/landing/Forest.png'
 import Ice from '../assets/landing/Ice.png'
 import Swamp from '../assets/landing/Swamp.png'
 import Volcano from '../assets/landing/Volcano.png'
-import Base from "../assets/landing/Base clouds.png"
+import Base from "../assets/landing/Base3.png"
 import LBBack from "../assets/landing/LBBack.png"
 import LBFront from "../assets/landing/LBFront.png"
 import LUBack from "../assets/landing/LUBack.png"
@@ -33,7 +33,7 @@ export default function Landing() {
         <img src={Main} className='absolute top-[5.56rem] left-0'></img>
 
         
-        <img src={Base} className='absolute top-[5.56rem] left-0'></img>
+        <img src={Base} className='absolute top-[5.75rem] left-0'></img>
 
         <img src={LBBack} className='absolute top-[5.56rem] left-0'></img>
         <img src={Forest} className='absolute top-[5.56rem] left-0'></img>

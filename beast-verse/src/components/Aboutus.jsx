@@ -23,8 +23,8 @@ console.log(scrollYProgress);
     const move1 = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, -800],
-        // { clamp: false }
+        [0, -1000],
+        { clamp: false }
     );
 
     const scale = useTransform(
@@ -36,8 +36,28 @@ console.log(scrollYProgress);
     const move2 = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, 800],
-        // { clamp: false }
+        [0, 1000],
+        { clamp: false }
+    )
+
+    const moveY1 = useTransform(
+        scrollYProgress,
+        [0,1],
+        [0, 100],
+        {clamp: false}
+    )
+
+    const moveY2 = useTransform(
+        scrollYProgress,
+        [0,1],
+        [0, 100],
+        {clamp: false}
+    )
+
+    const scaleScene = useTransform(
+        scrollYProgress,
+        [0,1],
+        [0, 1],
     )
 //   const scaleX = useSpring(scrollYProgress, {
 //     x:1000});
@@ -59,14 +79,17 @@ console.log(scrollYProgress);
         </div>
 
         <div>
-            <div ref={ref} className="flex pt-[20rem] mx-auto">
-                <motion.img style={{translateX: move1, transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}} viewport={{ once:true }} className=" relative z-10" src={Left} ></motion.img>
+            <motion.div ref={ref} style={{transformY:moveY1, transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)"}} className="flex pt-[20rem] z-30 mx-auto">
+                <motion.img style={{translateX: move1, transition: "all 3s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale}} viewport={{ once:true }} className=" relative z-20" src={Left} ></motion.img>
                 
-                <motion.img style={{ translateX:move2,transition: "all 4s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }} viewport={{ once:true }} src={Right} className="z-10 relative min-[1280px]:right-[98vw] min-[2000px]:right-[90vw]"></motion.img>
-            </div>
-            <div className="flex relative bottom-[55vw]">
-            <motion.img src={Manila} className="w-[80%] mx-auto relative z-0"></motion.img>
-            </div>
+                <motion.img style={{ translateX:move2, transition: "all 3s cubic-bezier(0.17, 0.55, 0.55, 1)", scale: scale }} viewport={{ once:true }} src={Right} className="z-20 relative min-[1280px]:right-[98vw] min-[2000px]:right-[90vw]"></motion.img>
+            
+
+            </motion.div>
+
+            <motion.div style={{translateY:moveY2, scale: scaleScene, transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)"}} className="z-0 flex relative bottom-[55vw]">
+            <motion.img src={Manila} className="w-[80%] mx-auto relative -z-10"></motion.img>
+            </motion.div>
         </div>
     </div>)
 }

@@ -12,7 +12,7 @@ export default function Navbar() {
       duration: 1
     }}
 
-    className='bg-white w-[70%] container mx-auto rounded-xl drop-shadow-xl'>
+    className='bg-white w-[70%] mt-3 container mx-auto rounded-xl drop-shadow-xl'>
         <div className='p-4 px-5 flex flex-row justify-between items-center max-h-20'>
             <div className='cursor-pointer'>
                 <img src={logo} alt="bv_logo" className='w-24' />
