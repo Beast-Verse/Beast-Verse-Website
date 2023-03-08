@@ -5,6 +5,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {},
+    fontFamily: {
+      Ruslan:['Ruslan Display', 'sans-serif'],
+      Monstserrat: ['Montserrat', 'sans-serif'],
+    },
   },
   plugins: [],
 }

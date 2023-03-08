@@ -3,7 +3,9 @@ import Ice from "../assets/Ice.png"
 import { motion, useScroll, useInView, useTransform } from "framer-motion";
 import Left from "../assets/left.png"
 import Right from "../assets/Right.png"
-import Manila from "../assets/Manila.png"
+import All from "../assets/All.png"
+import Stats from "./stats";
+
 // import Image from "react/Image"
 function AboutUs(){
     // const scrollRef = useRef(null)
@@ -23,38 +25,38 @@ console.log(scrollYProgress);
     const move1 = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, -1000],
+        ["1vw", "-100vw"],
         { clamp: false }
     );
 
     const scale = useTransform(
         scrollYProgress,
         [0,1],
-        [1, 1.3]
+        [1, 1.5]
     )
 
     const move2 = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, 1000],
+        ["-1vw", "100vw"],
         { clamp: false }
     )
 
     const moveY1 = useTransform(
         scrollYProgress,
         [0,1],
-        [0, 100],
+        ["0", "10vw"],
         {clamp: false}
     )
 
     const moveY2 = useTransform(
         scrollYProgress,
         [0,1],
-        [0, 100],
+        ["0", "12vw"],
         {clamp: false}
     )
 
-    const scaleScene = useTransform(
+    const opScene = useTransform(
         scrollYProgress,
         [0,1],
         [0, 1],
@@ -62,10 +64,10 @@ console.log(scrollYProgress);
 //   const scaleX = useSpring(scrollYProgress, {
 //     x:1000});
 
-    return (<div className="pl-[2vw] w-screen pt-10 bg-black ">
+    return (<div className=" w-screen pt-10 bg-black h-[200vw]">
 {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
-<motion.div className="origin-top-left fixed z-50 top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/>
-        <h2 className="text-[4.5vw] font-Montserrat font-semibold text-white">What is <span className="font-Ruslan">Beast Verse</span></h2>
+{/* <motion.div className="origin-top-left fixed z-50 top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/> */}
+        <h2 className="text-[4.5vw] pl-10 font-Montserrat font-semibold text-white">What is <span className="font-Ruslan">Beast Verse</span></h2>
 
         <div className="grid grid-flow-col grid-cols-2">
             <div className="pl-[3vw]">
@@ -87,10 +89,15 @@ console.log(scrollYProgress);
 
             </motion.div>
 
-            <motion.div style={{translateY:moveY2, scale: scaleScene, transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)"}} className="z-0 flex relative bottom-[55vw]">
-            <motion.img src={Manila} className="w-[80%] mx-auto relative -z-10"></motion.img>
+            <motion.div ref={{ref}} style={{translateY:moveY2, opacity: opScene, transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1)"}} className="z-0 absolute top-[110vw]">
+            <motion.img src={All} className=""></motion.img>   
+            <Stats/>             
             </motion.div>
+
+            
         </div>
+
+        
     </div>)
 }
 
