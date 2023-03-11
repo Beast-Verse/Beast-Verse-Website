@@ -5,6 +5,7 @@ import Left from "../assets/left.png"
 import Right from "../assets/Right.png"
 import All from "../assets/All.png"
 import Stats from "./stats";
+import Monsters from "./Monsters";
 
 // import Image from "react/Image"
 function AboutUs(){
@@ -91,7 +92,8 @@ console.log(scrollYProgress);
 
             <motion.div ref={{ref}} style={{translateY:moveY2, opacity: opScene, transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1)"}} className="z-0 absolute top-[110vw]">
             <motion.img src={All} className=""></motion.img>   
-            <Stats/>             
+            <Stats/>   
+            <Monsters/>          
             </motion.div>
 
             
