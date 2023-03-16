@@ -4,7 +4,7 @@ import { motion, useScroll, useInView, useTransform } from "framer-motion";
 import Left from "../assets/left.png"
 import Right from "../assets/Right.png"
 import All from "../assets/All.png"
-import Stats from "./Stats";
+import Stats from "./stats";
 import Monsters from "./Monsters";
 
 // import Image from "react/Image"
