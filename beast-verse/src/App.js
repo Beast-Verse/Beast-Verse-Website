@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import AboutUs from "./components/Aboutus"
 import Navbar from "./components/Navbar"
 import Landing from "./components/landing"
-import Roadmap from './components/Roadmap';
-import Domains from './components/Domains';
-import HowToPlay from './components/HowToPlay';
-import Team from './components/Team';
-import Footer from './components/Footer';
+// import Roadmap from './components/Roadmap';
+// import Domains from './components/Domains';
+// import HowToPlay from './components/HowToPlay';
+// import Team from './components/Team';
+// import Footer from './components/Footer';
 // import Stats from "./components/stats";
 
 

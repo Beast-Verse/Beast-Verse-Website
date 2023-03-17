@@ -4,6 +4,7 @@ import logo from '../assets/logo.png'
 
 export default function Navbar() {
   return (
+    <div className='fixed flex justify-center items-center w-full z-10'>
     <motion.div
     
     initial={{y: -100}}
@@ -27,10 +28,10 @@ export default function Navbar() {
                 <li className='hover:text-purple-600 text-purple-400 cursor-pointer'><a href="https://discord.gg/JG9VAuJbD7">Join Discord</a></li>
                 <li className='bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-4 px-7 rounded-lg cursor-pointer'>Pre-Register</li>
 
-                
-
             </ul>
         </div>
+        
     </motion.div>
+    </div>
   )
 }

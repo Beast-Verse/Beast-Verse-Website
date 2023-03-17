@@ -1,6 +1,11 @@
 import React, {useRef} from "react";
-import Ice from "../assets/Ice.png"
-import { motion, useScroll, useInView, useTransform } from "framer-motion";
+// import Ice from "../assets/Ice.png"
+import {
+    motion,
+    useScroll,
+    // useInView,
+    useTransform
+} from "framer-motion";
 import Left from "../assets/left.png"
 import Right from "../assets/Right.png"
 import All from "../assets/All.png"
