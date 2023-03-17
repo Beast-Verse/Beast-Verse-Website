@@ -1,5 +1,6 @@
 import React from 'react'
-// import {motion} from 'framer-motion'
+import {motion} from 'framer-motion'
+import logo from '../assets/logo.png'
 
 // import logo from '../assets/logo.png'
 // import Desert from '../assets/landing/Desert.png'
@@ -52,6 +53,27 @@ export default function Landing() {
         <video autoPlay muted loop className="top-0 left-0 w-[100vw] bg-cover overflow-x-hidden">
           <source src={videoSource} type="video/mp4" className=''/>
         </video>
+
+        <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{
+                duration: 2,
+                delay: 5,
+                ease: 'easeInOut'
+            }}
+
+        className='absolute flex flex-col justify-center items-center z-0 backdrop-blur-sm w-[100vw] h-[100vh]'>
+            <img src={logo} alt="bv_logo" className='w-[40%]' />
+            <div className='flex flex-row gap-4'>
+                <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+
+                className='border-white hover:border-green-900 border-2 shadow-xl hover:shadow-sm font-bold text-2xl bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-4 px-16 rounded-lg cursor-pointer'>Pre-Register</motion.button>
+                {/* <button className='border-white hover:border-purple-900 border-2 shadow-xl hover:shadow-sm font-bold text-lg bg-gradient-to-br from-purple-800 to-purple-500 hover:to-purple-600 hover:from-purple-500 text-white py-4 px-7 rounded-lg cursor-pointer'>Join Discord</button> */}
+            </div>
+        </motion.div>
 
 
     </div>

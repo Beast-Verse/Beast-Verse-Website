@@ -16,10 +16,9 @@ function App() {
 
   return (
     <div className="overflow-x-hidden bg-gradient-to-r from-[rgb(68,151,218)] to-[rgb(65,146,214)]">
-
       <Navbar/>
       <Landing/>
-     <AboutUs/>
+      <AboutUs/>
   
     {/* <Domains/> */}
     {/* <HowToPlay/> */}

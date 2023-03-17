@@ -10,7 +10,8 @@ export default function Navbar() {
     initial={{y: -100}}
     animate={{y: 0}}
     transition={{
-      duration: 1
+      duration: 1,
+      delay: 7
     }}
 
     className='bg-white w-[70%] mt-3 container mx-auto rounded-xl drop-shadow-xl'>
