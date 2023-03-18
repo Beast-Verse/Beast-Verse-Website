@@ -15,8 +15,8 @@ import Team from "./components/Team"
 
 function App() {
 
-  return (
-    <div className="overflow-x-hidden bg-gradient-to-r from-[rgb(68,151,218)] to-[rgb(65,146,214)]">
+  return (<>
+    <div className="overflow-x-hidden bg-gradient-to-r from-[rgb(68,151,218)] to-[rgb(65,146,214)] max-[740px]:hidden">
       <Navbar/>
       <Landing/>
       <AboutUs/>
@@ -28,8 +28,16 @@ function App() {
     {/* <Monsters /> */}
     {/* <Footer/> */}
     
+    
     </div>
-  );
+<div className='bg-gradient-to-br from-blue-700 to-blue-500 h-[100vh] pt-5 md:hidden'>
+        <div className='container mx-auto text-center text-white font-semibold font-Monstserrat h-[80vh] flex flex-col items-center justify-center'>
+          
+          Not Available For Smart-Phones Yet!
+        </div>
+      </div>
+  </>  
+);
 }
 
 export default App;
