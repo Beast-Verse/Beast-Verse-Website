@@ -21,7 +21,7 @@ import land from '../assets/land.png'
 // import Sky from "../assets/landing/Sky.png"
 // import Main from "../assets/landing/Main Cloud.png"
 
-import videoSource from '../assets/video.mp4';
+import videoSource from '../assets/No Flicker.mp4';
 
 
 
