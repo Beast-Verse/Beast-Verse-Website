@@ -28,18 +28,18 @@ function AboutUs() {
   //   const isInView = useInView(ref);
   // console.log(isInView);
 
-  const move1 = useTransform(scrollYProgress, [0, 1], ["1vw", "-100vw"], {
+  const move1 = useTransform(scrollYProgress, [0, 0.5, 1], ["1vw", "-50vw", "-100vw"], {
     clamp: false,
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const scale2 = useTransform(scrollYProgress, [0, 1], [.7, 1]);
 
-  const move2 = useTransform(scrollYProgress, [0, 1], ["-1vw", "100vw"], {
+  const move2 = useTransform(scrollYProgress, [0, .5,  1], ["-1vw", "50vw", "100vw"], {
     clamp: false,
   });
 
-  const moveY1 = useTransform(scrollYProgress, [0, 1], ["0", "30vw"], {
+  const moveY1 = useTransform(scrollYProgress, [0, .5, 1], ["0", "10vw", "20vw"], {
     clamp: false,
   });
 
@@ -47,7 +47,7 @@ function AboutUs() {
   //   clamp: false,
   // });
 
-  const opScene = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const opScene = useTransform(scrollYProgress, [0, 1], [0.3 , 1]);
   //   const scaleX = useSpring(scrollYProgress, {
   //     x:1000});
 
