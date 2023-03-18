@@ -39,7 +39,7 @@ function AboutUs() {
     clamp: false,
   });
 
-  const moveY1 = useTransform(scrollYProgress, [0, .5, 1], ["0", "10vw", "20vw"], {
+  const moveY1 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "5vw", "10vw"], {
     clamp: false,
   });
 
@@ -52,7 +52,7 @@ function AboutUs() {
   //     x:1000});
 
   return (
-    <div className=" w-screen pt-10 bg-black h-[150vw]">
+    <div className=" w-screen pt-10 bg-black h-[120vw]">
       {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
       {/* <motion.div className="origin-top-left fixed z-50 top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/> */}
       <h2 className="text-[4.5vw] text-center font-Montserrat font-semibold text-white">
