@@ -61,16 +61,14 @@ function AboutUs() {
       <div className="grid grid-flow-col grid-cols-2 mt-20 mx-auto">
         <div className="px-20">
           <p className="font-Montserrat text-[1.1vw] pt-4 text-white">
-            <b className="text-green-400"> Beast Verse </b> is a virtual world filled with beasts everywhere. It is
-            an online game that provides the players to explore an open, vibrant
-            world full of color. <br /> <br />
-            Beast Verse is an earn-to-play <b className="text-green-400"> PvP (Player vs Player) </b> NFT game,
-            powered by <b className="text-purple-500"> Polygon Blockchain. </b> <br /> <br />
-            We have created a virtual world where players can explore different
+            
+            <b className="text-green-400">Beast Verse </b>is a <b className="text-green-400"> Play-to-earn PvP </b> NFT game,
+            built on the <b className="text-purple-500"> Polygon Blockchain. </b> <br /> <br />
+            We are creating a virtual world where players can explore different
             terrains, choose their favorite beasts and fight their way to
             victory. Our use of the Polygon Blockchain ensures that the game is
             <b className="text-green-400"> secure and transparent </b>, which is essential for players who value
-            their personal information and assets. <br />
+            their personal information and assets. <br /><br ></br>
             So, jump into your <b className="text-green-400"> favorite terrain </b>, choose your <b className="text-green-400"> favorite beasts </b>,
             and fight your way through to become the <b className="text-green-400"> Mightiest of All Masters! </b>
             <br /> <br />
@@ -91,7 +89,7 @@ function AboutUs() {
         </div>
       </div>
 
-        <h2 className="text-center text-white text-3xl mt-10 font-semibold">See you in <span className=" text-green-500">Beast Verse!</span></h2>
+        <h2 className="text-center text-white text-5xl mt-16 font-Montserrat font-semibold">See you in <span className=" text-green-500">Beast Verse!</span></h2>
 
       <div>
         <motion.div
