@@ -55,7 +55,7 @@ function AboutUs() {
       {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
       {/* <motion.div className="origin-top-left fixed z-50 top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/> */}
       <h2 className="text-[4.5vw] text-center font-Montserrat font-semibold text-white">
-        What is <span className=" text-green-500">Beast Verse</span>
+        What is <span className=" text-green-500">Beast Verse</span> ?
       </h2>
 
       <div className="grid grid-flow-col grid-cols-2 mt-20 mx-auto">
