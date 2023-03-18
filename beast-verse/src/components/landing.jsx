@@ -1,6 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import logo from '../assets/logo.png'
+import land from '../assets/land.png'
 
 // import logo from '../assets/logo.png'
 // import Desert from '../assets/landing/Desert.png'
@@ -53,6 +54,16 @@ export default function Landing() {
         <video autoPlay muted loop className="top-0 left-0 w-[100vw] bg-cover overflow-x-hidden">
           <source src={videoSource} type="video/mp4" className=''/>
         </video>
+
+        <motion.div initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{
+                duration: 2,
+                delay: 7,
+                ease: 'easeInOut'
+            }}>
+        <img src={land} alt="land sillouhette" className='absolute w-[100vw] -bottom-[40px] left-0'/>
+        </motion.div>
 
         <motion.div
             initial={{opacity: 0}}
