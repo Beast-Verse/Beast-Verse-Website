@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 
 export default function Navbar() {
   return (
-    <div className='fixed flex justify-center items-center w-full z-10'>
+    <div className='fixed flex justify-center items-center w-full z-50'>
     <motion.div
     
     initial={{y: -100}}
