@@ -9,10 +9,10 @@ import {
 import Left from "../assets/left.png";
 import Right from "../assets/Right.png";
 
-import Team from '../components/Team';
+
 import All from "../assets/All.png";
-import Stats from "./stats";
-// import Monsters from "./Monsters";
+
+
 
 // import Image from "react/Image"
 function AboutUs() {
@@ -33,18 +33,19 @@ function AboutUs() {
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const scale2 = useTransform(scrollYProgress, [0, 1], [.7, 1]);
 
   const move2 = useTransform(scrollYProgress, [0, 1], ["-1vw", "100vw"], {
     clamp: false,
   });
 
-  const moveY1 = useTransform(scrollYProgress, [0, 1], ["0", "10vw"], {
+  const moveY1 = useTransform(scrollYProgress, [0, 1], ["0", "30vw"], {
     clamp: false,
   });
 
-  const moveY2 = useTransform(scrollYProgress, [0, 1], ["0", "12vw"], {
-    clamp: false,
-  });
+  // const moveY2 = useTransform(scrollYProgress, [0, 1], ["0", "12vw"], {
+  //   clamp: false,
+  // });
 
   const opScene = useTransform(scrollYProgress, [0, 1], [0, 1]);
   //   const scaleX = useSpring(scrollYProgress, {
@@ -95,10 +96,10 @@ function AboutUs() {
         <motion.div
           ref={ref}
           style={{
-            transformY: moveY1,
+            translateY: moveY1,
             transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
-          className="flex pt-[20rem] z-30 mx-auto"
+          className="flex pt-[15rem] relative z-40 mx-auto"
         >
           <motion.img
             style={{
@@ -126,16 +127,15 @@ function AboutUs() {
         <motion.div
           ref={{ ref }}
           style={{
-            translateY: moveY2,
+            translateY: moveY1,
+            scale: scale2,
             opacity: opScene,
-            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1)",
+            transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
           className="z-0 absolute top-[110vw]"
         >
           <motion.img src={All} className=""></motion.img>
-          <Stats />  
-            <Team/>
-          {/* <Monsters /> */}
+          
         </motion.div>
       </div>
     </div>
