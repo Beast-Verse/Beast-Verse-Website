@@ -51,9 +51,20 @@ export default function Landing() {
         <img src={Ice} alt="bv_island" className='absolute top-[5.56rem] left-0'></img>
         <img src={RUFront} alt="bv_island" className='absolute top-[5.56rem] left-0'></img> */}
 
-        <video autoPlay muted loop className="top-0 left-0 w-[100vw] bg-cover overflow-x-hidden">
-          <source src={videoSource} type="video/mp4" className=''/>
-        </video>
+        <motion.div
+        //blur animation
+        initial={{filter: 'blur(0px)'}}
+        animate={{filter: 'blur(4px)'}}
+        transition={{
+            duration: 2,
+            delay: 5,
+            ease: 'easeInOut'
+        }}
+        className='h-[100vh] overflow-clip'>
+            <video autoPlay muted loop className="top-0 left-0 w-[100vw] bg-cover overflow-x-hidden">
+                <source src={videoSource} type="video/mp4" className=''/>
+            </video>
+        </motion.div>
 
         <motion.div initial={{opacity: 0}}
             animate={{opacity: 1}}
@@ -74,8 +85,8 @@ export default function Landing() {
                 ease: 'easeInOut'
             }}
 
-        className='absolute flex flex-col justify-center items-center z-0 backdrop-blur-sm w-[100vw] h-[100vh]'>
-            <img src={logo} alt="bv_logo" className='w-[40%]' />
+        className='absolute flex flex-col justify-center items-center z-0 w-[100vw] h-[100vh]'>
+            <img src={logo} alt="bv_logo" className='w-[30%]' />
             <div className='flex flex-row gap-4'>
                 <motion.button
                 whileHover={{ scale: 1.1 }}
