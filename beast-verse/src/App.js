@@ -6,9 +6,7 @@ import Landing from "./components/landing"
 // import Roadmap from './components/Roadmap';
 // import Domains from './components/Domains';
 // import HowToPlay from './components/HowToPlay';
-// import Team from './components/Team';
 // import Footer from './components/Footer';
-// import Stats from "./components/stats";
 
 
 
@@ -23,8 +21,9 @@ function App() {
     {/* <Domains/> */}
     {/* <HowToPlay/> */}
     {/* <Roadmap/> */}
-    {/* <Team/> */}
+    {/* <Monsters /> */}
     {/* <Footer/> */}
+    
     </div>
   );
 }

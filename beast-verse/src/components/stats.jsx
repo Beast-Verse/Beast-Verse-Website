@@ -45,7 +45,7 @@ const Stats = () => {
         <div className="relative mb-32">
           <div className="absolute inset-3 bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-600 rounded-2xl blur-xl animate-tilt "></div>
           <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-600 rounded-2xl animate-glow z-10"></div>
-          <section className="relative px-7 py-4 mx-6 my-1 bg-slate-800 rounded-2xl lg:h-[250px] lg:w-[850px] flex flex-row justify-center items-center z-20">
+          <section className="relative px-7 py-4 mx-6 my-1 bg-slate-800 rounded-2xl lg:h-[250px] lg:w-[800px] flex flex-row justify-center items-center z-20">
             <div className="flex flex-col justify-center items-center">
               <div className="text-[200px] leading-none mt-36 font-bold absolute -z-10 text-blue-500/20">
                 {" "}
@@ -58,7 +58,7 @@ const Stats = () => {
                   <span className="text-xl mb-3 font-bold text-slate-200">
                     TOTAL SUPPLY
                   </span>
-                  <h2 className="text-[#7ae2ff] font-Montserrat text-[5vw] font-extrabold leading-none  pt-3">
+                  <h2 className="text-[#7ae2ff] font-Montserrat text-6xl font-extrabold leading-none  pt-3">
                     {data.supply}
                   </h2>
                 </div>
@@ -67,7 +67,7 @@ const Stats = () => {
                   <span className="text-xl mb-3 font-bold text-slate-200">
                     MINTED
                   </span>
-                  <h2 className="text-[#7ae2ff] font-Montserrat text-[5vw] font-extrabold leading-none  pt-3">
+                  <h2 className="text-[#7ae2ff] font-Montserrat text-6xl font-extrabold leading-none  pt-3">
                     {data.minted}
                   </h2>
                 </div>
@@ -76,7 +76,7 @@ const Stats = () => {
                   <span className="text-xl mb-3 font-bold text-slate-200">
                     VOLUME TRADED
                   </span>
-                  <h2 className="text-[#7ae2ff] font-Montserrat text-[5vw] font-extrabold leading-none pt-3">
+                  <h2 className="text-[#7ae2ff] font-Montserrat text-6xl font-extrabold leading-none pt-3">
                     {data.volume} ETH
                   </h2>
                 </div>
