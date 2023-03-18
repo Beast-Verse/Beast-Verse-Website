@@ -3,7 +3,10 @@ import './App.css';
 import AboutUs from "./components/Aboutus"
 import Navbar from "./components/Navbar"
 import Landing from "./components/landing"
-// import Roadmap from './components/Roadmap';
+import Roadmap from './components/Roadmap';
+import Stats from "./components/stats"
+// import Monsters from "./components/Monsters"
+import Team from "./components/Team"
 // import Domains from './components/Domains';
 // import HowToPlay from './components/HowToPlay';
 // import Footer from './components/Footer';
@@ -17,10 +20,11 @@ function App() {
       <Navbar/>
       <Landing/>
       <AboutUs/>
-  
+    <Stats/>
+    <Team/>
     {/* <Domains/> */}
     {/* <HowToPlay/> */}
-    {/* <Roadmap/> */}
+    <Roadmap/>
     {/* <Monsters /> */}
     {/* <Footer/> */}
     
