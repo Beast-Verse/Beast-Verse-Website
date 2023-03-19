@@ -11,7 +11,6 @@ import Team from "./components/Team"
 // import HowToPlay from './components/HowToPlay';
 // import Footer from './components/Footer';
 import logo from './assets/logo.png'
-import videoSource from './assets/No Flicker.mp4';
 
 
 
