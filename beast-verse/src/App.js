@@ -16,7 +16,7 @@ import Team from "./components/Team"
 function App() {
 
   return (
-    <div className="overflow-x-hidden bg-gradient-to-r from-[rgb(68,151,218)] to-[rgb(65,146,214)]">
+    <div className="overflow-x-hidden hidescrollbar bg-gradient-to-r from-[rgb(68,151,218)] to-[rgb(65,146,214)]">
       <Navbar/>
       <Landing/>
       <AboutUs/>

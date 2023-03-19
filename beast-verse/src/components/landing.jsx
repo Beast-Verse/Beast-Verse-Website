@@ -60,7 +60,7 @@ export default function Landing() {
             delay: 5,
             ease: 'easeInOut'
         }}
-        className='h-[100vh] overflow-clip'>
+        className='h-[100vh] overflow-clip hidescrollbar'>
             <video autoPlay muted loop className="top-0 left-0 w-[100vw] bg-cover overflow-x-hidden">
                 <source src={videoSource} type="video/mp4" className=''/>
             </video>
