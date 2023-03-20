@@ -43,6 +43,10 @@ function AboutUs() {
     clamp: false,
   });
 
+  const moveY2 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "2vw", "4vw"], {
+    clamp: false,
+  });
+
   // const moveY2 = useTransform(scrollYProgress, [0, 1], ["0", "12vw"], {
   //   clamp: false,
   // });
@@ -50,6 +54,22 @@ function AboutUs() {
   const opScene = useTransform(scrollYProgress, [0, 1], [0.3 , 1]);
   //   const scaleX = useSpring(scrollYProgress, {
   //     x:1000});
+
+
+
+  var x = window.matchMedia("(max-width: 1500px)")
+
+  let moveY;
+
+  if(x.matches){
+    moveY = moveY1
+  }
+
+  else{
+    moveY = moveY2;
+  }
+
+
 
   return (
     <div className=" w-screen pt-10 bg-black h-[120vw]">
@@ -96,7 +116,7 @@ function AboutUs() {
         <motion.div
           ref={ref}
           style={{
-            translateY: moveY1,
+            translateY: moveY,
             transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
           className="flex pt-[15rem] relative z-40 mx-auto"
@@ -127,7 +147,7 @@ function AboutUs() {
         <motion.div
           ref={{ ref }}
           style={{
-            translateY: moveY1,
+            translateY: moveY,
             scale: scale2,
             opacity: opScene,
             transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)",

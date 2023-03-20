@@ -24,10 +24,11 @@ function App() {
         <Landing/>
         <AboutUs/>
         <Stats/>
+        <Roadmap/>
         <Team/>
         {/* <Domains/> */}
         {/* <HowToPlay/> */}
-        <Roadmap/>
+        
         {/* <Monsters /> */}
         {/* <Footer/> */}
       </div>

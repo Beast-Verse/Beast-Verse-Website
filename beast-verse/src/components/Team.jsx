@@ -12,7 +12,7 @@ function Team(){
     const TeamData = [
         {
             name: "Risavdeb Patra",
-            position: "CEO & Marketing Head",
+            position: "CEO & Marketing",
             github: "https://github.com/Risav03",
             linkedin: "https://www.linkedin.com/in/risavdeb-patra-703971227/",
             twitter: "https://twitter.com/risavdebpatra",
@@ -20,7 +20,7 @@ function Team(){
         },
         {
             name: "Sayak Sarkar",
-            position: "WebDev Head",
+            position: "Web Developer",
             github: "https://github.com/SayakSarkar02",
             linkedin: "https://www.linkedin.com/in/sayaksarkar02/",
             twitter: "https://twitter.com/SayakSa40091728?t=oSXPbi63IS2kYaaRfgdQmw&s=09",
@@ -28,7 +28,7 @@ function Team(){
         },
         {
             name: "Aritra Roy",
-            position: "Assist. GameDev",
+            position: "Game Developer",
             github: "https://github.com/im-still-thinking",
             linkedin: "https://www.linkedin.com/in/aritra-roy-b88b421a5/",
             twitter: "",
@@ -36,7 +36,7 @@ function Team(){
         },
         {
             name: "Aiindrila Kole",
-            position: "Assist. GameDev",
+            position: "Graphics & Content",
             github: "https://github.com/Aiindrila23",
             linkedin: "https://www.linkedin.com/in/aiindrila-kole-627b77227",
             twitter: "http://twitter.com/ItsMeAiindrila",
@@ -44,7 +44,7 @@ function Team(){
         },
         {
           name: "Nilanjan Bhattacharya",
-          position: "Assist. GameDev",
+          position: "Backend Developer",
           github: "github.com/nbhattacharya08",
           linkedin: "linkedin.com/in/nilanjan-bhattacharya-139539229/",
           twitter: "twitter.com/nbhattacharya03",
@@ -52,7 +52,7 @@ function Team(){
       },
         {
             name: "Sabuj Ghosh",
-            position: "Assist. GameDev",
+            position: "Game Developer",
             github: "https://github.com/Night3y3",
             linkedin: "https://www.linkedin.com/in/sabuj-ghosh-a43609214",
             twitter: "https://twitter.com/SabujGh55659975?t=AOb5ERSIyuHONOMOOkOclA&s=09",
@@ -60,7 +60,7 @@ function Team(){
         },
         {
             name: "Soham Sengupta",
-            position: "Assist. GameDev",
+            position: "Graphics & Content",
             github: "https://github.com/BlackDeath1107",
             linkedin: "https://www.linkedin.com/in/soham-sengupta-306103228",
             twitter: "https://twitter.com/sengupta_soham?t=0RRwJ-rLaEc1FRzAOE4l6Q&s=09",
@@ -68,7 +68,7 @@ function Team(){
         },
         {
             name: "Rahul Guha",
-            position: "Assist. GameDev",
+            position: "Backend Developer",
             github: "https://github.com/guha-rahul",
             linkedin: "https://www.linkedin.com/in/rahul-guha-93165220a/",
             twitter: "https://twitter.com/0xrguha",
@@ -77,13 +77,14 @@ function Team(){
         
     ]
 
-    return(<div class="bg-gradient-to-br from-slate-900 to to-black">
-          <h2 className='text-6xl font-bold text-blue-500 pt-20 text-center'>TEAM</h2>
+    return(<div class="bg-gradient-to-b from-slate-900 to to-black">
+          <h2 className='text-6xl font-bold font-Montserrat text-blue-500 pt-20 text-center'>TEAM</h2>
         <div class=" px-6 py-40">
 
         <section class="flex justify-center">
         <div class="grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-4 w-[70%]">
 
+        
         {
             TeamData.map((member) => (
                 <div class="mb-24 md:mb-0">
@@ -94,8 +95,8 @@ function Team(){
             </div>
           </div>
           <div class="p-4 pb-6">
-            <h5 class="text-lg text-center text-blue-500 font-bold mb-2">{member.name}</h5>
-            {/* <p class="mb-6 text-center text-blue-300">{member.position}</p> */}
+            <h5 class="text-[.95rem] text-center text-blue-500 font-bold mb-2">{member.name}</h5>
+            <p class="mb-6 text-center text-blue-300 text-[.85rem]">{member.position}</p>
             <ul class="list-inside flex mx-auto justify-center">
               <a href={member.github} target="_blank" rel="noreferrer" class="px-2">
                 <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 496 512" class="w-4 h-4 text-blue-100">
