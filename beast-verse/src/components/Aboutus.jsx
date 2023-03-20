@@ -102,7 +102,7 @@ function AboutUs() {
             className="rounded-2xl shadow-2xl shadow-blue-500/50"
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/EQGig40g5wM"
+            src="https://www.youtube.com/embed/AMt5x44k1FY"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
