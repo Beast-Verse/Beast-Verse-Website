@@ -7,6 +7,8 @@ import mem6 from '../assets/team/sabuj.jpeg'
 import mem7 from '../assets/team/soham.jpeg'
 import mem8 from '../assets/team/rahul.jpeg'
 
+import {motion} from "framer-motion"
+
 function Team(){
 
     const TeamData = [
@@ -79,7 +81,8 @@ function Team(){
 
     return(<div class="bg-gradient-to-b from-slate-900 to to-black">
           <h2 className='text-6xl font-bold font-Montserrat text-blue-500 pt-20 text-center'>TEAM</h2>
-        <div class=" px-6 py-40">
+        <motion.div initial={{opacity:0}}
+        whileInView={{opacity:1}} transition={{duration: 1}} class=" px-6 py-40">
 
         <section class="flex justify-center">
         <div class="grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-4 w-[70%]">
@@ -127,7 +130,7 @@ function Team(){
       
       </div>
       </section>
-    </div>
+    </motion.div>
     </div> );
 }
 

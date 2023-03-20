@@ -1,6 +1,9 @@
+import {motion} from "framer-motion"
+
 function Roadmap23(){
     return(
-        <div className="grid grid-flow-col grid-cols-4 mt-5">
+        <motion.div initial={{opacity:0.2}}
+        whileInView={{opacity:1}} transition={{duration: 1}} className="grid grid-flow-col grid-cols-4 mt-5">
 
 
 
@@ -29,7 +32,7 @@ function Roadmap23(){
 
 
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto h-fit">
-                <h3 className="text-blue-400 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q2</h3>
+                <h3 className="text-blue-300 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q2</h3>
                 <div className="w-[90%]">
                 <p className="font-Montserrat text-[1.2vw] ml-7 font-semibold text-blue-400 mt-6">Community Enhancement
                 <ul className="list-disc mb-7">
@@ -51,7 +54,7 @@ function Roadmap23(){
 
 
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto h-fit">
-                <h3 className="text-blue-400 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q3</h3>
+                <h3 className="text-blue-300 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q3</h3>
                 <div className="w-[90%]">
                 <p className="font-Montserrat text-[1.2vw] ml-7 font-semibold text-blue-400 mt-6">The Game
                 <ul className="list-disc mb-7">
@@ -71,7 +74,7 @@ function Roadmap23(){
 
 
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto h-fit">
-                <h3 className="text-blue-400 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q4</h3>
+                <h3 className="text-blue-300 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q4</h3>
                 <div className="w-[90%]">
                 <p className="font-Montserrat text-[1.2vw] ml-7 font-semibold text-blue-400 mt-6">Game Launch
                 <ul className="list-disc mb-7">
@@ -82,7 +85,7 @@ function Roadmap23(){
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     );
 }
 

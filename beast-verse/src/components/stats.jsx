@@ -1,6 +1,6 @@
 
 import React from "react";
-
+import {motion} from "framer-motion"
 const Stats = () => {
   //Change Stats Here
   const data = {
@@ -53,7 +53,8 @@ const Stats = () => {
                   STATS
                 </span>{" "}
               </div>
-              <div className="flex flex-row gap-12 max-[640px]:flex-col justify-center items-center">
+              <motion.div initial={{opacity:0}}
+        whileInView={{opacity:1}} transition={{duration: 1}} className="flex flex-row gap-12 max-[640px]:flex-col justify-center items-center">
                 <div className="flex flex-col items-center ">
                   <span className="text-xl mb-3 font-bold text-slate-200">
                     TOTAL SUPPLY
@@ -82,7 +83,7 @@ const Stats = () => {
                 </div>
 
                 
-              </div>
+              </motion.div>
             </div>
           </section>
           

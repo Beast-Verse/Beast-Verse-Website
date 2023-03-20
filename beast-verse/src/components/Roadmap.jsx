@@ -15,7 +15,9 @@ function Roadmap(){
     
 
     return(<div className="bg-gradient-to-b from-slate-800 to to-slate-900">
-        <div className="grid grid-flow-col grid-cols-4 gap-5 w-[50%] ml-3">
+            <h2 className="text-[4vw] text-blue-500 font-bold text-center font-Montserrat">ROADMAP</h2>
+
+        <div className="grid grid-flow-col grid-cols-4 gap-5 w-[50%] ml-3 border-b-2 border-blue-400">
             <button className="text-slate-700 font-Montserrat font-bold min-[1500px]:text-[3.5vw] text-[4vw] border-blue-400 focus:border-b-8 focus:text-blue-400" onClick={()=> setView23(true) & setView24(false) & setView25(false) & setView26(false)}>2023</button>
             <button className="text-slate-700 font-Montserrat font-bold min-[1500px]:text-[3.5vw] text-[4vw] border-blue-400 focus:border-b-8 focus:text-blue-400" onClick={()=> setView23(false) & setView24(true) & setView25(false) & setView26(false)}>2024</button>
             <button className="text-slate-700 font-Montserrat font-bold min-[1500px]:text-[3.5vw] text-[4vw] border-blue-400 focus:border-b-8 focus:text-blue-400" onClick={()=> setView23(false) & setView24(false) & setView25(true) & setView26(false)}>2025</button>
