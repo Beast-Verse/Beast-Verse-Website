@@ -27,7 +27,7 @@ import videoSource from '../assets/No Flicker.mp4';
 
 export default function Landing() {
   return (
-    <div className=' overflow-x-hidden w-[100vw] flex'>
+    <div className=' overflow-x-hidden w-[100vw] flex' id="Landing">
         {/* background */}
         {/* <img src={Sky} alt="bv_island" className='relative top-0 left-0'></img>
         <img src={LUBack} alt="bv_island" className='absolute top-[5.56rem] left-0'></img>

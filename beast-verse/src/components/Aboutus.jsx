@@ -72,7 +72,7 @@ function AboutUs() {
 
 
   return (
-    <div className=" w-screen pt-10 bg-black h-[120vw]">
+    <div className=" w-screen pt-10 bg-black h-[120vw]" id="AboutUs">
       {/* <motion.div style={{ scaleX: scrollYProgress }} /> */}
       {/* <motion.div className="origin-top-left fixed z-50 top-0 left-0 right-0 transform-none bg-red-500 h-2" style={{ scaleX: scrollYProgress}}/> */}
       <h2 className="text-[4.5vw] text-center font-Montserrat font-semibold text-white">
