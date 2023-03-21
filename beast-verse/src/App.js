@@ -11,7 +11,7 @@ import Team from "./components/Team"
 // import HowToPlay from './components/HowToPlay';
 // import Footer from './components/Footer';
 import logo from './assets/logo.png'
-import { Route, Routes } from "react-router";
+// import { Route, Routes } from "react-router";
 import {BrowserRouter} from "react-router-dom"
 
 
