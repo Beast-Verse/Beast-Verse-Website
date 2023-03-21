@@ -88,11 +88,11 @@ export default function Landing() {
         className='absolute flex flex-col justify-center items-center z-0 w-[100vw] h-[100vh]'>
             <img src={logo} alt="bv_logo" className='w-[30%]' />
             <div className='flex flex-row gap-4'>
-                <motion.button
+                <motion.a
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-
-                className='border-white hover:border-green-900 border-2 shadow-xl hover:shadow-sm font-bold text-2xl bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-4 px-16 rounded-lg cursor-pointer'>Pre-Register</motion.button>
+                href='https://forms.gle/kNn1TArMvbYRc3vj8'
+                className='border-white hover:border-green-900 border-2 shadow-xl hover:shadow-sm font-bold text-2xl bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-4 px-16 rounded-lg cursor-pointer'>Pre-Register</motion.a>
                 {/* <button className='border-white hover:border-purple-900 border-2 shadow-xl hover:shadow-sm font-bold text-lg bg-gradient-to-br from-purple-800 to-purple-500 hover:to-purple-600 hover:from-purple-500 text-white py-4 px-7 rounded-lg cursor-pointer'>Join Discord</button> */}
             </div>
         </motion.div>
