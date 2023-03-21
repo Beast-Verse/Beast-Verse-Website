@@ -154,8 +154,13 @@ function AboutUs() {
           }}
           className="z-0 absolute top-[110vw]"
         >
-          <motion.img src={All} className=""></motion.img>
-          
+          <motion.img src={All} className="">
+            
+          </motion.img>
+          <div className="w-[9.5vw] h-[20vw] bg-blue-400 absolute bottom-[14vw] left-[7.8vw]"></div>
+          <div className="w-[9.5vw] h-[20vw] bg-blue-400 absolute bottom-[14vw] left-[32.5vw]"></div>
+          <div className="w-[9.5vw] h-[20vw] bg-blue-400 absolute bottom-[14vw] left-[58vw]"></div>
+          <div className="w-[9.5vw] h-[20vw] bg-blue-400 absolute bottom-[14vw] left-[82vw]"></div>
         </motion.div>
       </div>
     </div>
