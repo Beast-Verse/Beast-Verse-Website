@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import "./aboutus.css"
+import React, { useRef} from "react";
+
 // import Ice from "../assets/Ice.png"
 import {
   motion,
@@ -11,13 +11,18 @@ import Left from "../assets/left.png";
 import Right from "../assets/Right.png";
 
 
+
+
 import All from "../assets/All.png";
+import { useState } from "react";
 
 
 
 // import Image from "react/Image"
 function AboutUs() {
   // const scrollRef = useRef(null)
+
+
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -29,14 +34,14 @@ function AboutUs() {
   //   const isInView = useInView(ref);
   // console.log(isInView);
 
-  const move1 = useTransform(scrollYProgress, [0, 0.5, 1], ["1vw", "-50vw", "-100vw"], {
+  const move1 = useTransform(scrollYProgress, [0, 0.5, 1], ["1vw", "-50vw", "-150vw"], {
     clamp: false,
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const scale2 = useTransform(scrollYProgress, [0, 1], [.7, 1]);
 
-  const move2 = useTransform(scrollYProgress, [0, .5,  1], ["-1vw", "50vw", "100vw"], {
+  const move2 = useTransform(scrollYProgress, [0, .5,  1], ["-1vw", "50vw", "150vw"], {
     clamp: false,
   });
 
@@ -120,7 +125,7 @@ function AboutUs() {
             translateY: moveY,
             transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
-          className="flex pt-[15rem] relative z-40 mx-auto"
+          className="flex pt-[15rem] relative mx-auto"
         >
           <motion.img
             style={{
@@ -129,7 +134,7 @@ function AboutUs() {
               scale: scale,
             }}
             viewport={{ once: true }}
-            className=" relative z-20"
+            className="z-10 relative"
             src={Left}
           ></motion.img>
 
@@ -141,11 +146,13 @@ function AboutUs() {
             }}
             viewport={{ once: true }}
             src={Right}
-            className="z-20 relative min-[1280px]:right-[98vw] min-[2000px]:right-[90vw]"
+            className="z-10 relative min-[1280px]:right-[98vw] min-[2000px]:right-[90vw]"
           ></motion.img>
-        </motion.div>
 
-        <motion.div
+
+
+
+<motion.div
           ref={{ ref }}
           style={{
             translateY: moveY,
@@ -153,17 +160,37 @@ function AboutUs() {
             opacity: opScene,
             transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
-          className="z-0 absolute top-[110vw]"
+          className="z-0 absolute bottom-[10vw]"
         >
           <motion.img src={All} className="">
             
           </motion.img>
-          <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[7.8vw] bg-green-500 hover:bg-slate-500 z-50 hi"></div>
-          <div className="bg-white hello">Check me out bitch</div>
-          <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[32.5vw]"></div>
-          <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[58vw]"></div>
-          <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[82vw]"></div>
+          <div className="w-[15rem] absolute bottom-[11vw] left-[4.5vw] opacity-0 hover:opacity-100 transition-all duration-500 bg-green-400/30 text-center border-2 border-green-700 rounded-xl">
+            <h3 className="font-Montserrat font-bold text-green-500 pt-3 text-[1.7rem] mb-3">Common Eggs</h3>
+            <p className="text-white font-Montserrat px-4 pb-2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+          </div>
+
+
+          <div className="w-[15rem] absolute bottom-[11vw] left-[29vw] opacity-0 hover:opacity-100 transition-all duration-500 bg-blue-400/30 text-center border-2 border-blue-700 rounded-xl">
+            <h3 className="font-Montserrat font-bold text-blue-500 pt-3 text-[1.7rem] mb-3">Rare Eggs</h3>
+            <p className="text-white font-Montserrat px-4 pb-2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+          </div>
+
+          <div className="w-[15rem] absolute bottom-[11vw] left-[55vw] opacity-0 hover:opacity-100 transition-all duration-500 bg-purple-400/30 text-center border-2 border-purple-700 rounded-xl">
+            <h3 className="font-Montserrat font-bold text-purple-500 pt-3 text-[1.7rem] mb-3">Epic Eggs</h3>
+            <p className="text-white font-Montserrat px-4 pb-2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+          </div>
+
+          <div className="w-[15rem] absolute bottom-[11vw] left-[79.5vw] opacity-0 hover:opacity-100 transition-all duration-500 bg-yellow-400/30 text-center border-2 border-yellow-700 rounded-xl">
+            <h3 className="font-Montserrat font-bold text-yellow-500 pt-3 text-[1.7rem] mb-3">Legendary Eggs</h3>
+            <p className="text-white font-Montserrat px-4 pb-2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+          </div>
         </motion.div>
+
+
+        </motion.div>
+
+       
       </div>
     </div>
   );

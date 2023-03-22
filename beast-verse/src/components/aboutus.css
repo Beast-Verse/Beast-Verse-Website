@@ -1,7 +1,0 @@
-
- 
-.hi:hover + .hello {
-    display: block;
-    color: green;
-    font-size: 25px;
-}
