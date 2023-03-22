@@ -9,7 +9,7 @@ import Stats from "./components/stats"
 import Team from "./components/Team"
 // import Domains from './components/Domains';
 // import HowToPlay from './components/HowToPlay';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import logo from './assets/logo.png'
 // import { Route, Routes } from "react-router";
 import {BrowserRouter} from "react-router-dom"
@@ -34,7 +34,7 @@ function App() {
         {/* <HowToPlay/> */}
         
         {/* <Monsters /> */}
-        {/* <Footer/> */}
+        <Footer/>
         
       </div>
 </BrowserRouter>

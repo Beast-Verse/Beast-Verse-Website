@@ -91,7 +91,7 @@ function Team(){
         {
             TeamData.map((member) => (
                 <div class="mb-24 md:mb-0">
-        <div class="rounded-lg shadow-lg h-full block bg-gradient-to-bl from-[#070811] to-[#1c2c4e] border-x-4 border-blue-500 border-b-4 border-b-blue-500">
+        <div class=" rounded-lg shadow-xl h-full block bg-gradient-to-bl from-[#070811] to-[#1c2c4e] border-x-4 border-blue-500 border-b-4 border-b-blue-500">
           <div class="flex justify-center">
             <div class="flex justify-center mt-[-100px] ">
               <img src={member.img} class="border-4 border-blue-500 rounded-full w-40 mt-8 mx-auto shadow-lg" alt="mem1"/>
