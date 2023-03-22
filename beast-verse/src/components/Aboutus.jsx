@@ -160,7 +160,7 @@ function AboutUs() {
             opacity: opScene,
             transition: "all 2s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
-          className="z-0 absolute bottom-[10vw]"
+          className="z-0 absolute bottom-[15vw]"
         >
           <motion.img src={All} className="">
             
