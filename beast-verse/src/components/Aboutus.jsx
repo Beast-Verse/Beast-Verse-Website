@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import "./aboutus.css"
 // import Ice from "../assets/Ice.png"
 import {
   motion,
@@ -157,7 +158,8 @@ function AboutUs() {
           <motion.img src={All} className="">
             
           </motion.img>
-          <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[7.8vw]"></div>
+          <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[7.8vw] bg-green-500 hover:bg-slate-500 z-50 hi"></div>
+          <div className="bg-white hello">Check me out bitch</div>
           <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[32.5vw]"></div>
           <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[58vw]"></div>
           <div className="w-[9.5vw] h-[20vw] absolute bottom-[14vw] left-[82vw]"></div>
