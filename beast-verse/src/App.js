@@ -15,6 +15,7 @@ import logo from './assets/logo.png'
 import {BrowserRouter} from "react-router-dom"
 import Mobland from './components/Mobland';
 import Mobabout from './components/Mobabout';
+import Mobstats from './components/Mobstats';
 
 
 
@@ -43,6 +44,7 @@ function App() {
       <div className='bg-gradient-to-br from-black to-slate-800 h-[100vh] pt-5 md:hidden'>
         <Mobland/>
         <Mobabout/>
+        <Mobstats/>
       </div>
     </>
   );
