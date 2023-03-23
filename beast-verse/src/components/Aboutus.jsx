@@ -50,11 +50,11 @@ function AboutUs() {
     clamp: false,
   });
 
-  const moveY1 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "5vw", "10vw"], {
+  const moveY1 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "6vw", "10vw"], {
     clamp: false,
   });
 
-  const moveY2 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "9vw", "10vw"], {
+  const moveY2 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "9vw", "12vw"], {
     clamp: false,
   });
 
