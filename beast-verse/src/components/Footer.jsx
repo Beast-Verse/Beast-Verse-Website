@@ -3,6 +3,14 @@ import { HashLink as Link } from "react-router-hash-link";
 
 import React from "react";
 
+function openGmail(){
+  var gmailUrl = "https://mail.google.com/mail/?extsrc=mailto&url=";
+  var recipient = "realbeastverse@gmail.com"; // Change this to the desired recipient email address
+  var mailtoUrl = "mailto:" + recipient;
+  var finalUrl = gmailUrl + encodeURIComponent(mailtoUrl);
+  window.open(finalUrl);
+}
+
 
 function Footer(){
     return(<div>
@@ -16,9 +24,9 @@ function Footer(){
                   <span className="font-bold text-blue-500">Email: </span>
                 </h1>
               </li>
-              <a href="mailto:realbeastverse@gmail.com">
-                <li className="hover:text-blue-500 mt-5">realbeastverse@gmail.com</li>
-              </a>
+              <div onClick={openGmail}>
+                <li className="hover:text-blue-500 cursor-pointer mt-5">realbeastverse@gmail.com</li>
+              </div>
             </ul>
           </div>
           <div className="flex flex-col justify-between">
