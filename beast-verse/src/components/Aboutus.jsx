@@ -177,7 +177,7 @@ function AboutUs() {
           
           <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-green-500 bg-green-300/20 rounded-xl text-center">
               <h1 className="text-green-200 text-[1.7vw] font-bold font-Montserrat pt-2">Common Eggs</h1>
-              <p className="font-Montserrat text-green-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-4 py-2">They might be named common but they hold really uncommon beasts, something you have never seen before</p>
+              <p className="font-Montserrat text-green-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-4 py-2">They might be named common but they hold really uncommon beasts, something you have never seen before!</p>
               </div>  
 
           </div>
@@ -186,21 +186,21 @@ function AboutUs() {
           <div className="w-[15rem] opacity-0 hover:opacity-100 transition-opacity duration-500 h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[29vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[31vw] ">
           <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-blue-500 bg-blue-300/20 rounded-xl text-center">
               <h1 className="text-blue-200 text-[1.7vw] font-bold font-Montserrat pt-2">Rare Eggs</h1>
-              <p className="font-Montserrat text-blue-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p className="font-Montserrat text-blue-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-4 py-2">Being fascinated by their Blue Colour? If so the contents are gonna blow your mind! They are a rank above the commons in terms for all traits!</p>
               </div>
             </div>
 
           <div className="w-[15rem] opacity-0 hover:opacity-100 transition-opacity duration-500 h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[55vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[56.5vw]">
           <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-purple-500 bg-purple-300/20 rounded-xl text-center">
               <h1 className="text-purple-200 text-[1.7vw] font-bold font-Montserrat pt-2">Epic Eggs</h1>
-              <p className="font-Montserrat text-purple-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p className="font-Montserrat text-purple-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-4 py-2">Entering the Big Boys now! These hold some of the mightiest beasts of the Beast Verse. They should be handled with care.</p>
               </div>
              </div>
 
           <div className="w-[15rem] opacity-0 hover:opacity-100 transition-opacity duration-500 h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[78.5vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[81vw]">
           <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-yellow-500 bg-yellow-300/20 rounded-xl text-center">
               <h1 className="text-yellow-200 text-[1.7vw] font-bold font-Montserrat pt-2">Legendary Eggs</h1>
-              <p className="font-Montserrat text-yellow-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p className="font-Montserrat text-yellow-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-4 py-2">The best Beasts to ever exist in terms of power and durability! Owning one of these just makes the road to the Champion a cake-walk.</p>
               </div>
             </div>
 
