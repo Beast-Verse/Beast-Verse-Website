@@ -77,14 +77,7 @@ function Team(){
             twitter: "https://twitter.com/0xrguha",
             img: mem8
         },
-        {
-          name: "Rahul Guha",
-          position: "Backend Developer",
-          github: "https://github.com/guha-rahul",
-          linkedin: "https://www.linkedin.com/in/rahul-guha-93165220a/",
-          twitter: "https://twitter.com/0xrguha",
-          img: mem8
-      },
+        
       {
         name: "Anusmita Hait",
         position: "Frontend Developer",
@@ -106,7 +99,7 @@ function Team(){
 
    
 
-        <div class=" font-Montserrat grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-4 w-[70%]">
+        <div class=" font-Montserrat grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-3 min-[1500px]:w-[60%] w-[70%]">
 
 
         
