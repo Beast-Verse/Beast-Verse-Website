@@ -86,7 +86,7 @@ function Team(){
         whileInView={{opacity:1}} transition={{duration: 2}} class=" px-6 py-40">
 
         <section class="flex justify-center">
-        <div class=" font-Montserrat grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-4 w-[80%]">
+        <div class=" font-Montserrat grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-4 w-[70%]">
 
         
         {
