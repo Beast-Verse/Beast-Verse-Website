@@ -6,6 +6,7 @@ import mem5 from '../assets/team/nilanjan.jpeg'
 import mem6 from '../assets/team/sabuj.jpeg'
 import mem7 from '../assets/team/soham.jpeg'
 import mem8 from '../assets/team/rahul.jpeg'
+import mem9 from '../assets/team/anus.jpeg'
 
 import {motion} from "framer-motion"
 
@@ -76,6 +77,22 @@ function Team(){
             twitter: "https://twitter.com/0xrguha",
             img: mem8
         },
+        {
+          name: "Rahul Guha",
+          position: "Backend Developer",
+          github: "https://github.com/guha-rahul",
+          linkedin: "https://www.linkedin.com/in/rahul-guha-93165220a/",
+          twitter: "https://twitter.com/0xrguha",
+          img: mem8
+      },
+      {
+        name: "Anusmita Hait",
+        position: "Frontend Developer",
+        github: "https://github.com/anuHait",
+        linkedin: "https://www.linkedin.com/in/anusmita-hait-b9552b226/",
+        twitter: "https://twitter.com/anusmita_hait?t=2Cr9GhYvnzIdFs2rbsXCvg&s=09",
+        img: mem9
+    },
         
         
     ]
@@ -86,7 +103,11 @@ function Team(){
         whileInView={{opacity:1}} transition={{duration: 2}} class=" px-6 py-40">
 
         <section class="flex justify-center">
+
+   
+
         <div class=" font-Montserrat grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-4 w-[70%]">
+
 
         
         {
