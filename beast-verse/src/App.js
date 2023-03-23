@@ -22,7 +22,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <div className="overflow-x-hidden hidescrollbar bg-gradient-to-r from-[rgb(68,151,218)] to-[rgb(65,146,214)] max-[768px]:hidden">
+      <div className="overflow-x-hidden hidescrollbar max-[768px]:hidden">
         
         <Navbar/>
         <Landing/>

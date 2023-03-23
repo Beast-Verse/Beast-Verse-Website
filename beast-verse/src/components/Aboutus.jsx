@@ -173,44 +173,39 @@ function AboutUs() {
           <motion.img src={All} className="">
             
           </motion.img>
-          <div onClick={()=>setCommon(true) & setEpic(false) & setLegendary(false) & setRare(false)} className="w-[15rem] h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] min-[1500px]:bottom-[13vw] left-[4.5vw] min-[1500px]:left-[6vw]">
-          <motion.div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute bottom-[0vw] left-[2vw] min-[1500px]:left-[2vw] border-2 border-green-500 bg-green-300/20 rounded-xl text-center">
+          <div className="w-[15rem] opacity-0 hover:opacity-100 h-[25vw] transition-opacity duration-500 min-[1500px]:h-[22vw] absolute bottom-[11vw] min-[1500px]:bottom-[13vw] left-[5.5vw] min-[1500px]:left-[6vw]">
+          
+          <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-green-500 bg-green-300/20 rounded-xl text-center">
               <h1 className="text-green-200 text-[1.7vw] font-bold font-Montserrat pt-2">Common Eggs</h1>
               <p className="font-Montserrat text-green-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </motion.div>   
+              </div>  
+
           </div>
 
 
-          <div onClick={()=>setCommon(false) & setEpic(false) & setLegendary(false) & setRare(true)} className="w-[15rem] h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[29vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[31vw] ">
-            
+          <div className="w-[15rem] opacity-0 hover:opacity-100 transition-opacity duration-500 h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[29vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[31vw] ">
+          <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-blue-500 bg-blue-300/20 rounded-xl text-center">
+              <h1 className="text-blue-200 text-[1.7vw] font-bold font-Montserrat pt-2">Rare Eggs</h1>
+              <p className="font-Montserrat text-blue-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              </div>
             </div>
 
-          <div onClick={()=>setCommon(false) & setEpic(true) & setLegendary(false) & setRare(false)} className="w-[15rem] h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[55vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[56.5vw]">
+          <div className="w-[15rem] opacity-0 hover:opacity-100 transition-opacity duration-500 h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[55vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[56.5vw]">
+          <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-purple-500 bg-purple-300/20 rounded-xl text-center">
+              <h1 className="text-purple-200 text-[1.7vw] font-bold font-Montserrat pt-2">Epic Eggs</h1>
+              <p className="font-Montserrat text-purple-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              </div>
              </div>
 
-          <div onClick={()=>setCommon(false) & setEpic(false) & setLegendary(true) & setRare(false)} className="w-[15rem] h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[78.5vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[81vw]">
+          <div className="w-[15rem] opacity-0 hover:opacity-100 transition-opacity duration-500 h-[25vw] min-[1500px]:h-[22vw] absolute bottom-[11vw] left-[78.5vw] min-[1500px]:bottom-[13vw] min-[1500px]:left-[81vw]">
+          <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-yellow-500 bg-yellow-300/20 rounded-xl text-center">
+              <h1 className="text-yellow-200 text-[1.7vw] font-bold font-Montserrat pt-2">Legendary Eggs</h1>
+              <p className="font-Montserrat text-yellow-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              </div>
             </div>
 
 
-            {common && <motion.div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute bottom-[0vw] left-[2vw] min-[1500px]:left-[2vw] border-2 border-green-500 bg-green-300/20 rounded-xl text-center">
-              <h1 className="text-green-200 text-[1.7vw] font-bold font-Montserrat pt-2">Common Eggs</h1>
-              <p className="font-Montserrat text-green-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </motion.div>}
-
-              {rare && <div className="min-[1500px]:w-[25rem] w-[20rem] absolute bottom-[0vw] left-[26.5vw] min-[1500px]:left-[26.5vw] border-2 border-blue-500 bg-blue-300/20 rounded-xl text-center">
-              <h1 className="text-blue-200 text-[1.7vw]  font-bold font-Montserrat pt-2">Rare Eggs</h1>
-              <p className="font-Montserrat text-blue-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>}
-
-              {epic && <div className="min-[1500px]:w-[25rem] w-[20rem] absolute bottom-[0vw] left-[52.5vw] min-[1500px]:left-[53vw] border-2 border-purple-500 bg-purple-300/20 rounded-xl text-center">
-              <h1 className="text-purple-200 text-[1.7vw]  font-bold font-Montserrat pt-2">Epic Eggs</h1>
-              <p className="font-Montserrat text-purple-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>}
-
-              {legendary && <div className=" w-[20rem] absolute min-[1500px]:w-[25rem] bottom-[0vw] left-[76vw] min-[1500px]:left-[77vw] border-2 border-yellow-500 bg-yellow-300/20 rounded-xl text-center">
-              <h1 className="text-yellow-200 text-[1.7vw]  font-bold font-Montserrat pt-2">Legendary Eggs</h1>
-              <p className="font-Montserrat text-yellow-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>}
+            
 
         </motion.div>
 
