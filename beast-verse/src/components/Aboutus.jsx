@@ -54,7 +54,7 @@ function AboutUs() {
     clamp: false,
   });
 
-  const moveY2 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "9vw", "15vw"], {
+  const moveY2 = useTransform(scrollYProgress, [0, .25, .5, .75, 1], ["0vw", "0vw", "0vw", "9vw", "10vw"], {
     clamp: false,
   });
 
