@@ -16,7 +16,8 @@ import {BrowserRouter} from "react-router-dom"
 import Mobland from './components/Mobland';
 import Mobabout from './components/Mobabout';
 import Mobstats from './components/Mobstats';
-
+import Eggs from './components/Eggs';
+import Mobroadmap from './components/Mobroadmap';
 
 
 
@@ -45,6 +46,8 @@ function App() {
         <Mobland/>
         <Mobabout/>
         <Mobstats/>
+        <Eggs/>
+        <Mobroadmap/>
       </div>
     </>
   );
