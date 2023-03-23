@@ -26,7 +26,7 @@ function Team(){
             position: "Web Developer",
             github: "https://github.com/SayakSarkar02",
             linkedin: "https://www.linkedin.com/in/sayaksarkar02/",
-            twitter: "https://twitter.com/SayakSa40091728?t=oSXPbi63IS2kYaaRfgdQmw&s=09",
+            twitter: "https://twitter.com/SayakSa40091728",
             img: mem2
         },
         {
@@ -34,7 +34,7 @@ function Team(){
             position: "Game Developer",
             github: "https://github.com/im-still-thinking",
             linkedin: "https://www.linkedin.com/in/aritra-roy-b88b421a5/",
-            twitter: "",
+            twitter: "https://twitter.com/AritraR2002",
             img: mem3
         },
         {
@@ -42,15 +42,15 @@ function Team(){
             position: "Graphics & Content",
             github: "https://github.com/Aiindrila23",
             linkedin: "https://www.linkedin.com/in/aiindrila-kole-627b77227",
-            twitter: "http://twitter.com/ItsMeAiindrila",
+            twitter: "https://twitter.com/ItsMeAiindrila",
             img: mem4
         },
         {
           name: "Nilanjan Bhattacharya",
           position: "Backend Developer",
-          github: "github.com/nbhattacharya08",
-          linkedin: "linkedin.com/in/nilanjan-bhattacharya-139539229/",
-          twitter: "twitter.com/nbhattacharya03",
+          github: "https://github.com/nbhattacharya08",
+          linkedin: "https://linkedin.com/in/nilanjan-bhattacharya-139539229/",
+          twitter: "https://twitter.com/nbhattacharya03",
           img: mem5
       },
         {
@@ -58,7 +58,7 @@ function Team(){
             position: "Game Developer",
             github: "https://github.com/Night3y3",
             linkedin: "https://www.linkedin.com/in/sabuj-ghosh-a43609214",
-            twitter: "https://twitter.com/SabujGh55659975?t=AOb5ERSIyuHONOMOOkOclA&s=09",
+            twitter: "https://twitter.com/SabujGh55659975",
             img: mem6
         },
         {
@@ -66,7 +66,7 @@ function Team(){
             position: "Graphics & Content",
             github: "https://github.com/BlackDeath1107",
             linkedin: "https://www.linkedin.com/in/soham-sengupta-306103228",
-            twitter: "https://twitter.com/sengupta_soham?t=0RRwJ-rLaEc1FRzAOE4l6Q&s=09",
+            twitter: "https://twitter.com/sengupta_soham",
             img: mem7
         },
         {
@@ -80,10 +80,10 @@ function Team(){
         
       {
         name: "Anusmita Hait",
-        position: "Frontend Developer",
+        position: "Web Developer",
         github: "https://github.com/anuHait",
         linkedin: "https://www.linkedin.com/in/anusmita-hait-b9552b226/",
-        twitter: "https://twitter.com/anusmita_hait?t=2Cr9GhYvnzIdFs2rbsXCvg&s=09",
+        twitter: "https://twitter.com/anusmita_hait",
         img: mem9
     },
         
