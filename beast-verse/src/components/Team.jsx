@@ -94,28 +94,33 @@ function Team(){
         img: mem9
     },
         
+        
     ]
 
-    return(<div id="Team" class="bg-gradient-to-b from-slate-900 to to-black">
+    return(<div id="Team" class="bg-gradient-to-b from-slate-900 to to-black pt-10">
           <h2 className='text-6xl font-bold font-Montserrat text-blue-500 pt-20 text-center'>TEAM</h2>
         <motion.div initial={{opacity:0}}
-        whileInView={{opacity:1}} transition={{duration: 1}} class=" px-6 py-40">
+        whileInView={{opacity:1}} transition={{duration: 2}} class=" px-6 py-40">
 
         <section class="flex justify-center">
-        <div class="grid gap-x-6 gap-y-28 lg:gap-x-12 items-center md:grid-cols-4 w-[70%]">
+
+   
+
+        <div class=" font-Montserrat grid gap-x-6 gap-y-28 lg:gap-x-12 md:grid-cols-4 w-[70%]">
+
 
         
         {
             TeamData.map((member) => (
                 <div class="mb-24 md:mb-0">
-        <div class=" rounded-lg shadow-xl h-full block bg-gradient-to-bl from-[#070811] to-[#1c2c4e] border-x-4 border-blue-500 border-b-4 border-b-blue-500">
+        <div class="rounded-xl shadow-xl shadow-slate-800 h-full block bg-gradient-to-bl from-[#070811] to-[#1c2c4e] border-x-4 border-blue-500 border-b-4 border-b-blue-500">
           <div class="flex justify-center">
             <div class="flex justify-center mt-[-100px] ">
               <img src={member.img} class="border-4 border-blue-500 rounded-full w-40 mt-8 mx-auto shadow-lg" alt="mem1"/>
             </div>
           </div>
           <div class="p-4 pb-6">
-            <h5 class="text-[.95rem] text-center text-blue-500 font-bold mb-2">{member.name}</h5>
+            <h5 class="text-[1rem] text-center text-blue-500 font-bold mb-2">{member.name}</h5>
             <p class="mb-6 text-center text-blue-300 text-[.85rem]">{member.position}</p>
             <ul class="list-inside flex mx-auto justify-center">
               <a href={member.github} target="_blank" rel="noreferrer" class="px-2">
