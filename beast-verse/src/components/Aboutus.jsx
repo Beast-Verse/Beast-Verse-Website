@@ -177,7 +177,7 @@ function AboutUs() {
           
           <div initial="0px" className=" w-[20rem] min-[1500px]:w-[25rem] absolute -bottom-[8vw] -left-[3.4vw] min-[1500px]:-left-[3.5vw] border-2 border-green-500 bg-green-300/20 rounded-xl text-center">
               <h1 className="text-green-200 text-[1.7vw] font-bold font-Montserrat pt-2">Common Eggs</h1>
-              <p className="font-Montserrat text-green-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-2 pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p className="font-Montserrat text-green-50 font-medium text-[1vw] min-[1500px]:text-[.89vw] px-4 py-2">They might be named common but they hold really uncommon beasts, something you have never seen before</p>
               </div>  
 
           </div>
