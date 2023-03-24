@@ -111,7 +111,7 @@ function AboutUs() {
 
         <div className="mx-auto">
           <iframe
-            className="rounded-2xl shadow-2xl shadow-green-500/50"
+            className="rounded-2xl shadow-2xl shadow-amber-900/60"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/AMt5x44k1FY"
