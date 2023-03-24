@@ -2,7 +2,7 @@ import React from 'react'
 
 function Mobabout() {
   return (
-    <div className='bg-gradient-to-br from-black to-slate-800' id="Mobabout">
+    <div className='bg-gradient-to-br pt-3 from-slate-900 to-slate-800' id="Mobabout">
     <h2 className="text-4xl max-[640px]:text-3xl text-center font-Montserrat font-semibold text-white">
     What is <span className=" text-green-500">Beast Verse</span> ?
   </h2>
