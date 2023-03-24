@@ -18,6 +18,8 @@ import Mobabout from './components/Mobabout';
 import Mobstats from './components/Mobstats';
 import Eggs from './components/Eggs';
 import Mobroadmap from './components/Mobroadmap';
+import Mobteams from './components/Mobteams';
+import Mobnav from './components/Mobnav';
 
 
 
@@ -42,13 +44,18 @@ function App() {
         
       </div>
 </BrowserRouter>
-      <div className='bg-gradient-to-br from-black to-slate-800 h-[100vh] pt-5 md:hidden'>
-        <Mobland/>
-        <Mobabout/>
-        <Mobstats/>
-        <Eggs/>
-        <Mobroadmap/>
-      </div>
+<BrowserRouter>
+<div className='bg-gradient-to-br from-black to-slate-800 h-[100vh]  md:hidden'>
+<Mobnav/>  
+<Mobland/>
+<Mobabout/>
+<Eggs/>
+<Mobstats/>
+<Mobroadmap/>
+<Mobteams/>
+<Footer/>
+</div></BrowserRouter>
+      
     </>
   );
 }

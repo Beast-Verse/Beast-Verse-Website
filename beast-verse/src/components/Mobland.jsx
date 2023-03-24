@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../assets/logo.png'
 function Mobland() {
   return (
-    <div>
+    <div id="Mobland">
     <div className='container mx-auto text-center text-white font-semibold font-Monstserrat h-[80vh] flex flex-col items-center justify-center'>
     <img src={logo} alt="bv_logo" className='w-80' />
     <h2 className='mx-9'>Open in Desktop/Laptop to get an Immersive Experience!</h2>

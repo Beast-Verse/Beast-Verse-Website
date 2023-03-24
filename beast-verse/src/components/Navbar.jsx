@@ -22,10 +22,10 @@ export default function Navbar() {
             </div>
             <ul className='flex flex-row gap-5 font-Monstserrat font-bold text-blue-400 items-center'>
 
-                <li className='hover:text-blue-300 cursor-pointer'><Link to="#Landing" smooth>Home</Link></li>
+                <li className='hover:text-blue-300 cursor-pointer'>Home</li>
                 <li className='text-gray-400 cursor-pointer'>MarketPlace</li>
                 <li className='text-gray-400 cursor-pointer'>Buy Eggs</li>
-                <li className='hover:text-blue-300 cursor-pointer'><Link to="#AboutUs" smooth>About Us</Link></li>
+                <li className='hover:text-blue-300 cursor-pointer'><Link to="#Mobabout" smooth>About Us</Link></li>
                 <li className='w-[2px] h-8 bg-gray-300'></li>
                 <li className='bg-gradient-to-br from-[#6c7aca] to-[#8C9EFF] hover:to-[#8292EA] hover:from-[#6c7aca] text-white py-2 px-5 rounded-full cursor-pointer'><a href="https://discord.gg/JG9VAuJbD7">Join Discord</a></li>
                 <li className='bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-2 px-5 rounded-full cursor-pointer'><a href="https://forms.gle/kNn1TArMvbYRc3vj8">Join Waitlist</a></li>
