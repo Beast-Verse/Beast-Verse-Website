@@ -3,7 +3,7 @@ import {motion} from 'framer-motion'
 import logo from '../assets/logo.png'
 import { HashLink as Link} from "react-router-hash-link"
 
-export default function Navbar() {
+export default function Navbar({delay}) {
   return (
     <div className='fixed flex justify-center items-center w-full z-50'>
     <motion.div
@@ -12,7 +12,7 @@ export default function Navbar() {
     animate={{y: 0}}
     transition={{
       duration: 1,
-      delay: 7
+      delay: delay
     }}
 
     className='bg-gradient-to-br from-black to-slate-800 w-[70%] mt-3 container mx-auto rounded-xl drop-shadow-xl'>
