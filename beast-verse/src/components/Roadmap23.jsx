@@ -2,8 +2,8 @@ import {motion} from "framer-motion"
 
 function Roadmap23(){
     return(
-        <motion.div initial={{opacity:0.2}}
-        whileInView={{opacity:1}} transition={{duration: 1}} className="grid grid-flow-col grid-cols-4 mt-5">
+        <motion.div initial={{opacity:0}}
+        whileInView={{opacity:1}} transition={{duration: 2}} className="grid grid-flow-col grid-cols-4 mt-5">
 
 
 

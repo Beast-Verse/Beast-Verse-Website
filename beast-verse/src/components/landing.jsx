@@ -21,7 +21,7 @@ import land from '../assets/land.png'
 // import Sky from "../assets/landing/Sky.png"
 // import Main from "../assets/landing/Main Cloud.png"
 
-import videoSource from '../assets/No Flicker.mp4';
+import videoSource from '../assets/video.mp4';
 
 
 
@@ -69,8 +69,8 @@ export default function Landing() {
         <motion.div initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{
-                duration: 2,
-                delay: 7,
+                duration: 1,
+                delay: 2,
                 ease: 'easeInOut'
             }}>
         <img src={land} alt="land sillouhette" className='absolute w-[100vw] -bottom-[40px] left-0'/>

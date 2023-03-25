@@ -4,9 +4,9 @@ import {motion} from "framer-motion"
 const Stats = () => {
   //Change Stats Here
   const data = {
-    supply: 3000,
-    minted: 300,
-    volume: 2,
+    supply: "TBD",
+    minted: "0",
+    volume: "0",
   };
 
   return (
@@ -54,7 +54,7 @@ const Stats = () => {
                 </span>{" "}
               </div>
               <motion.div initial={{opacity:0}}
-        whileInView={{opacity:1}} transition={{duration: 1}} className="flex flex-row gap-12 max-[640px]:flex-col justify-center items-center">
+        whileInView={{opacity:1}} transition={{duration: 2}} className="flex flex-row gap-12 max-[640px]:flex-col justify-center items-center">
                 <div className="flex flex-col items-center ">
                   <span className="text-xl mb-3 font-bold text-slate-200">
                     TOTAL SUPPLY
@@ -75,9 +75,9 @@ const Stats = () => {
                 <div className="w-[2px] h-40 bg-blue-400"></div>
                 <div className="flex flex-col items-center ">
                   <span className="text-xl mb-3 font-bold text-slate-200">
-                    VOLUME TRADED
+                    VOLUME
                   </span>
-                  <h2 className="text-[#7ae2ff] font-Montserrat text-6xl font-extrabold leading-none pt-3">
+                  <h2 className="text-[#7ae2ff] font-Montserrat text-[3.2rem] font-extrabold leading-none pt-3">
                     {data.volume} ETH
                   </h2>
                 </div>
