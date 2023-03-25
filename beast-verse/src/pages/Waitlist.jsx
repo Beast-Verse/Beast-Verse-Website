@@ -158,7 +158,7 @@ export default function Waitlist() {
                 <TextField
                   type="text"
                   name="discord"
-                  placeholder="Enter Your Email"
+                  placeholder="Enter Your Discord ID"
                 />
               </div>
 
