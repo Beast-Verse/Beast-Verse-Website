@@ -2,9 +2,9 @@ import React from 'react'
 import {motion} from "framer-motion"
 function Mobstats() {
     const data = {
-        supply: 3000,
-        minted: 300,
-        volume: 2,
+        supply: "TBD",
+        minted: "0",
+        volume: 0,
       };
   return (
     <div className='bg-gradient-to-b from-black to-slate-800 text-center py-20 pb-28'>
