@@ -5,6 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
+      backgroundImage:theme=>(
+        {
+          'land-img':"url('../src/assets/island.jpg')"
+        }
+      ),
       dropShadow: {
         'blue': '0 10px 30px rgba(225, 248, 255, 0.5)',
         'orange': '0 10px 30px rgba(255, 244, 233, 0.5)',

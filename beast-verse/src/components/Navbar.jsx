@@ -21,6 +21,7 @@ export default function Navbar() {
                 <img src={logo} alt="bv_logo" className='w-24' />
             </div>
             <ul className='flex flex-row gap-5 font-Monstserrat font-bold text-blue-400 items-center'>
+
                 <li className='hover:text-blue-300 cursor-pointer'><Link to="#Landing" smooth>Home</Link></li>
             <li className='hover:text-blue-300 cursor-pointer'><Link to="https://drive.google.com/file/d/1voYANBhdLDcoXAcRt-CvAJRKbeqX6_YN/view?usp=sharing" smooth>Whitepaper</Link></li>
                 <li className='text-gray-400 cursor-pointer'>MarketPlace <br /><span className='text-sm text-red-500'></span></li>
