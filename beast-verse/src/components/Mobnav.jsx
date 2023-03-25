@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 
-import { HashLink as Link } from "react-router-hash-link";
+import { HashLink as HLink } from "react-router-hash-link";
+import {Link} from "react-router-dom";
 
 function Mobnav() {
   let [open, setOpen] = useState(false);
@@ -19,21 +20,21 @@ function Mobnav() {
 
         </div>
        
-        <ul className={`${open?'block':'hidden'} w-fit text-center mx-auto `}>
+        <ul className={`${open?'block':'hidden'} text-center mx-auto bg-gradient-to-b from-slate-700/0 to-slate-400/20 p-4 rounded-b-3xl backdrop-blur-sm`}>
           <li >
             <div className="grid grid-flow-col grid-cols-2 mx-auto gap-2 ">
             <h3 className="text-gray-300 text-[4vw]  font-Montserrat font-bold rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2">Buy Eggs</h3>
-          <Link className="text-blue-300 text-[4vw]  font-Montserrat font-bold rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2" to="#Mobabout" smooth>
+          <HLink className="text-blue-300 text-[4vw]  font-Montserrat font-bold rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2" to="#Mobabout" smooth>
           About Us
-          </Link>
+          </HLink>
           </div>
           </li>
 
           <li >
             <div className="grid grid-flow-col grid-cols-2 mx-auto gap-2 ">
-            <Link className="text-blue-300 text-[4vw]  font-Montserrat font-bold  rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2" to="#Mobland" smooth>
+            <HLink className="text-blue-300 text-[4vw]  font-Montserrat font-bold  rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2" to="#Mobland" smooth>
             Home
-          </Link>
+          </HLink>
           <h3 className="text-gray-300 text-[4vw]  font-Montserrat font-bold rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2">MarketPlace</h3>
           
           </div>
@@ -42,9 +43,11 @@ function Mobnav() {
           
           <li >
 
-           <div className="grid grid-flow-row grid-cols-2 gap-4 mt-2">
-           <a className=" mb-2 rounded-xl py-5 bg-gradient-to-br from-[#6c7aca] to-[#8C9EFF]  text-white text-[4vw]  font-Montserrat font-bold " href="https://discord.gg/JG9VAuJbD7">Join Discord</a>
-            <a className=" mb-2 rounded-xl py-5 bg-gradient-to-br from-green-600 to-lime-400  text-white text-[4vw]  font-Montserrat font-bold " href="https://forms.gle/kNn1TArMvbYRc3vj8">Join Waitlist</a>
+           <div className="grid grid-flow-row grid-cols-2 gap-2">
+           <a className=" mb-2 rounded-xl py-4 bg-gradient-to-br from-[#6c7aca] to-[#8C9EFF]  text-white text-[4vw]  font-Montserrat font-bold " href="https://discord.gg/JG9VAuJbD7">Join Discord</a>
+          <Link to="/waitlist" className=" mb-2 rounded-xl py-4 bg-gradient-to-br from-green-600 to-lime-400  text-white text-[4vw]  font-Montserrat font-bold ">
+            <a  href="https://forms.gle/kNn1TArMvbYRc3vj8">Join Waitlist</a>
+          </Link>
           </div>
             </li>
         </ul>

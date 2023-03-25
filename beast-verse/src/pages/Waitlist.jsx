@@ -88,6 +88,7 @@ export default function Waitlist() {
         }}
         validationSchema={validate}
         onSubmit={(values)=>{
+          loadingHandle(true)
           //API call
           axios.post('https://bv-backend.onrender.com/api/addwaitlist', values, {
             headers: {
@@ -230,8 +231,8 @@ export default function Waitlist() {
                   <MutatingDots 
                     height="100"
                     width="100"
-                    color="#8358FF"
-                    secondaryColor= '#FFFFFF'
+                    color="#3B81F6"
+                    secondaryColor= '#5FA5F9'
                     radius='12.5'
                     ariaLabel="mutating-dots-loading"
                     wrapperStyle={{}}

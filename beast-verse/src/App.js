@@ -12,7 +12,6 @@ function App() {
 
   return (
     <BrowserRouter>
-
       <Routes>
         <Route path="/waitlist" element={<Waitlist />}/>
         <Route path="/" element={<Home />} exact/>
