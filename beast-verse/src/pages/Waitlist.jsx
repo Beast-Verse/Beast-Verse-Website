@@ -58,7 +58,7 @@ export default function Waitlist() {
 
 
   return (
-    <div className='bg-gradient-to-br from-black via-slate-900 to-blue-900 pb-20'>
+    <div className='font-Montserrat bg-gradient-to-br from-black via-slate-900 to-blue-900 pb-20'>
 
       <Navbar delay={1}/>
 
@@ -66,7 +66,7 @@ export default function Waitlist() {
       <div className='pt-40 px-40 max-[740px]:px-5'>
         <div className='container mx-auto flex flex-col items-center justify-center bg-blue-400/10 border-2 border-blue-400 rounded-xl pb-10 px-20 max-[740px]:px-5'>
           <img src={logo} className="mx-auto w-80 mt-10" alt="bvlogo" />
-          <h1 className='text-center font-bold text-blue-500 text-4xl my-10'>Successfully Registered</h1>
+          <h1 className=' text-center font-bold text-blue-500 text-4xl my-10'>Successfully Registered</h1>
           <h2 className='text-center font-bold text-red-500 text-xl max-[740px]:text-lg my-2'> COPY THE REFERRAL CODE </h2>
           <h2 className='text-center font-bold text-white px-8 py-3 max-[740px]:text-2xl bg-slate-200/20 rounded-full w-fit text-4xl mb-10'>{response._id}</h2>
           <h2 className='text-center font-normal text-slate-300 text-lg my-2'> LET FRIENDS KNOW ABOUT BEAST-VERSE <br /> TELL THEM TO USE YOUR REFERRAL CODE WHEN REGISTERING & WIN EXCITING PRIZES </h2>
