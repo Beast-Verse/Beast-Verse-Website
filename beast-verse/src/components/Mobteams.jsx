@@ -90,8 +90,9 @@ function Mobteams() {
     
 ]
 
-return(<div id="Team" class="bg-gradient-to-b from-slate-900 to to-black pt-10">
-      <h2 className='text-6xl font-bold font-Montserrat text-blue-500 pt-20 text-center'>TEAM</h2>
+return(
+  <div id="Mobteams" class="bg-gradient-to-b from-slate-900 to to-black pt-10">
+      <h2 className='text-[8vw] font-bold font-Montserrat text-blue-500 pt-20 text-center'>TEAM</h2>
     <motion.div initial={{opacity:0}}
     whileInView={{opacity:1}} transition={{duration: 2}} class=" px-6 py-40">
 

@@ -20,6 +20,7 @@ import Eggs from './components/Eggs';
 import Mobroadmap from './components/Mobroadmap';
 import Mobteams from './components/Mobteams';
 import Mobnav from './components/Mobnav';
+import Mobfooter from './components/Mobfooter';
 
 
 
@@ -53,7 +54,7 @@ function App() {
 <Mobstats/>
 <Mobroadmap/>
 <Mobteams/>
-<Footer/>
+<Mobfooter/>
 </div></BrowserRouter>
       
     </>

@@ -2,8 +2,8 @@ import React from 'react'
 
 function Mobabout() {
   return (
-    <div className='bg-gradient-to-br pt-3 from-slate-900 to-slate-800' id="Mobabout">
-    <h2 className="text-4xl max-[640px]:text-3xl text-center font-Montserrat font-semibold text-white">
+    <div className='bg-gradient-to-b pt-3 from-slate-900 to-slate-800' id="Mobabout">
+    <h2 className="text-4xl max-[640px]:text-3xl text-center font-Montserrat font-semibold text-white mt-16">
     What is <span className=" text-green-500">Beast Verse</span> ?
   </h2>
   <div className=' mx-auto text-center  flex flex-col items-center justify-center'>

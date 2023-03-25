@@ -6,7 +6,8 @@ import Epic from '../assets/epic.png'
 
 function Eggs() {
   return (
-    <div className='bg-gradient-to-b from-slate-900 to-slate-800 text-center py-20 pb-28'>
+    <div className='bg-gradient-to-b from-slate-800 to-black text-center py-20 pb-28'>
+    <h2 className='text-[8vw] font-Montserrat text-blue-400 font-bold'>NFTs</h2>
       <div className='flex flex-col'>
       <div className='flex flex-col items-center'>
       <div className=''><img className=' w-60 ' src={Common} alt=""></img></div>
