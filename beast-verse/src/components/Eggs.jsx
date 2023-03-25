@@ -1,8 +1,8 @@
 import React from 'react'
-import Common from '../assets/common.png'
-import Rare from '../assets/rare.png'
-import Legendary from '../assets/legendary.png'
-import Epic from '../assets/epic.png'
+import Common from '../assets/Common.png'
+import Rare from '../assets/Rare.png'
+import Legendary from '../assets/Legendary.png'
+import Epic from '../assets/Epic.png'
 
 function Eggs() {
   return (
