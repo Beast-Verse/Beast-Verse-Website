@@ -20,6 +20,7 @@ import Mobroadmap from '../components/Mobroadmap';
 import Mobteams from '../components/Mobteams';
 import Mobnav from '../components/Mobnav';
 import Mobfooter from '../components/Mobfooter';
+import Partners from '../components/Partners';
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
     <Navbar delay={5}/>
     <Landing/>
     <AboutUs/>
+    <Partners/>
     <Stats/>
     <Roadmap/>
     <Team/>
@@ -46,6 +48,7 @@ export default function Home() {
 <Mobland/>
 <Mobabout/>
 <Eggs/>
+<Partners/>
 <Mobstats/>
 <Mobroadmap/>
 <Mobteams/>

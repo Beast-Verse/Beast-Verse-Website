@@ -15,7 +15,7 @@ function Mobteams() {
   const TeamData = [
     {
         name: "Risavdeb Patra",
-        position: "CEO & Marketing",
+        position: "Founder & Marketing",
         github: "https://github.com/Risav03",
         linkedin: "https://www.linkedin.com/in/risavdeb-patra-703971227/",
         twitter: "https://twitter.com/risavdebpatra",
