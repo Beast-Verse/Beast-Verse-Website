@@ -105,7 +105,7 @@ export default function Waitlist() {
         onSubmit={(values)=>{
           loadingHandle(true)
           //API call
-          axios.post('https://bv-backend.onrender.com/api/addwaitlist', values, {
+          axios.post('https://bv-backend-ebon.vercel.app/api/addwaitlist', values, {
             headers: {
               'Content-Type': 'application/json',
             },
