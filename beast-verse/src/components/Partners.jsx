@@ -3,8 +3,8 @@ import nftcal from '../assets/partners/nftcal.svg';
 
 export default function Partners() {
   return (
-    <div className='bg-black text-center py-20 px-40 pb-32 max-[740px]:px-10'>
-        <h2 className='text-6xl font-bold font-Montserrat text-blue-500 pb-10 text-center max-[740px]:text-4xl'>PARTNERS</h2>
+    <div className='bg-slate-900 text-center py-20 px-40 pb-32 max-[740px]:px-10'>
+        <h2 className='text-[4vw] font-bold font-Montserrat text-blue-500 pb-10 text-center max-[768px]:text-[12vw]'>PARTNERS</h2>
         <div className='flex flex-row items-start justify-center'>
             <div className=' flex flex-col items-center'>
                 <div className='h-5 overflow-hidden'>

@@ -30,9 +30,9 @@ export default function Home() {
     <Navbar delay={5}/>
     <Landing/>
     <AboutUs/>
-    <Partners/>
     <Stats/>
     <Roadmap/>
+    <Partners/>
     <Team/>
     {/* <Domains/> */}
     {/* <HowToPlay/> */}
@@ -48,9 +48,9 @@ export default function Home() {
 <Mobland/>
 <Mobabout/>
 <Eggs/>
-<Partners/>
 <Mobstats/>
 <Mobroadmap/>
+<Partners/>
 <Mobteams/>
 <Mobfooter/>
 </div>
