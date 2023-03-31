@@ -60,7 +60,7 @@ export default function Waitlist() {
 
   const hashtags = "hashtags=beastverse,nftgame,P2E,Gaming";
   const tweet = "https://twitter.com/intent/tweet?" + hashtags + "&text=";
-  const tweetmsg = tweet + "Hi!%20I%20just%20registered%20for%20@realbeastverse.%20My%20referral%20code%20is:%20" + response._id +"%20Head%20over%20to%20https://beastversegame.com/waitlist%20%20%20%20%20https://twitter.com/realbeastverse/status/1636992468662226945?s=20";
+  const tweetmsg = tweet + "Hi!%20I%20just%20registered%20for%20@realbeastverse.%20My%20referral%20code%20is:%20" + response.id +"%20Head%20over%20to%20https://beastversegame.com/waitlist%20%20%20%20%20https://twitter.com/realbeastverse/status/1636992468662226945?s=20";
 
   return (
     <div className='font-Montserrat bg-gradient-to-br from-black via-slate-900 to-blue-900 pb-20'>
