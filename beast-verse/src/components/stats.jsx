@@ -4,7 +4,7 @@ import {motion} from "framer-motion"
 const Stats = () => {
   //Change Stats Here
   const data = {
-    supply: "TBD",
+    supply: "3000",
     minted: "0",
     volume: "0",
   };
