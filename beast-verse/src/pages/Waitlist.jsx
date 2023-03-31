@@ -73,7 +73,7 @@ export default function Waitlist() {
           <img src={logo} className="mx-auto w-80 mt-10" alt="bvlogo" />
           <h1 className=' text-center font-bold text-blue-500 text-4xl my-10'>Successfully Registered</h1>
           <h2 className='text-center font-bold text-red-500 text-xl max-[740px]:text-lg my-2'> COPY THE REFERRAL CODE </h2>
-          <h2 className='text-center font-bold text-white px-8 py-3 max-[740px]:text-2xl bg-slate-200/20 rounded-full w-fit text-4xl mb-10'>{response._id}</h2>
+          <h2 className='text-center font-bold text-white px-8 py-3 max-[740px]:text-2xl bg-slate-200/20 rounded-full w-fit text-4xl mb-10'>{response.id}</h2>
           <h2 className='text-center font-normal text-slate-300 text-lg my-2'> LET FRIENDS KNOW ABOUT BEAST-VERSE <br /> TELL THEM TO USE YOUR REFERRAL CODE WHEN REGISTERING & WIN EXCITING PRIZES </h2>
           
                 <motion.a
