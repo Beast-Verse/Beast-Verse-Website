@@ -29,6 +29,7 @@ export default function Navbar({delay}) {
             <li className='hover:text-blue-300 cursor-pointer'><HLink to="https://drive.google.com/file/d/1FGpVPThc2vRP-MBfoSusVPKoQGlM9DaF/view?usp=sharing" smooth>Whitepaper</HLink></li>
                 <li className='text-gray-400 cursor-pointer'>MarketPlace <br /><span className='text-sm text-red-500'></span></li>
                 <li className='text-gray-400 cursor-pointer'>Buy Eggs</li>
+                <li className='text-blue-400 cursor-pointer'><a href="https://linktr.ee/realbeastverse">Socials</a></li>
                 <li className='hover:text-blue-300 cursor-pointer'><HLink to="#AboutUs" smooth>About Us</HLink></li>
 
                 <li className='bg-gradient-to-br from-[#6c7aca] to-[#8C9EFF] hover:to-[#8292EA] hover:from-[#6c7aca] text-white py-2 px-5 rounded-full cursor-pointer'><a href="https://discord.gg/JG9VAuJbD7">Join Discord</a></li>
