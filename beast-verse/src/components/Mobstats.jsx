@@ -52,6 +52,39 @@ function Mobstats() {
     </div>
     
   </div>
+
+  <div className='flex flex-row items-start justify-center mx-5'>
+            <div className=' flex flex-col items-center'>
+                <div className='h-5 overflow-hidden'>
+                </div>
+                <div className='p-10 px-0 border border-y-4 border-blue-500 border-x-0 rounded-xl bg-gradient-to-br from-blue-400/20 to-slate-900/70 flex flex-col items-center justify-center'>
+                    {/* <img src={nftcal} alt="nftcal" className='w-40'/> */}
+                    <div className='text-white font-Montserrat text-xl flex items-center justify-center flex-col'>
+                      <h2 className="text-4xl font-bold text-cyan-300">ANNOUNCEMENTS</h2>
+                      <h3 className="w-[80%] mb-5 text-left mt-10 max-[740px]:text-center">Each phase of the launch will have <span className="font-bold text-blue-500">300 NFTs</span>  , thus <span className="font-bold text-blue-500">10 phases</span> in total rolling out weekly</h3>
+
+                      <div className="flex flex-row max-[740px]:flex-col gap-y-6 gap-x-16 items-start justify-start w-[80%]">
+                      <div>
+                      <h3 className=" text-left"><span className="font-bold text-blue-500">Out of those 300, there will be:</span><br />
+                        - 125 <span className="text-green-300">Common</span> <br />
+                        - 100 <span className="text-blue-300">Rare</span> <br />
+                        - 50 <span className="text-purple-300">Epic</span> <br />
+                        - 25 <span className="text-yellow-300">Legendary </span> NFTs</h3>
+                        </div>
+                        <div>
+                      <h3 className=" text-left"><span className="font-bold text-blue-500">Prices of first mint will be:</span><br />
+                        (5 MATIC) - <span className="text-green-300">Common</span> <br />
+                        (7 MATIC) - <span className="text-blue-300">Rare</span> <br />
+                        (9 MATIC) - <span className="text-purple-300">Epic</span> <br />
+                        (11 MATIC) - <span className="text-yellow-300">Legendary</span></h3>
+                        </div>
+                      </div>
+                      <h3 className="w-[80%] mb-5 text-center text-lg mt-10">*With each phase the price of each rarity will be incremented by 2 MATIC.</h3>
+                    </div>
+                </div>
+            </div>
+      </div>
+
     </div>
   )
 }

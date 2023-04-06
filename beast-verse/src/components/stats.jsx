@@ -12,37 +12,8 @@ const Stats = () => {
   return (
     <div className="bg-gradient-to-b from-black to-slate-800 text-center py-20 pb-32">
 
-      {/* <div className="grid grid-flow-col grid-cols-3">
-        <div className="bg-[#f0ffe9] py-7 w-[80%] mx-auto rounded-xl border-l-8 border-[#97df75] flex flex-col justify-center items-center drop-shadow-green">
-          <h2 className="text-[#97df75] font-Montserrat text-[5vw] font-extrabold leading-none">
-            {data.supply}
-          </h2>
-          <h3 className="text-[#97df75] font-bold font-Montserrat text-[2vw]">
-            Total Supply
-          </h3>
-        </div>
-
-        <div className="bg-[#e1f8ff] py-7 w-[80%] mx-auto rounded-xl border-b-8 border-[#7ae2ff] flex flex-col justify-center items-center drop-shadow-blue">
-          <h2 className="text-[#7ae2ff] font-Montserrat text-[5vw] font-extrabold leading-none">
-            {data.minted}
-          </h2>
-          <h3 className="text-[#7ae2ff] font-bold font-Montserrat text-[2vw]">
-            Minted
-          </h3>
-        </div>
-
-        <div className="bg-[#fff4e9] py-7 w-[80%] mx-auto rounded-xl border-r-8 border-[#ffb56d] flex flex-col justify-center items-center drop-shadow-orange">
-          <h2 className="text-[#ffb56d] font-Montserrat text-[5vw] font-extrabold leading-none">
-            {data.volume} ETH
-          </h2>
-          <h3 className="text-[#ffb56d] font-bold font-Montserrat text-[2vw]">
-            Volume Traded
-          </h3>
-        </div>
-      </div> */}
-
       <div className="flex items-center justify-center mt-40">
-        <div className="relative mb-32">
+        <div className="relative mb-12">
           <div className="absolute inset-3 bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-600 rounded-2xl blur-xl animate-tilt "></div>
           <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-600 rounded-2xl animate-glow z-10"></div>
           <section className="relative px-7 py-4 mx-6 my-1 bg-slate-800 rounded-2xl lg:h-[250px] lg:w-[800px] flex flex-row justify-center items-center z-20">
@@ -81,14 +52,44 @@ const Stats = () => {
                     {data.volume} ETH
                   </h2>
                 </div>
-
-                
               </motion.div>
             </div>
           </section>
           
         </div>
         
+      </div>
+
+      <div className='flex flex-row items-start justify-center'>
+            <div className=' flex flex-col items-center'>
+                <div className='h-5 overflow-hidden'>
+                </div>
+                <div className='p-10 px-0 border border-y-4 border-blue-500 border-x-0 rounded-xl bg-gradient-to-br from-blue-400/20 to-slate-900/70 flex flex-col items-center justify-center'>
+                    {/* <img src={nftcal} alt="nftcal" className='w-40'/> */}
+                    <div className='text-white font-Montserrat text-xl flex items-center justify-center flex-col'>
+                      <h2 className="text-4xl font-bold text-cyan-300">ANNOUNCEMENTS</h2>
+                      <h3 className="w-[80%] mb-5 text-left mt-10">Each phase of the launch will have <span className="font-bold text-blue-500">300 NFTs</span>  , thus <span className="font-bold text-blue-500">10 phases</span> in total rolling out weekly</h3>
+
+                      <div className="flex flex-row gap-y-6 gap-x-16 items-start justify-start w-[80%]">
+                      <div>
+                      <h3 className=" text-left"><span className="font-bold text-blue-500">Out of those 300, there will be:</span><br />
+                        - 125 <span className="text-green-300">Common</span> <br />
+                        - 100 <span className="text-blue-300">Rare</span> <br />
+                        - 50 <span className="text-purple-300">Epic</span> <br />
+                        - 25 <span className="text-yellow-300">Legendary </span> NFTs</h3>
+                        </div>
+                        <div>
+                      <h3 className=" text-left"><span className="font-bold text-blue-500">Prices of first mint will be:</span><br />
+                        (5 MATIC) - <span className="text-green-300">Common</span> <br />
+                        (7 MATIC) - <span className="text-blue-300">Rare</span> <br />
+                        (9 MATIC) - <span className="text-purple-300">Epic</span> <br />
+                        (11 MATIC) - <span className="text-yellow-300">Legendary</span></h3>
+                        </div>
+                      </div>
+                      <h3 className="w-[80%] mb-5 text-center text-lg mt-10">*With each phase the price of each rarity will be incremented by 2 MATIC.</h3>
+                    </div>
+                </div>
+            </div>
       </div>
 
     </div>
