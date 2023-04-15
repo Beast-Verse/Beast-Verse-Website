@@ -14,7 +14,7 @@ import Left from "../assets/left.png";
 import Right from "../assets/Right.png";
 
 
-import All from "../assets/All.png";
+import All from "../assets/All.jpeg";
 import { useState } from "react";
 
 
