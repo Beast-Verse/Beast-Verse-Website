@@ -796,33 +796,33 @@ function Mint() {
   return (
     <>
 
-    <div className='bg-gradient-to-b from-black to-slate-800 text-center h-[100vh] md:h-[100vh]'>
+    <div className='bg-gradient-to-b from-black to-slate-800 text-center h-full md:h-[100vh]'>
       <h1 className='pt-10 text-5xl font-bold text-blue-400  lg:text-7xl' id="check">MINT YOUR EGGS</h1>
       {/* <h2 id="success" className='mt-10 text-[3vw] font-Montserrat font-semibold text-green-400 lg:text-[5vw]'></h2> */}
-      <div className='grid grid-flow-col grid-cols-4 md:flex md:flex-row mt-20 w-[90%] mx-auto gap-10 text-3xl text-white font-Montserrat' id="wlonly">
+      <div className='grid  grid-rows-4  md:grid-flow-cols md:grid-cols-4 mt-20 w-[90%] mx-auto gap-10 text-3xl text-white font-Montserrat' id="wlonly">
       
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={common} className="w-[30.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93FF94]"></img>
-          <button id="mint common" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[33vw] md:w-[11vw] mt-10 bg-[#00BB02] text-[#c5ffc6] border-[#93FF94]">MINT</button>
+          <img src={common} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93FF94]"></img>
+          <button id="mint common" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#00BB02] text-[#c5ffc6] border-[#93FF94]">MINT</button>
           </div>
 
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={Rare} className="w-[30.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93E5FF]"></img>
-          <button id="mint rare" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[33vw] md:w-[11vw] mt-10 bg-[#007DBB] text-[#b4edff] border-[#93E5FF]">MINT</button>
+          <img src={Rare} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93E5FF]"></img>
+          <button id="mint rare" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]">MINT</button>
           </div>
 
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={epic} className="w-[30.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#E093FF]"></img>
-          <button id="mint epic" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[33vw] md:w-[11vw] mt-10 bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]">MINT</button>
+          <img src={epic} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#E093FF]"></img>
+          <button id="mint epic" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]">MINT</button>
           </div>
 
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={Legendary} className="w-[30.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#FEFFB6]"></img>
-          <button id="mint legendary" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[33vw] md:w-[11vw] mt-10 bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]">MINT</button>
+          <img src={Legendary} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#FEFFB6]"></img>
+          <button id="mint legendary" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]">MINT</button>
           </div>
 		  
       </div>
-	  <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3'>Withdraw</button>
+	  <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400'>Withdraw</button>
     </div>
    
     </>
