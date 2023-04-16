@@ -53,14 +53,14 @@ function Mobstats() {
     
   </div>
 
-  <div className='flex flex-row items-start justify-center mx-5'>
-            <div className=' flex flex-col items-center'>
+  <div className='flex flex-row items-start justify-center mx-5 '>
+            <div className=' flex flex-col items-center '>
                 <div className='h-5 overflow-hidden'>
                 </div>
-                <div className='p-10 px-0 border border-y-4 border-blue-500 border-x-0 rounded-xl bg-gradient-to-br from-blue-400/20 to-slate-900/70 flex flex-col items-center justify-center'>
+                <div className='p-10 px-0 border border-y-4 w-[90%] border-blue-500 border-x-0 rounded-xl bg-gradient-to-br from-blue-400/20 to-slate-900/70 flex flex-col items-center justify-center'>
                     {/* <img src={nftcal} alt="nftcal" className='w-40'/> */}
                     <div className='text-white font-Montserrat text-xl flex items-center justify-center flex-col'>
-                      <h2 className="text-4xl font-bold text-cyan-300">ANNOUNCEMENTS</h2>
+                      <h2 className="text-[7vw] font-bold text-cyan-300">ANNOUNCEMENTS</h2>
                       <h3 className="w-[80%] mb-5 text-left mt-10 max-[740px]:text-center">Each phase of the launch will have <span className="font-bold text-blue-500">300 NFTs</span>  , thus <span className="font-bold text-blue-500">10 phases</span> in total rolling out weekly</h3>
 
                       <div className="flex flex-row max-[740px]:flex-col gap-y-6 gap-x-16 items-start justify-start w-[80%]">

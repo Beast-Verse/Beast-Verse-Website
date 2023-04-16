@@ -170,7 +170,7 @@ function AboutUs() {
           }}
           className="z-0 absolute bottom-[15vw]"
         >
-          <motion.img src={All} className="">
+          <motion.img src={All} className="min-[1500px]:w-[100vw]">
             
           </motion.img>
           <div className="w-[15rem] opacity-0 hover:opacity-100 h-[25vw] transition-opacity duration-500 min-[1500px]:h-[22vw] absolute bottom-[11vw] min-[1500px]:bottom-[13vw] left-[5.5vw] min-[1500px]:left-[6vw]">
