@@ -823,7 +823,7 @@ function Mint() {
           </div>
 		  
       </div>
-	  {/* <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400 '>Withdraw</button> */}
+	  <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400 '>Withdraw</button>
     </div>
    
     </>
