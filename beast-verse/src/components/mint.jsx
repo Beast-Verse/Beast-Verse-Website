@@ -807,17 +807,17 @@ function Mint() {
           </div>
 
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={Rare} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93E5FF] brightness-125"></img>
+          <img src={Rare} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93E5FF] brightness-150"></img>
           <button id="mint rare" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]">MINT</button>
           </div>
 
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={epic} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#E093FF] brightness-125"></img>
+          <img src={epic} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#E093FF] brightness-150"></img>
           <button id="mint epic" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]">MINT</button>
           </div>
 
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={Legendary} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#FEFFB6] brightness-125"></img>
+          <img src={Legendary} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#FEFFB6] brightness-150"></img>
           <button id="mint legendary" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]">MINT</button>
           </div>
 		  
