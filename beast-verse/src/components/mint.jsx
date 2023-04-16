@@ -650,6 +650,8 @@ var ABI = [
 
 var ADDRESS = "0x081Af03e7A316FC54f39b1A1ea9d75c70DBDb442";
 
+const admin = "0xc67Aa95B4AD61b6435d10567EC192e125aF7A0a0";
+
 (async ()=> {
   
   if(window.ethereum){
@@ -758,11 +760,14 @@ console.log(isthere);
 	  
 			}}
 	  
-		
-			document.getElementById("withdraw").onclick = (async () => {
-			  contract.methods.withdraw().send({from:account});
-			  
-			});
+			if(account.toUpperCase() === admin.toUpperCase()){
+
+				document.getElementById("withdraw").onclick = (async () => {
+					contract.methods.withdraw().send({from:account});
+					
+				});
+			}
+
 	  
 			 console.log(await contract.methods.totalSupply().call());
 	  
@@ -781,11 +786,7 @@ console.log(isthere);
 		}
 	}
 
- 
 
-
-      
-  
 
   else{
     console.log("no metamask");
@@ -823,7 +824,7 @@ function Mint() {
           </div>
 		  
       </div>
-	  <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400 '>Withdraw</button>
+	  <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400 hidden'>Withdraw</button>
     </div>
    
     </>
