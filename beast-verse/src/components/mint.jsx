@@ -777,6 +777,7 @@ console.log(isthere);
 		console.log("Not whitelisted!");
 		document.getElementById("check").textContent="WALLET IS NOT WHITELISTED!";
 		document.getElementById("wlonly").textContent="Your wallet was not whitelisted! \n Please wait for the General Mint to start on 21/05/23! :D"
+		document.getElementById("noview").innerHTML=<div></div>
 		}
 	}
 
@@ -796,10 +797,10 @@ function Mint() {
   return (
     <>
 
-    <div className='bg-gradient-to-b from-black to-slate-800 text-center h-full '>
+    <div className='bg-gradient-to-b from-black to-slate-800 text-center h-[100vh] '>
       <h1 className='pt-10 text-5xl font-bold text-blue-400  lg:text-7xl' id="check">MINT YOUR EGGS</h1>
-      {/* <h2 id="success" className='mt-10 text-[3vw] font-Montserrat font-semibold text-green-400 lg:text-[5vw]'></h2> */}
-      <div className='grid  grid-rows-4  md:grid-flow-cols md:grid-cols-4 mt-20 w-[90%] h-fit mx-auto gap-10 text-3xl text-white font-Montserrat' id="wlonly">
+      <h2 id="wlonly" className='mt-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw]'></h2>
+      <div className='grid grid-flow-col  grid-cols-4  max-[768px]:grid-flow-rows max-[768px]:grid-rows-4 mt-24 w-[90%] h-fit mx-auto gap-10' id="noview">
       
           <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
           <img src={common} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93FF94] brightness-150"></img>
@@ -822,7 +823,7 @@ function Mint() {
           </div>
 		  
       </div>
-	  <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400 '>Withdraw</button>
+	  {/* <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400 '>Withdraw</button> */}
     </div>
    
     </>
