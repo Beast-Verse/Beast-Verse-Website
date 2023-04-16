@@ -761,13 +761,13 @@ console.log(isthere);
 	  
 			}}
 	  
-			if(account.toUpperCase() === admin.toUpperCase()){
+			// if(account.toUpperCase() === admin.toUpperCase()){
 
-				document.getElementById("withdraw").onclick = (async () => {
-					contract.methods.withdraw().send({from:account});
+			// 	document.getElementById("withdraw").onclick = (async () => {
+			// 		contract.methods.withdraw().send({from:account});
 					
-				});
-			}
+			// 	});
+			// }
 
 	  
 			 console.log(await contract.methods.totalSupply().call());
@@ -805,7 +805,7 @@ function Mint() {
     <div className='bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start p-2'>
       <h1 className='pt-10 text-4xl font-bold text-blue-400  lg:text-6xl mb-10' id="check">MINT YOUR EGGS</h1>
 	  <button className='bg-white p-4 rounded-xl font-Montserrat font-semibold' onClick={connect} id="buttonconnect">Connect your wallet</button>
-	  <h3 id="address" className='mt-10 text-[1vw] mx-auto w-[70%] font-Montserrat font-medium text-green-400 lg:text-[1.5vw]'></h3>
+	  <h3 id="address" className='mt-10 text-[2vw] mx-auto w-[70%] font-Montserrat font-medium text-green-400 lg:text-[1.5vw]'></h3>
       <h2 id="wlonly" className='mt-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw]'></h2>
       <div className='flex flex-row max-[768px]:flex-row max-[768px]:flex-wrap min-[768px]:mx-10' id="noview">
       
