@@ -743,10 +743,7 @@ console.log(isthere);
 	  
 			document.getElementById("mint rare").onclick = async () => {
 			  contract.methods.rareMint(account, rarlink, rar).send({from:account,  value:"20000000000000000"});
-			  setTimeout(()=> {
-				window.location.reload();
-			 }
-			 ,20000);
+
 	  
 			}}
 	  
@@ -754,21 +751,13 @@ console.log(isthere);
 			if(epi<51){
 			document.getElementById("mint epic").onclick = async () => {
 			  contract.methods.epicMint(account, epilink, epi).send({from:account,  value:"30000000000000000"});
-			  setTimeout(()=> {
-				window.location.reload();
-			 }
-			 ,20000);
-	  
+			
 			}}
 	  
 			if(leg<26){
 	  
 			document.getElementById("mint legendary").onclick = async () => {
 			  contract.methods.legendaryMint(account, leglink, leg).send({from:account,  value:"40000000000000000"});
-			  setTimeout(()=> {
-				window.location.reload();
-			 }
-			 ,20000);
 	  
 			}}
 	  
