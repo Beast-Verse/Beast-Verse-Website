@@ -23,7 +23,7 @@ function Mobnav() {
         <ul className={`${open?'block':'hidden'} text-center mx-auto bg-gradient-to-b from-slate-700/0 to-slate-400/20 p-4 rounded-b-3xl backdrop-blur-sm`}>
           <li>
           <div className="grid grid-flow-col grid-cols-2 mx-auto gap-2 ">
-          <h3 className="text-blue-300 text-[4vw]  font-Montserrat font-bold rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2"><a href="https://drive.google.com/file/d/1FGpVPThc2vRP-MBfoSusVPKoQGlM9DaF/view?usp=sharing">Whitepaper</a></h3>
+          <h3 className="text-blue-300 text-[4vw]  font-Montserrat font-bold rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2"><a href="https://drive.google.com/file/d/1s7H0uSHBkJJZISJE-9LrZkQThxoUTB8k/view?usp=share_link">Whitepaper</a></h3>
           <h3 className='text-blue-300 text-[4vw]  font-Montserrat font-bold rounded-xl px-3 py-4 bg-gradient-to-br from-slate-900 to-slate-700 mb-2'><a href="https://linktr.ee/realbeastverse">Socials</a></h3>
           </div>
           </li>
