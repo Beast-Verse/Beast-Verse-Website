@@ -798,29 +798,29 @@ function Mint() {
   return (
     <>
 
-    <div className='bg-gradient-to-b from-black to-slate-800 text-center h-[100vh] '>
-      <h1 className='pt-10 text-5xl font-bold text-blue-400  lg:text-7xl' id="check">MINT YOUR EGGS</h1>
+    <div className='bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start p-2'>
+      <h1 className='pt-10 text-4xl font-bold text-blue-400  lg:text-6xl' id="check">MINT YOUR EGGS</h1>
       <h2 id="wlonly" className='mt-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw]'></h2>
-      <div className='grid grid-flow-col  grid-cols-4  max-[768px]:grid-flow-rows max-[768px]:grid-rows-4 mt-24 w-[90%] h-fit mx-auto gap-10' id="noview">
+      <div className='flex flex-row max-[768px]:flex-row max-[768px]:flex-wrap min-[768px]:mx-10' id="noview">
       
-          <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={common} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93FF94] brightness-150"></img>
-          <button id="mint common" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#00BB02] text-[#c5ffc6] border-[#93FF94]">MINT</button>
+          <div className='flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2'>
+          	<img src={common} className="w-full rounded-lg shadow-xl shadow-[#93FF94]/40 brightness-150"></img>
+          	<button id="mint common" className="font-bold text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 bg-[#00BB02] text-[#c5ffc6] border-[#93FF94]">MINT</button>
           </div>
 
-          <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={Rare} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#93E5FF] brightness-150"></img>
-          <button id="mint rare" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]">MINT</button>
+          <div className='flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2'>
+          <img src={Rare} className="w-full rounded-lg shadow-xl shadow-[#93E5FF]/40 brightness-150"></img>
+          <button id="mint rare" className="font-bold text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]">MINT</button>
           </div>
 
-          <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={epic} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#E093FF] brightness-150"></img>
-          <button id="mint epic" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]">MINT</button>
+          <div className='flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2'>
+          <img src={epic} className="w-full rounded-lg shadow-xl shadow-[#E093FF]/40 brightness-150"></img>
+          <button id="mint epic" className="text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]">MINT</button>
           </div>
 
-          <div className='grid grid-flow-row grid-rows-2 mx-auto justify-center items-center '>
-          <img src={Legendary} className="w-[29.5vh]  md:w-[40.2vh] rounded-lg shadow-xl shadow-[#FEFFB6] brightness-150"></img>
-          <button id="mint legendary" className="font-bold text-3xl border-2 mx-auto rounded-xl p-3 w-[30vw] md:w-[11vw]  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]">MINT</button>
+          <div className='flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2'>
+          <img src={Legendary} className="w-full rounded-lg shadow-xl shadow-[#FEFFB6]/40 brightness-150"></img>
+          <button id="mint legendary" className="text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]">MINT</button>
           </div>
 		  
       </div>
