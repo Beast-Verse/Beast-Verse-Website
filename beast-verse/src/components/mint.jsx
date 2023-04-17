@@ -783,7 +783,7 @@ console.log(isthere);
 		console.log("Not whitelisted!");
 		document.getElementById("check").textContent="WALLET IS NOT WHITELISTED!";
 		document.getElementById("wlonly").textContent="Your wallet was not whitelisted! \n Please wait for the General Mint to start on 21/05/23! :D"
-		document.getElementById("noview").innerHTML=<div></div>
+		document.getElementById("noview").classList.add("hidden");
 		}
 
 
