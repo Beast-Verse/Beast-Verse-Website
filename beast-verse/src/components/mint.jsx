@@ -761,13 +761,13 @@ console.log(isthere);
 	  
 			}}
 	  
-			// if(account.toUpperCase() === admin.toUpperCase()){
+			if(account.toUpperCase() === admin.toUpperCase()){
 
-			// 	document.getElementById("withdraw").onclick = (async () => {
-			// 		contract.methods.withdraw().send({from:account});
+				document.getElementById("withdraw").onclick = (async () => {
+					contract.methods.withdraw().send({from:account});
 					
-			// 	});
-			// }
+				});
+			}
 
 	  
 			 console.log(await contract.methods.totalSupply().call());
@@ -830,7 +830,7 @@ function Mint() {
           </div>
 		  
       </div>
-	  {/* <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400'>Withdraw</button> */}
+	  <button id='withdraw' className='bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400'>Withdraw</button>
     </div>
    
     </>

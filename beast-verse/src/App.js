@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/waitlist" element={<Waitlist />}/>
-        <Route path="/mint" element={<Mint />}/>
+        <Route path="/wearemintingfortestpurposesonly" element={<Mint />}/>
 
         <Route path="/" element={<Home />} exact/>
       </Routes>
