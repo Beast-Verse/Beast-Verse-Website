@@ -648,7 +648,7 @@ var ABI = [
   },
 ];
 
-var ADDRESS = "0x99Cb0DeB1344Ea3537242c6ABF9Ad7A43EBA9bEc";
+var ADDRESS = "0x66Fc2Ca29c2797Cc2B4cd8590b03931f4ddB24F1";
 
 const admin = "0xc67Aa95B4AD61b6435d10567EC192e125aF7A0a0";
 
@@ -712,6 +712,8 @@ async function connect() {
 	  "0xd762eb9a13821a93e5c02baefEC29fC1E785FaF2",
 	  "0xa92b24ac60a6b381e0ec2dd17d2a3339cda24d84",
 	  "0x95d0f0FB194718A6D82a3D7F85f73DCD9E716302",
+	  "0x50912A8ab9362D17D264DbE62989181f0f01c641",
+	  "0x82ceFB5b4D46B9079e45e7C6B6188EB2062c12F8",
     ];
 
     const size = whitelisted.length;
@@ -750,7 +752,7 @@ async function connect() {
       //   var leg = parseInt(await contract.methods.leg().call()) + 1;
 
     //   let url = "https://bv-backend-self.vercel.app/api";
-	let url = "bvbackend-production.up.railway.app/api";
+	let url = "https://bvbackend-production.up.railway.app/api";
 
       let com = async () => {
         let res = await axios.get(url + "/getRandom", {
@@ -819,6 +821,7 @@ async function connect() {
             total: 250,
           },
         });
+		// console.log(res);
         return res.data.count;
       };
 
@@ -829,7 +832,7 @@ async function connect() {
 	  console.log("Common", await getCountCom())
 	  console.log("Rare", await getCountRar())
 	  console.log("Epic", await getCountEpi())
-	  console.log("Legendary", await getCountEpi())
+	  console.log("Legendary", await getCountLeg())
 
       if ((await getCountCom()) < 125) {
         document.getElementById("mint common").onclick = async () => {
@@ -881,7 +884,7 @@ async function connect() {
 				setTimeout(()=> {
 					window.location.reload();
 				 }
-				 ,2000);
+				 ,3000);
 			})
 			
         };
@@ -935,7 +938,7 @@ async function connect() {
 				setTimeout(()=> {
 					window.location.reload();
 				 }
-				 ,2000);
+				 ,3000);
 			})
         };
       }
@@ -990,7 +993,7 @@ async function connect() {
 				setTimeout(()=> {
 					window.location.reload();
 				 }
-				 ,2000);
+				 ,3000);
 			})
         };
       }
@@ -1014,7 +1017,7 @@ async function connect() {
 			.then((res) => {
 				console.log(res);
 
-				document.getElementById("wlonly").textContent = `Transaction for Legendary Egg was rejected! \n Reloading in 2s`
+				
 
 
 				axios.put(url + "/pop", {
@@ -1034,6 +1037,7 @@ async function connect() {
 			})
 			.catch(async (err) => {
 				console.log(err);
+				document.getElementById("wlonly").textContent = `Transaction for Legendary Egg was rejected! \n Reloading in 2s`;
 				axios.put(url + "/flip", {
 					"index": legValue,
 					"rarity": "legendary"
@@ -1046,16 +1050,16 @@ async function connect() {
 				setTimeout(()=> {
 					window.location.reload();
 				 }
-				 ,2000);
+				 ,3000);
 			})
         };
       }
 
-      if (account.toUpperCase() === admin.toUpperCase()) {
-        document.getElementById("withdraw").onclick = async () => {
-          contract.methods.withdraw().send({ from: account });
-        };
-      }
+    //   if (account.toUpperCase() === admin.toUpperCase()) {
+    //     document.getElementById("withdraw").onclick = async () => {
+    //       contract.methods.withdraw().send({ from: account });
+    //     };
+    //   }
 
       console.log(await contract.methods.totalSupply().call());
 
@@ -1157,12 +1161,12 @@ function Mint() {
             </button>
           </div>
         </div>
-        <button
+        {/* <button
           id="withdraw"
           className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
         >
           Withdraw
-        </button>
+        </button> */}
       </div>
     </>
   );
