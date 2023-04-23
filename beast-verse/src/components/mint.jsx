@@ -826,12 +826,18 @@ async function connect() {
 	  console.log("Epic", await getCountEpi())
 	  console.log("Legendary", await getCountEpi())
 
-      if ((await getCountCom()) < 126) {
+      if ((await getCountCom()) < 125) {
         document.getElementById("mint common").onclick = async () => {
           let comValue = await com();
           const comlink =
             "ipfs://QmbZHGc9poq2YQvDRCnpP6GWCQpMp75UHHxdJnjWBZQBQK/" +comValue +".json";
           console.log(comlink);
+
+
+		document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
+		  document.getElementById("noview").classList.add("hidden")
+
+
           contract.methods
             .commonMint(account, comlink, comValue)
             .send({ from: account, value: "10000000000000000" })
@@ -844,11 +850,18 @@ async function connect() {
 				.then(async (res) => {
 					console.log(res)
 					console.log(await getCountCom())
+					document.getElementById("wlonly").textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 5 secs`
+					setTimeout(()=> {
+						window.location.reload();
+					 }
+					 ,5000);
 				})
 				.catch((err) => console.log(err))
 			})
 			.catch(async (err) => {
 				console.log(err);
+				document.getElementById("wlonly").textContent = `Transaction for Common Egg was rejected! \n Reloading in 2s`
+				
 				axios.put(url + "/flip", {
 					"index": comValue,
 					"rarity": "common"
@@ -857,13 +870,15 @@ async function connect() {
 					console.log(res)
 					console.log(await getCountCom())
 				})
+				
 				.catch((err) => console.log(err))
+
+				setTimeout(()=> {
+					window.location.reload();
+				 }
+				 ,2000);
 			})
 			
-          //   setTimeout(()=> {
-          //     window.location.reload();
-          //  }
-          //  ,20000);
         };
       }
 
@@ -875,6 +890,10 @@ async function connect() {
             rarValue +
             ".json";
 		  console.log(rarlink);
+
+		  document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
+		  document.getElementById("noview").classList.add("hidden")
+
           contract.methods
             .rareMint(account, rarlink, rarValue)
             .send({ from: account, value: "20000000000000000" })
@@ -887,11 +906,17 @@ async function connect() {
 				.then(async (res) => {
 					console.log(res)
 					console.log(await getCountRar())
+					document.getElementById("wlonly").textContent = `Successfully minted Rare Egg #${rarValue}! \n Reloading in 5 secs`
+					setTimeout(()=> {
+						window.location.reload();
+					 }
+					 ,5000);
 				})
 				.catch((err) => console.log(err))
 			})
 			.catch(async (err) => {
 				console.log(err);
+				document.getElementById("wlonly").textContent = `Transaction for Rare Egg was rejected! \n Reloading in 2s`
 				axios.put(url + "/flip", {
 					"index": rarValue,
 					"rarity": "rare"
@@ -901,6 +926,11 @@ async function connect() {
 					console.log(await getCountRar())
 				})
 				.catch((err) => console.log(err))
+
+				setTimeout(()=> {
+					window.location.reload();
+				 }
+				 ,2000);
 			})
         };
       }
@@ -913,11 +943,17 @@ async function connect() {
             epiValue +
             ".json";
 		  console.log(epilink);
+
+		  document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
+		  document.getElementById("noview").classList.add("hidden")
+
+
           contract.methods
             .epicMint(account, epilink, epiValue)
             .send({ from: account, value: "30000000000000000" })
 			.then((res) => {
 				console.log(res);
+				// document.getElementById("wlonly").textContent = `Wait till the egg is minted`
 				axios.put(url + "/pop", {
 					"index": epiValue,
 					"rarity": "epic"
@@ -925,11 +961,17 @@ async function connect() {
 				.then(async (res) => {
 					console.log(res)
 					console.log(await getCountEpi())
+					document.getElementById("wlonly").textContent = `Successfully minted Epic Egg #${epiValue}! \n Reloading in 5 secs`
+					setTimeout(()=> {
+						window.location.reload();
+					 }
+					 ,5000);
 				})
 				.catch((err) => console.log(err))
 			})
 			.catch(async (err) => {
 				console.log(err);
+				document.getElementById("wlonly").textContent = `Transaction for Epic Egg was rejected! \n Reloading in 2s`
 				axios.put(url + "/flip", {
 					"index": epiValue,
 					"rarity": "epic"
@@ -939,6 +981,11 @@ async function connect() {
 					console.log(await getCountEpi())
 				})
 				.catch((err) => console.log(err))
+
+				setTimeout(()=> {
+					window.location.reload();
+				 }
+				 ,2000);
 			})
         };
       }
@@ -951,11 +998,20 @@ async function connect() {
             legValue +
             ".json";
 		  console.log(leglink)
+
+		  document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
+		  document.getElementById("noview").classList.add("hidden")
+
+		  
           contract.methods
             .legendaryMint(account, leglink, legValue)
             .send({ from: account, value: "40000000000000000" })
 			.then((res) => {
 				console.log(res);
+
+				document.getElementById("wlonly").textContent = `Transaction for Legendary Egg was rejected! \n Reloading in 2s`
+
+
 				axios.put(url + "/pop", {
 					"index": legValue,
 					"rarity": "legendary"
@@ -963,6 +1019,11 @@ async function connect() {
 				.then(async (res) => {
 					console.log(res)
 					console.log(await getCountLeg())
+					document.getElementById("wlonly").textContent = `Successfully minted Legendary Egg #${legValue}! \n Reloading in 5 secs`
+					setTimeout(()=> {
+						window.location.reload();
+					 }
+					 ,5000);
 				})
 				.catch((err) => console.log(err))
 			})
@@ -977,15 +1038,19 @@ async function connect() {
 					console.log(await getCountLeg())
 				})
 				.catch((err) => console.log(err))
+				setTimeout(()=> {
+					window.location.reload();
+				 }
+				 ,2000);
 			})
         };
       }
 
-      if (account.toUpperCase() === admin.toUpperCase()) {
-        document.getElementById("withdraw").onclick = async () => {
-          contract.methods.withdraw().send({ from: account });
-        };
-      }
+    //   if (account.toUpperCase() === admin.toUpperCase()) {
+    //     document.getElementById("withdraw").onclick = async () => {
+    //       contract.methods.withdraw().send({ from: account });
+    //     };
+    //   }
 
       console.log(await contract.methods.totalSupply().call());
 
@@ -1087,12 +1152,12 @@ function Mint() {
             </button>
           </div>
         </div>
-        <button
+        {/* <button
           id="withdraw"
           className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
         >
           Withdraw
-        </button>
+        </button> */}
       </div>
     </>
   );
