@@ -709,7 +709,9 @@ async function connect() {
       "0xbc6b6652f244ff6b1c584503f558d3a152eb5a0e",
 	  "0x97a12F8b8aaED58922c49160F4a0C85E361162cF",
 	  "0x3e3d92339368fcefe40bc67c768b004f09cbb75f",
-	  "0xd762eb9a13821a93e5c02baefEC29fC1E785FaF2"
+	  "0xd762eb9a13821a93e5c02baefEC29fC1E785FaF2",
+	  "0xa92b24ac60a6b381e0ec2dd17d2a3339cda24d84",
+	  "0x95d0f0FB194718A6D82a3D7F85f73DCD9E716302",
     ];
 
     const size = whitelisted.length;
