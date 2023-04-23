@@ -750,7 +750,7 @@ async function connect() {
       //   var leg = parseInt(await contract.methods.leg().call()) + 1;
 
     //   let url = "https://bv-backend-self.vercel.app/api";
-	let url = "bvbackend-production.up.railway.app";
+	let url = "bvbackend-production.up.railway.app/api";
 
       let com = async () => {
         let res = await axios.get(url + "/getRandom", {
