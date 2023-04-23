@@ -830,9 +830,7 @@ async function connect() {
         document.getElementById("mint common").onclick = async () => {
           let comValue = await com();
           const comlink =
-            "ipfs://QmVu2Q9vf5mrV86RXsqTTKVApeWxZGsGvJ9z8kaPo4JvVE/" +
-            comValue +
-            ".json";
+            "ipfs://QmbZHGc9poq2YQvDRCnpP6GWCQpMp75UHHxdJnjWBZQBQK/" +comValue +".json";
           console.log(comlink);
           contract.methods
             .commonMint(account, comlink, comValue)
@@ -873,7 +871,7 @@ async function connect() {
         document.getElementById("mint rare").onclick = async () => {
           let rarValue = await rar();
           const rarlink =
-            "ipfs://Qmarxrtu7xsCJeuhLb93QYCeEnrjqH5jhLgzcdXkvWoJ1G/" +
+            "ipfs://QmNtu7RvpvgiUxoAnBQoNoR48g9NYa6KvSn4U1RYaWBPnH/" +
             rarValue +
             ".json";
 		  console.log(rarlink);
@@ -911,7 +909,7 @@ async function connect() {
         document.getElementById("mint epic").onclick = async () => {
           let epiValue = await epi();
           const epilink =
-            "ipfs://QmaEuJx1B2zNrC7imS73Jt36abX1rwPht7M6WhSPkb1HFP/" +
+            "ipfs://QmbjUKBupp15uUw6R2WXChyYMffUttHH2B9jd4CPZFhcfk/" +
             epiValue +
             ".json";
 		  console.log(epilink);
@@ -949,7 +947,7 @@ async function connect() {
         document.getElementById("mint legendary").onclick = async () => {
           let legValue = await leg();
           const leglink =
-            "ipfs://QmVy3eFMxT3cimV5B9NiDxo4ZviFUNSQsPS8QVJaEhVBTm/" +
+            "ipfs://Qmd2hwPxdPFXf3HmE1MnUorXUvs8JbQiFLgmPNpVbKnBYR/" +
             legValue +
             ".json";
 		  console.log(leglink)
