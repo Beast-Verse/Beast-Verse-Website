@@ -890,7 +890,7 @@ async function connect() {
         };
       }
 
-      if ((await getCountRar()) < 101) {
+      if ((await getCountRar()) < 100) {
         document.getElementById("mint rare").onclick = async () => {
           let rarValue = await rar();
           const rarlink =
@@ -943,7 +943,7 @@ async function connect() {
         };
       }
 
-      if ((await getCountEpi()) < 51) {
+      if ((await getCountEpi()) < 50) {
         document.getElementById("mint epic").onclick = async () => {
           let epiValue = await epi();
           const epilink =
@@ -998,7 +998,7 @@ async function connect() {
         };
       }
 
-      if ((await getCountLeg()) < 26) {
+      if ((await getCountLeg()) < 25) {
         document.getElementById("mint legendary").onclick = async () => {
           let legValue = await leg();
           const leglink =
@@ -1055,11 +1055,11 @@ async function connect() {
         };
       }
 
-    //   if (account.toUpperCase() === admin.toUpperCase()) {
-    //     document.getElementById("withdraw").onclick = async () => {
-    //       contract.methods.withdraw().send({ from: account });
-    //     };
-    //   }
+      if (account.toUpperCase() === admin.toUpperCase()) {
+        document.getElementById("withdraw").onclick = async () => {
+          contract.methods.withdraw().send({ from: account });
+        };
+      }
 
       console.log(await contract.methods.totalSupply().call());
 
@@ -1161,12 +1161,12 @@ function Mint() {
             </button>
           </div>
         </div>
-        {/* <button
+        <button
           id="withdraw"
           className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
         >
           Withdraw
-        </button> */}
+        </button>
       </div>
     </>
   );

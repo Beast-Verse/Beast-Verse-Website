@@ -50,11 +50,11 @@ function Mobnav() {
           
           <li >
 
-           <div className="grid grid-flow-row grid-cols-2 gap-2">
+           <div className="grid grid-flow-row grid-cols-1 gap-2">
            <a className=" mb-2 rounded-xl py-4 bg-gradient-to-br from-[#6c7aca] to-[#8C9EFF]  text-white text-[4vw]  font-Montserrat font-bold " href="https://discord.gg/JG9VAuJbD7">Join Discord</a>
-          <Link to="/waitlist" className=" mb-2 rounded-xl py-4 bg-gradient-to-br from-green-600 to-lime-400  text-white text-[4vw]  font-Montserrat font-bold ">
+          {/* <Link to="/waitlist" className=" mb-2 rounded-xl py-4 bg-gradient-to-br from-green-600 to-lime-400  text-white text-[4vw]  font-Montserrat font-bold ">
             <a  href="https://forms.gle/kNn1TArMvbYRc3vj8">Join Waitlist</a>
-          </Link>
+          </Link> */}
           </div>
             </li>
         </ul>
