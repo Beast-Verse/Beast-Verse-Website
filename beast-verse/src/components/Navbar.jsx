@@ -33,11 +33,11 @@ export default function Navbar({delay}) {
                 <li className='hover:text-blue-300 cursor-pointer'><HLink to="#AboutUs" smooth>About Us</HLink></li>
 
                 <li className='bg-gradient-to-br from-[#6c7aca] to-[#8C9EFF] hover:to-[#8292EA] hover:from-[#6c7aca] text-white py-2 px-5 rounded-full cursor-pointer'><a href="https://discord.gg/JG9VAuJbD7">Join Discord</a></li>
-                <li className='bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-2 px-5 rounded-full cursor-pointer'><a href="https://forms.gle/kNn1TArMvbYRc3vj8">
+                {/* <li className='bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-2 px-5 rounded-full cursor-pointer'><a href="https://forms.gle/kNn1TArMvbYRc3vj8">
                 <Link to="/waitlist" className="">
                   Join Waitlist
                 </Link>
-                </a></li>
+                </a></li> */}
 
             </ul>
         </div>
