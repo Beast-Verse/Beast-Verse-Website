@@ -866,7 +866,7 @@ function Mint() {
             console.log(res)
             console.log(await getCountCom())
             document.getElementById("wlonly").textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 5 secs`
-            console.log(await contract.methods.totalSupply())
+            console.log(await contract.methods.totalSupply().call());
             setTimeout(()=> {
               window.location.reload();
              }
