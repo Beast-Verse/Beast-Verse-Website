@@ -749,7 +749,8 @@ function Mint() {
 				"0x95d0f0FB194718A6D82a3D7F85f73DCD9E716302",
 				"0x50912A8ab9362D17D264DbE62989181f0f01c641",
 				"0x82ceFB5b4D46B9079e45e7C6B6188EB2062c12F8",
-				"0xc67Aa95B4AD61b6435d10567EC192e125aF7A0a0"
+				"0xc67Aa95B4AD61b6435d10567EC192e125aF7A0a0",
+				"0x45eccf0a835570faf1039d15b31e531eb82ba963"
 			];
 
 			const size = whitelisted.length;
@@ -1191,10 +1192,10 @@ function Mint() {
 				>{isConnect ? account : null}</h3>
 				
 				
-				<h2
+				{isConnect? <h2
 					id="wlonly"
 					className="my-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw]"
-				>{isWhitelisted? null : "You're not whitelisted! Wait till 21/05/23"}</h2>
+				>{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}</h2>: null}
 				
 				
 				<div
