@@ -658,6 +658,7 @@ function Mint() {
 	const [account, setAccount] = useState(null);
 	const [isConnect, setIsConnect] = useState(false);
 	const [isWhitelisted, setIsWhitelisted] = useState(false);
+	const [userData, setUserData] = useState([]);
 
 	async function connect() {
 		if (window.ethereum) {
@@ -679,10 +680,11 @@ function Mint() {
 		setAccount(null);
 		setIsConnect(false);
 		localStorage.removeItem("account");
+	
 	}
 
 	const connectEth = async () => {
-
+		setUserData([]);
 		if (window.ethereum) {
 			//   console.log("Metamask is here.");
 			//   console.log(web3.version);
@@ -867,6 +869,33 @@ function Mint() {
 				console.log("Rare", await getCountRar())
 				console.log("Epic", await getCountEpi())
 				console.log("Legendary", await getCountLeg())
+
+				var balance = await contract.methods.balanceOf(account).call();
+				console.log("Total held by the account: ", balance);
+
+				const tempData = [];
+
+				for(let i=0; i<balance; i++){
+					const userMintedId = parseInt(await contract.methods.tokenOfOwnerByIndex(account, i).call());
+					const tokenURI = await contract.methods.tokenURI(userMintedId).call();
+					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
+					const meta = await fetch(metadata);
+					const json = await meta.json();
+					const name = json["name"];
+
+
+					tempData.push({userMintedId, name});
+				}
+
+				setUserData(tempData);
+
+				// for(let j=0; j<tempData.length; j++){
+				// 	const metadata = tempData.tokenURI?.substr(7);
+				// 	console.log(metadata);
+				// }
+
+
+				// console.log(userData);
 
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
@@ -1123,13 +1152,14 @@ function Mint() {
 
 	useEffect(()=>{
 		connectEth();
-	},[account]
+	},[account, isConnect]
 	)
 
 
 	return (
 		<>
 			<div className="bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start p-2">
+				{console.log(userData)};
 				<h1
 					className="pt-10 text-4xl font-bold text-blue-400  lg:text-6xl mb-10"
 					id="check"
@@ -1238,19 +1268,22 @@ function Mint() {
 							>
 								YOUR MINTS
 							</h1>
-							<table className="w-[80vw] border-blue-400 rounded-xl">
-								<thead className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg">
-									<tr className="text-xl lg:text-2xl text-white font-semibold text-left  rounded-lg">
+							<table className="w-[80vw] border-blue-400 rounded-xl font-Montserrat">
+								<thead className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg ">
+									<tr className="text-xl lg:text-2xl text-white font-semibold rounded-lg text-center">
 										<th className="p-3 border rounded-lg border-blue-400 border-l-1 w-[30vw]">Minted eggs</th>
 										<th className="p-3 border border-blue-400 border-l-1 w-[70vw]">Links</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td className="p-3 border border-blue-400 border-l-1 text-white text-left">legendary</td>
-										<td className="p-3 border border-blue-400 border-l-1 text-white text-left">helloo</td>
+								<tbody className="">
 
-									</tr>
+									{userData.map((data)=> (<tr>
+										<td className={`p-3 border border-blue-400 border-l-1 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
+										{console.log(data.name[0])}
+										<td className="p-3 border border-blue-400 border-l-1 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/0x5d63e3f3b4ef97a3d24504a6dec771ebf97e71d5/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
+										
+
+									</tr>))}
 								</tbody>
 							</table>
 						</div>
