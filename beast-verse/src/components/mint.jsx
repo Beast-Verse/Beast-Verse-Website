@@ -1159,7 +1159,7 @@ function Mint() {
 
 	return (
 		<>
-			<div className="bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start p-2">
+			<div className="bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center   p-2">
 				{console.log(userData)};
 				<h1
 					className="pt-10 text-4xl font-bold text-blue-400  lg:text-6xl mb-10"
@@ -1167,9 +1167,9 @@ function Mint() {
 				>
 					MINT YOUR EGGS
 				</h1>
-				<div className={`${isConnect?"grid grid-flow-col grid-cols-3 gap-4 w-[35vw]": null}`}>
+				<div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
 				<button
-					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2" : "bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 text-[1.2vw] rounded-xl font-Montserrat font-semibold`}
+					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2" : "bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 lg:text-[1.2vw] text-[3.3vw]  rounded-xl font-Montserrat font-semibold `}
 					onClick={connect}
 					id="buttonconnect"
 				>
@@ -1180,7 +1180,7 @@ function Mint() {
 				</button>
 				
 				{isConnect && <button
-					className={`bg-red-500 text-[1.2vw] hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1`}
+					className={`bg-red-500 lg:w-[8.1vw] w-[30.3vw] hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 `}
 					onClick={disconnect}
 					id="buttonconnect">
 					Disconnect
@@ -1188,13 +1188,13 @@ function Mint() {
 				</div>
 				<h3
 					id="address"
-					className="mt-10 text-[2vw] mx-auto w-[70%] font-Montserrat font-medium text-green-400 lg:text-[1.5vw]"
+					className="mt-10 text-[3.2vw] mx-auto w-[70%] font-Montserrat font-medium text-green-400 lg:text-[1.5vw] flex justify-center items-center"
 				>{isConnect ? account : null}</h3>
 				
 				
 				{isConnect? <h2
 					id="wlonly"
-					className="my-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw]"
+					className="my-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw] flex justify-center items-center"
 				>{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}</h2>: null}
 				
 				
@@ -1209,7 +1209,7 @@ function Mint() {
 						></img>
 						<button
 							id="mint common"
-							className="font-bold text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 bg-[#00BB02] text-[#c5ffc6] border-[#93FF94]"
+							className="font-bold text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 bg-[#00BB02] text-[#c5ffc6] border-[#93FF94]"
 						>
 							MINT
 						</button>
@@ -1222,7 +1222,7 @@ function Mint() {
 						></img>
 						<button
 							id="mint rare"
-							className="font-bold text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
+							className="font-bold text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
 						>
 							MINT
 						</button>
@@ -1235,7 +1235,7 @@ function Mint() {
 						></img>
 						<button
 							id="mint epic"
-							className="text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]"
+							className="text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]"
 						>
 							MINT
 						</button>
@@ -1248,7 +1248,7 @@ function Mint() {
 						></img>
 						<button
 							id="mint legendary"
-							className="text-3xl max-[768px]:text-2xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]"
+							className="text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]"
 						>
 							MINT
 						</button>
