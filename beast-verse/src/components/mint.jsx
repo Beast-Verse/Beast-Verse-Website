@@ -901,7 +901,7 @@ function Mint() {
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
 						let comValue = await com();
-						const comlink = "ipfs://QmbZHGc9poq2YQvDRCnpP6GWCQpMp75UHHxdJnjWBZQBQK/" + comValue + ".json";
+						const comlink = "ipfs://QmdrpjforHWJWxnB4SyR7LY9kqmu6zBpCnGp5G8E1ph1bG/" + comValue + ".json";
 						console.log(comlink);
 
 
@@ -966,7 +966,7 @@ function Mint() {
 					document.getElementById("mint rare").onclick = async () => {
 						let rarValue = await rar();
 						const rarlink =
-							"ipfs://QmNtu7RvpvgiUxoAnBQoNoR48g9NYa6KvSn4U1RYaWBPnH/" +
+							"ipfs://QmYVoTjRy6m9t9AhV7eMouc3C9bLCjMY8qGScWq9Pp76bf/" +
 							rarValue +
 							".json";
 						console.log(rarlink);
@@ -1019,7 +1019,7 @@ function Mint() {
 					document.getElementById("mint epic").onclick = async () => {
 						let epiValue = await epi();
 						const epilink =
-							"ipfs://QmbjUKBupp15uUw6R2WXChyYMffUttHH2B9jd4CPZFhcfk/" +
+							"ipfs://QmT3cdFjAf13U1cisDa7LHL2Q5oTxz7mjURZZjaZcDG56d/" +
 							epiValue +
 							".json";
 						console.log(epilink);
@@ -1074,7 +1074,7 @@ function Mint() {
 					document.getElementById("mint legendary").onclick = async () => {
 						let legValue = await leg();
 						const leglink =
-							"ipfs://Qmd2hwPxdPFXf3HmE1MnUorXUvs8JbQiFLgmPNpVbKnBYR/" +
+							"ipfs://QmcczKoyxPpXR7kiyTC5BDg7yze5UiiQ3xkra4Uj9pbb1G/" +
 							legValue +
 							".json";
 						console.log(leglink)
@@ -1159,8 +1159,9 @@ function Mint() {
 
 	return (
 		<>
-			<div className="bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center   p-2">
-				{console.log(userData)};
+
+			<div className="bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start p-2">
+				
 				<h1
 					className="pt-10 text-4xl font-bold text-blue-400  lg:text-6xl mb-10"
 					id="check"
@@ -1169,27 +1170,25 @@ function Mint() {
 				</h1>
 				<div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
 				<button
-					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2" : "bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 lg:text-[1.2vw] text-[3.3vw]  rounded-xl font-Montserrat font-semibold `}
+
+					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.2vw]" : "text-[1.2vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
+
 					onClick={connect}
 					id="buttonconnect"
 				>
 		
 
 
-					{isConnect ? "Wallet already Connected" : "Connect your wallet"}
+					{isConnect ? account : "Connect your wallet"}
 				</button>
 				
 				{isConnect && <button
-					className={`bg-red-500 lg:w-[8.1vw] w-[30.3vw] hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 `}
+					className={`bg-red-500  hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 `}
 					onClick={disconnect}
 					id="buttonconnect">
 					Disconnect
 				</button>}
 				</div>
-				<h3
-					id="address"
-					className="mt-10 text-[3.2vw] mx-auto w-[70%] font-Montserrat font-medium text-green-400 lg:text-[1.5vw] flex justify-center items-center"
-				>{isConnect ? account : null}</h3>
 				
 				
 				{isConnect? <h2
@@ -1198,57 +1197,58 @@ function Mint() {
 				>{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}</h2>: null}
 				
 				
-				<div
-					className={`${isConnect && isWhitelisted? null: "hidden"} flex flex-row max-[768px]:flex-row max-[768px]:flex-wrap min-[768px]:mx-10`}
-					id="noview"
-				>
-					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2">
+				<div className={`${isConnect && isWhitelisted? null: "hidden"} flex flex-row max-[768px]:flex-row max-[768px]:flex-wrap min-[768px]:mx-10`} id="noview">
+					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2">
 						<img
 							src={common}
-							className="w-full rounded-lg shadow-xl shadow-[#93FF94]/40 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-green-400/20 brightness-150"
 						></img>
+						<h2 className="text-green-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">2 MATIC</h2>
 						<button
 							id="mint common"
-							className="font-bold text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 bg-[#00BB02] text-[#c5ffc6] border-[#93FF94]"
+							className="font-bold text-3xl max-[768px]:w-[80%]  max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-green-600 text-green-200 border-green-300"
 						>
 							MINT
 						</button>
 					</div>
 
-					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2">
+					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-blue-400/40 border-[1px] border-blue-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
 						<img
 							src={Rare}
-							className="w-full rounded-lg shadow-xl shadow-[#93E5FF]/40 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-blue-400/20 brightness-150"
 						></img>
+						<h2 className="text-blue-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">4 MATIC</h2>
 						<button
 							id="mint rare"
-							className="font-bold text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
+							className="font-bold text-3xl max-[768px]:w-[80%]  max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
 						>
 							MINT
 						</button>
 					</div>
 
-					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2">
+					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-purple-400/40 border-[1px] border-purple-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
 						<img
 							src={epic}
-							className="w-full rounded-lg shadow-xl shadow-[#E093FF]/40 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-purple-400/20 brightness-150"
 						></img>
+						<h2 className="text-purple-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">6 MATIC</h2>
 						<button
 							id="mint epic"
-							className="text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]"
+							className="text-3xl max-[768px]:w-[80%] max-[768px]:py-3  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]"
 						>
 							MINT
 						</button>
 					</div>
 
-					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] max-[360px]:w-full m-2">
+					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
 						<img
 							src={Legendary}
-							className="w-full rounded-lg shadow-xl shadow-[#FEFFB6]/40 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-yellow-400/20 brightness-150"
 						></img>
+						<h2 className="text-yellow-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">8 MATIC</h2>
 						<button
 							id="mint legendary"
-							className="text-4xl max-[768px]:text-3xl max-[768px]:w-full max-[768px]:py-1  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]"
+							className="text-3xl max-[768px]:w-[80%] max-[768px]:py-3  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]"
 						>
 							MINT
 						</button>
