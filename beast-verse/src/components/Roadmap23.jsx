@@ -7,7 +7,7 @@ function Roadmap23(){
 
 
 
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto shadow-blue-500/40 shadow-xl border-2 border-blue-500">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto">
                 <h3 className="text-blue-300 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q1</h3>
                 <div className="w-[90%]">
                 <p className="font-Montserrat text-[1.2vw] ml-7 font-semibold text-blue-400 mt-6">Community Building
@@ -31,7 +31,7 @@ function Roadmap23(){
 
 
 
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto h-fit">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto h-fit shadow-blue-500/40 shadow-xl border-2 border-blue-500">
                 <h3 className="text-blue-300 font-Montserrat font-bold text-[3vw] ml-5 mt-4">Q2</h3>
                 <div className="w-[90%]">
                 <p className="font-Montserrat text-[1.2vw] ml-7 font-semibold text-blue-400 mt-6">Community Enhancement
