@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 //import beast from "../assets/beast.jpeg"
-
+import { MutatingDots } from 'react-loader-spinner';
 import Footer from "./Footer";
 import common from "../assets/Commons.gif";
 import epic from "../assets/Epics.gif";
@@ -655,6 +655,11 @@ const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
 
 function Mint() {
 
+	const [isLoading, setLoading] = useState(false);
+    const loadingHandle = (e)=>{
+        setLoading(e);
+    }
+
 	const [account, setAccount] = useState(null);
 	const [isConnect, setIsConnect] = useState(false);
 	const [isWhitelisted, setIsWhitelisted] = useState(false);
@@ -864,6 +869,7 @@ function Mint() {
 
 				await contract.methods.message().call();
 
+				setLoading(true);
 				console.log(await contract.methods.MAX_SUPPLY().call());
 
 				console.log("Common", await getCountCom())
@@ -874,6 +880,7 @@ function Mint() {
 				var balance = await contract.methods.balanceOf(account).call();
 				console.log("Total held by the account: ", balance);
 
+				
 				const tempData = [];
 
 				for(let i=0; i<balance; i++){
@@ -889,7 +896,7 @@ function Mint() {
 				}
 
 				setUserData(tempData);
-
+				setLoading(false);
 				// for(let j=0; j<tempData.length; j++){
 				// 	const metadata = tempData.tokenURI?.substr(7);
 				// 	console.log(metadata);
@@ -904,10 +911,8 @@ function Mint() {
 						const comlink = "ipfs://QmdrpjforHWJWxnB4SyR7LY9kqmu6zBpCnGp5G8E1ph1bG/" + comValue + ".json";
 						console.log(comlink);
 
-
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
-
 
 						contract.methods
 							.commonMint(account, comlink, comValue)
@@ -1278,15 +1283,30 @@ function Mint() {
 								</thead>
 								<tbody className="">
 
-									{userData.map((data)=> (<tr>
+									{
+									 !isLoading &&
+									userData.map((data)=> (<tr>
 										<td className={`p-3 border border-blue-400 border-l-1 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
 										{console.log(data.name[0])}
 										<td className="p-3 border border-blue-400 border-l-1 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/0x5d63e3f3b4ef97a3d24504a6dec771ebf97e71d5/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
 										
 
-									</tr>))}
+									</tr>))
+									
+									}
 								</tbody>
 							</table>
+							{isLoading && <div className=" w-full flex items-center justify-center my-10"><MutatingDots 
+									height="100"
+									width="100"
+									color="#5fa5f9"
+									secondaryColor= '#ffffff'
+									radius='12.5'
+									ariaLabel="mutating-dots-loading"
+									wrapperStyle={{}}
+									wrapperClass=""
+									visible={true}
+								  /></div>}
 						</div>
 					) : (
 						<div></div>
