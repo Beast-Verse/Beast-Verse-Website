@@ -673,10 +673,11 @@ function Mint() {
 			const accounts = await window.ethereum.request({
 				method: "eth_requestAccounts",
 			});
-			setAccount(accounts[0]);
+			
 			localStorage.setItem("account", accounts[0])
 
 			console.log(typeof account);
+			
 		}
 	}
 
@@ -755,7 +756,12 @@ function Mint() {
 				"0x50912A8ab9362D17D264DbE62989181f0f01c641",
 				"0x82ceFB5b4D46B9079e45e7C6B6188EB2062c12F8",
 				"0xc67Aa95B4AD61b6435d10567EC192e125aF7A0a0",
-				"0x45eccf0a835570faf1039d15b31e531eb82ba963"
+				"0x45eccf0a835570faf1039d15b31e531eb82ba963",
+				"0xa259F8BB636793405F2B4f0CeEAbE8eC767A77fC",
+				"0x7953b5040257e77B8D3Bc768F247c06fbc955a21",
+				"0xc100438f86d7a4647F269523EE3A0b1De996eAAa",
+				"0xf9837CE784A9d326853677dabaf2EAC4Ed84E2F7",
+				"0xE607253Cd53C873D9bc26d427E943daADDbe0914"
 			];
 
 			const size = whitelisted.length;
@@ -892,8 +898,9 @@ function Mint() {
 					const name = json["name"];
 
 
-					tempData.push({userMintedId, name});
+					tempData.push({userMintedId, name, i});
 				}
+				
 
 				setUserData(tempData);
 				setLoading(false);
@@ -1202,7 +1209,7 @@ function Mint() {
 				>{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}</h2>: null}
 				
 				
-				<div className={`${isConnect && isWhitelisted? null: "hidden"} flex flex-row max-[768px]:flex-row max-[768px]:flex-wrap min-[768px]:mx-10`} id="noview">
+				<div className={`${isConnect && isWhitelisted? null: "hidden"} flex flex-row  max-[768px]:flex-wrap min-[768px]:mx-10`} id="noview">
 					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2">
 						<img
 							src={common}
@@ -1211,7 +1218,7 @@ function Mint() {
 						<h2 className="text-green-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">2 MATIC</h2>
 						<button
 							id="mint common"
-							className="font-bold text-3xl max-[768px]:w-[80%]  max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-green-600 text-green-200 border-green-300"
+							className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw] max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-green-600 text-green-200 border-green-300"
 						>
 							MINT
 						</button>
@@ -1225,7 +1232,7 @@ function Mint() {
 						<h2 className="text-blue-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">4 MATIC</h2>
 						<button
 							id="mint rare"
-							className="font-bold text-3xl max-[768px]:w-[80%]  max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
+							className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw] max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
 						>
 							MINT
 						</button>
@@ -1239,7 +1246,7 @@ function Mint() {
 						<h2 className="text-purple-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">6 MATIC</h2>
 						<button
 							id="mint epic"
-							className="text-3xl max-[768px]:w-[80%] max-[768px]:py-3  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]"
+							className="text-3xl max-[768px]:w-[80%] max-[768px]:py-3 max-[768px]:text-[5.5vw]  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]"
 						>
 							MINT
 						</button>
@@ -1253,7 +1260,7 @@ function Mint() {
 						<h2 className="text-yellow-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">8 MATIC</h2>
 						<button
 							id="mint legendary"
-							className="text-3xl max-[768px]:w-[80%] max-[768px]:py-3  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]"
+							className="text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]"
 						>
 							MINT
 						</button>
