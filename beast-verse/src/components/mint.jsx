@@ -675,8 +675,9 @@ function Mint() {
 			});
 			
 			localStorage.setItem("account", accounts[0])
-
+			setAccount(accounts[0])
 			console.log(typeof account);
+			console.log(accounts[0]);
 			
 		}
 	}
@@ -763,7 +764,8 @@ function Mint() {
 				"0xf9837CE784A9d326853677dabaf2EAC4Ed84E2F7",
 				"0xE607253Cd53C873D9bc26d427E943daADDbe0914",
 				"0x7DAC2CE052AD5F39E0380568980220E8dcA26CC3",
-				"0xAaA20CFb686CAe0B0482ad53701618426C8CeB46"
+				"0xAaA20CFb686CAe0B0482ad53701618426C8CeB46",
+				"0x632C0480be31fD2234703553020815366A8116F1"
 			];
 
 			const size = whitelisted.length;
@@ -1149,10 +1151,6 @@ function Mint() {
 
 				console.log(await contract.methods.totalSupply().call());
 
-				//   console.log(await contract.methods.com().call());
-				//   console.log(await contract.methods.rar().call());
-				//   console.log(await contract.methods.epi().call());
-				//   console.log(await contract.methods.leg().call());
 			} else if (isthere === false) {
 				console.log("Not whitelisted!");
 				// document.getElementById("check").textContent ="WALLET IS NOT WHITELISTED!";
@@ -1283,11 +1281,11 @@ function Mint() {
 							>
 								YOUR MINTS
 							</h1>
-							<table className="w-[80vw] border-blue-400 rounded-xl font-Montserrat">
-								<thead className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg ">
-									<tr className="text-xl lg:text-2xl text-white font-semibold rounded-lg text-center">
-										<th className="p-3 border rounded-lg border-blue-400 border-l-1 w-[30vw]">Minted eggs</th>
-										<th className="p-3 border border-blue-400 border-l-1 w-[70vw]">Links</th>
+							<table className="w-[50vw] border-blue-400 font-Montserrat mb-10">
+								<thead className="bg-gradient-to-br from-slate-800 to-slate-700">
+									<tr className="text-xl lg:text-2xl text-white font-semibold text-center">
+										<th className="p-3 w-[50vw] rounded-tl-2xl">Minted eggs</th>
+										<th className="p-3 w-[50vw] rounded-tr-2xl">Links</th>
 									</tr>
 								</thead>
 								<tbody className="">
@@ -1295,9 +1293,9 @@ function Mint() {
 									{
 									 !isLoading &&
 									userData.map((data)=> (<tr>
-										<td className={`p-3 border border-blue-400 border-l-1 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
+										<td className={`p-3 border-b-[1px] border-slate-500 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
 										{console.log(data.name[0])}
-										<td className="p-3 border border-blue-400 border-l-1 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/0x5d63e3f3b4ef97a3d24504a6dec771ebf97e71d5/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
+										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/0x5d63e3f3b4ef97a3d24504a6dec771ebf97e71d5/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
 										
 
 									</tr>))
