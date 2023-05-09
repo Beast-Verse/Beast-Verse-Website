@@ -917,7 +917,7 @@ function Mint() {
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
 						let comValue = await com();
-						const comlink = "ipfs://QmdrpjforHWJWxnB4SyR7LY9kqmu6zBpCnGp5G8E1ph1bG/" + comValue + ".json";
+						const comlink = "ipfs://QmQdVNdXqbFEuHfsbLrjsmLkfqg3CM6KVqG55HHfH5QYUb/" + comValue + ".json";
 						console.log(comlink);
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
@@ -980,7 +980,7 @@ function Mint() {
 					document.getElementById("mint rare").onclick = async () => {
 						let rarValue = await rar();
 						const rarlink =
-							"ipfs://QmYVoTjRy6m9t9AhV7eMouc3C9bLCjMY8qGScWq9Pp76bf/" +
+							"ipfs://QmbocsV5V135Kxa3q6CQCp63WMayQQuxyMiLMXEMYXqPLX/" +
 							rarValue +
 							".json";
 						console.log(rarlink);
@@ -1033,7 +1033,7 @@ function Mint() {
 					document.getElementById("mint epic").onclick = async () => {
 						let epiValue = await epi();
 						const epilink =
-							"ipfs://QmT3cdFjAf13U1cisDa7LHL2Q5oTxz7mjURZZjaZcDG56d/" +
+							"ipfs://QmXYsL6DJVYf9niwyy8H6Rs165wiMF4R5L1zvJWxcy58XK/" +
 							epiValue +
 							".json";
 						console.log(epilink);
@@ -1088,7 +1088,7 @@ function Mint() {
 					document.getElementById("mint legendary").onclick = async () => {
 						let legValue = await leg();
 						const leglink =
-							"ipfs://QmcczKoyxPpXR7kiyTC5BDg7yze5UiiQ3xkra4Uj9pbb1G/" +
+							"ipfs://QmNi6aoPWZYeEhkdur8P98k4bdgH5nMJwxVrAv2v8SiVnn/" +
 							legValue +
 							".json";
 						console.log(leglink)
