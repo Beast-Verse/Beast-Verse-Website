@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/waitlist" element={<Waitlist />}/>
+        {/* <Route path="/waitlist" element={<Waitlist />}/> */}
         <Route path="/wearemintingfortestpurposesonly" element={<Mint />}/>
 
         <Route path="/" element={<Home />} exact/>
