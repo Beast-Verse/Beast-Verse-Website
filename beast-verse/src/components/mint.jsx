@@ -909,7 +909,7 @@ function Mint() {
 					document.getElementById("mint common").onclick = async () => {
 						setIsMinting(true);
 						let comValue = await com();
-						const comlink = "ipfs://QmQdVNdXqbFEuHfsbLrjsmLkfqg3CM6KVqG55HHfH5QYUb/" + comValue + ".json";
+						const comlink = "ipfs://QmbMx9vN1w5Ga9XhKFXu764xmq9QkmYaQbJ8n8V4qLXHPT/" + comValue + ".json";
 						console.log(comlink);
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
@@ -976,7 +976,7 @@ function Mint() {
 						setIsMinting(true);
 						let rarValue = await rar();
 						const rarlink =
-							"ipfs://QmbocsV5V135Kxa3q6CQCp63WMayQQuxyMiLMXEMYXqPLX/" +
+							"ipfs://QmNgz8wJbitXX9bqtQU1527JoF9GAQnN7GFmHiEVESZrEE/" +
 							rarValue +
 							".json";
 						console.log(rarlink);
@@ -1031,7 +1031,7 @@ function Mint() {
 						setIsMinting(true);
 						let epiValue = await epi();
 						const epilink =
-							"ipfs://QmXYsL6DJVYf9niwyy8H6Rs165wiMF4R5L1zvJWxcy58XK/" +
+							"ipfs://QmSVtYkQ9AkDYjL9sWbdysyPLB8pSJCoQTPSNrvdYyAdV3/" +
 							epiValue +
 							".json";
 						console.log(epilink);
@@ -1088,7 +1088,7 @@ function Mint() {
 						setIsMinting(true);
 						let legValue = await leg();
 						const leglink =
-							"ipfs://QmNi6aoPWZYeEhkdur8P98k4bdgH5nMJwxVrAv2v8SiVnn/" +
+							"ipfs://QmQoj6dJwzqHWwuUvNRpwuJVYCdSMgjqDQeeyX4ZDyhsba/" +
 							legValue +
 							".json";
 						console.log(leglink)
