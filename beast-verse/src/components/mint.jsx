@@ -655,6 +655,7 @@ const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
 
 function Mint() {
 
+	const [isMinting, setIsMinting] = useState(false);
 	const [isLoading, setLoading] = useState(false);
     const loadingHandle = (e)=>{
         setLoading(e);
@@ -693,29 +694,17 @@ function Mint() {
 	const connectEth = async () => {
 		setUserData([]);
 		if (window.ethereum) {
-			//   console.log("Metamask is here.");
-			//   console.log(web3.version);
-
-			//   const accounts = await window.ethereum.request({
-			// 	method: "eth_requestAccounts",
-			//   });
-			//   setAccount(accounts[0]);
-			//   console.log(typeof account);
 
 			const localAcc = localStorage.getItem("account")
 
 			if (localAcc != null) {
 				setIsConnect(true);
 				setAccount(localAcc);
-				// document.getElementById("buttonconnect").textContent ="Wallet already Connected";
-				// document.getElementById("address").textContent = account;
-				// document.getElementById("buttonconnect").classList.remove("bg-white");
-				// document.getElementById("buttonconnect").classList.add("text-gray-500");
-				// document.getElementById("buttonconnect").classList.add("bg-gray-300");
 			}
 
 			const whitelisted = [
 				"0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
+				"0xa92B24AC60A6B381E0eC2DD17d2a3339Cda24D84",
 				"0xd3057d40d6538f32489CA3ce73e2A2E60405F0A1",
 				"0x4012dBd303447EC2EF495f18c1f95CCf01a33594",
 				"0xb1574f6638f835a292647D5E7e09Af91E947Bb2A",
@@ -918,12 +907,14 @@ function Mint() {
 
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
+						setIsMinting(true);
 						let comValue = await com();
 						const comlink = "ipfs://QmQdVNdXqbFEuHfsbLrjsmLkfqg3CM6KVqG55HHfH5QYUb/" + comValue + ".json";
 						console.log(comlink);
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
+
 
 						contract.methods
 							.commonMint(account, comlink, comValue)
@@ -938,6 +929,7 @@ function Mint() {
 										console.log("hemlo")
 										console.log(res)
 										console.log(await getCountCom())
+										setIsMinting(false);
 										document.getElementById("wlonly").textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 5 secs`
 										console.log(await contract.methods.totalSupply().call());
 										setTimeout(() => {
@@ -978,8 +970,10 @@ function Mint() {
 					};
 				}
 
+
 				if ((await getCountRar()) < 100) {
 					document.getElementById("mint rare").onclick = async () => {
+						setIsMinting(true);
 						let rarValue = await rar();
 						const rarlink =
 							"ipfs://QmbocsV5V135Kxa3q6CQCp63WMayQQuxyMiLMXEMYXqPLX/" +
@@ -1001,6 +995,7 @@ function Mint() {
 								})
 									.then(async (res) => {
 										console.log(res)
+										setIsMinting(false);
 										console.log(await getCountRar())
 										document.getElementById("wlonly").textContent = `Successfully minted Rare Egg #${rarValue}! \n Reloading in 5 secs`
 										setTimeout(() => {
@@ -1033,6 +1028,7 @@ function Mint() {
 
 				if ((await getCountEpi()) < 50) {
 					document.getElementById("mint epic").onclick = async () => {
+						setIsMinting(true);
 						let epiValue = await epi();
 						const epilink =
 							"ipfs://QmXYsL6DJVYf9niwyy8H6Rs165wiMF4R5L1zvJWxcy58XK/" +
@@ -1057,6 +1053,7 @@ function Mint() {
 									.then(async (res) => {
 										console.log(res)
 										console.log(await getCountEpi())
+										setIsMinting(false);
 										document.getElementById("wlonly").textContent = `Successfully minted Epic Egg #${epiValue}! \n Reloading in 5 secs`
 										setTimeout(() => {
 											window.location.reload();
@@ -1088,6 +1085,7 @@ function Mint() {
 
 				if ((await getCountLeg()) < 25) {
 					document.getElementById("mint legendary").onclick = async () => {
+						setIsMinting(true);
 						let legValue = await leg();
 						const leglink =
 							"ipfs://QmNi6aoPWZYeEhkdur8P98k4bdgH5nMJwxVrAv2v8SiVnn/" +
@@ -1115,6 +1113,7 @@ function Mint() {
 									.then(async (res) => {
 										console.log(res)
 										console.log(await getCountLeg())
+										setIsMinting(false);
 										document.getElementById("wlonly").textContent = `Successfully minted Legendary Egg #${legValue}! \n Reloading in 5 secs`
 										setTimeout(() => {
 											window.location.reload();
@@ -1203,10 +1202,28 @@ function Mint() {
 				</div>
 				
 				
-				{isConnect? <h2
+				{
+				 
+				isConnect? <h2
 					id="wlonly"
-					className="my-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw] flex justify-center items-center"
-				>{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}</h2>: null}
+					className="my-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw] flex justify-center items-center">
+						{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}
+					</h2>: null
+					
+				}
+				{
+					isMinting && <div className=" w-full flex items-center justify-center my-10"><MutatingDots 
+					height="100"
+					width="100"
+					color="#5fa5f9"
+					secondaryColor= '#ffffff'
+					radius='12.5'
+					ariaLabel="mutating-dots-loading"
+					wrapperStyle={{}}
+					wrapperClass=""
+					visible={true}
+				  /></div>
+				}
 				
 				
 				<div className={`${isConnect && isWhitelisted? null: "hidden"} flex flex-row  max-[768px]:flex-wrap min-[768px]:mx-10`} id="noview">
