@@ -679,11 +679,28 @@ function Mint() {
 	const [userData, setUserData] = useState([]);
 
 
-	const { address, isConnected } = useAccount({
+	const { address, isConnecting, isDisconnected } = useAccount({
 		onConnect: ({address, isReconnected, connector})=> {
 			console.log("Connected!"+address)
-		}
+			setAccount(address);
+			setIsConnect(true);
+			console.log("wow re"+account);
+		},
+		onDisconnect() {
+			setAccount(null);
+			setIsConnect(false);
+		  },
 	})
+
+	// // if(isConnecting){
+	// // 	setAccount(address);
+	// // 	setIsConnect(true);
+	// // }
+
+	// // if(isDisconnected){
+	// // 	setAccount(null);
+	// // 	setIsConnect(false)
+	// }
 
 	// async function connect() {
 	// 	let accounts;
@@ -733,14 +750,18 @@ function Mint() {
 
 	const connectEth = async () => {
 		setUserData([]);
-		if (window.ethereum) {
+		
+			// var localAcc = address;
 
-			const localAcc = address;
+			// if (localAcc != null) {
+			// 	setIsConnect(true);
+			// 	setAccount(localAcc);
+			// }
 
-			if (localAcc != null) {
-				setIsConnect(true);
-				setAccount(localAcc);
-			}
+			// else if(localAcc = null){
+			// 	setIsConnect(false);
+			// 	setAccount(null);
+			// }
 
 			const whitelisted = [
 				"0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
@@ -1198,7 +1219,7 @@ function Mint() {
 			} else {
 				alert("Install Metamask!");
 			}
-		}
+		
 
 	}
 
