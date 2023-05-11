@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 //import beast from "../assets/beast.jpeg"
 import { MutatingDots } from 'react-loader-spinner';
 import Footer from "./Footer";
@@ -667,21 +668,38 @@ function Mint() {
 	const [userData, setUserData] = useState([]);
 
 	async function connect() {
+		let accounts;
+	  
 		if (window.ethereum) {
-			console.log("Metamask is here.");
-			console.log(web3.version);
-
-			const accounts = await window.ethereum.request({
-				method: "eth_requestAccounts",
-			});
-			
-			localStorage.setItem("account", accounts[0])
-			setAccount(accounts[0])
-			console.log(typeof account);
-			console.log(accounts[0]);
-			
+		  // Modern dapp browsers (including mobile Chrome with MetaMask)
+		  try {
+			await window.ethereum.request({ method: "eth_requestAccounts" });
+			accounts = await window.ethereum.request({ method: "eth_accounts" });
+		  } catch (error) {
+			console.error(error);
+		  }
+		} else if (window.web3) {
+		  // Legacy dapp browsers (e.g., older versions of MetaMask)
+		  const web3 = new Web3(window.web3.currentProvider);
+		  try {
+			accounts = await web3.eth.getAccounts();
+		  } catch (error) {
+			console.error(error);
+		  }
+		} else {
+		  // Non-dapp browsers
+		  console.log("Please install MetaMask or use a dapp browser");
+		  return;
 		}
-	}
+	  
+		if (accounts && accounts.length > 0) {
+		  localStorage.setItem("account", accounts[0]);
+		  setAccount(accounts[0]);
+		  console.log(typeof account);
+		  console.log(accounts[0]);
+		}
+	  }
+	  
 
 	async function disconnect() {
 		console.log("Disconnect");
@@ -1156,7 +1174,7 @@ function Mint() {
 				// document.getElementById("wlonly").textContent ="Your wallet was not whitelisted! \n Please wait for the General Mint to start on 21/05/23! :D";
 				// document.getElementById("noview").classList.add("hidden");
 			} else {
-				console.log("no metamask");
+				alert("Install Metamask!");
 			}
 		}
 
@@ -1179,10 +1197,11 @@ function Mint() {
 				>
 					MINT YOUR EGGS
 				</h1>
+
 				<div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
 				<button
 
-					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.2vw]" : "text-[1.2vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
+					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
 
 					onClick={connect}
 					id="buttonconnect"
@@ -1190,7 +1209,7 @@ function Mint() {
 		
 
 
-					{isConnect ? account : "Connect your wallet"}
+					{isConnect ? `${account.substring(0,7)}...${account.substring(38,44)}` : "Connect your wallet"}
 				</button>
 				
 				{isConnect && <button
@@ -1235,7 +1254,7 @@ function Mint() {
 						<h2 className="text-green-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">2 MATIC</h2>
 						<button
 							id="mint common"
-							className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw] max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-green-600 text-green-200 border-green-300"
+							className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-green-600 text-green-200 border-green-300"
 						>
 							MINT
 						</button>
@@ -1249,7 +1268,7 @@ function Mint() {
 						<h2 className="text-blue-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">4 MATIC</h2>
 						<button
 							id="mint rare"
-							className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw] max-[768px]:w-full max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
+							className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
 						>
 							MINT
 						</button>
@@ -1298,7 +1317,7 @@ function Mint() {
 							>
 								YOUR MINTS
 							</h1>
-							<table className="w-[50vw] border-blue-400 font-Montserrat mb-10">
+							<table className="w-[60vw] max-[768px]:w-[90vw] border-blue-400 font-Montserrat mb-10">
 								<thead className="bg-gradient-to-br from-slate-800 to-slate-700">
 									<tr className="text-xl lg:text-2xl text-white font-semibold text-center">
 										<th className="p-3 w-[50vw] rounded-tl-2xl">Minted eggs</th>
