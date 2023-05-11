@@ -679,13 +679,11 @@ function Mint() {
 	const [userData, setUserData] = useState([]);
 
 
-	const { address, isConnected } = useAccount()
-
-	const { connect } = useConnect({
-	  connector: new InjectedConnector(),
+	const { address, isConnected } = useAccount({
+		onConnect: ({address, isReconnected, connector})=> {
+			console.log("Connected!"+address)
+		}
 	})
-	const { disconnect } = useDisconnect()
-
 
 	// async function connect() {
 	// 	let accounts;
@@ -1221,8 +1219,8 @@ function Mint() {
 				>
 					MINT YOUR EGGS
 				</h1>
-				<ConnectButton/>
-				<div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
+				<ConnectButton />
+				{/* <div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
 				<button
 
 					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
@@ -1242,7 +1240,7 @@ function Mint() {
 					id="buttonconnect">
 					Disconnect
 				</button>}
-				</div>
+				</div> */}
 				
 				
 				{
