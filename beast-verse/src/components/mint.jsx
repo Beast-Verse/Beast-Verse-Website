@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 //import beast from "../assets/beast.jpeg"
 import { MutatingDots } from 'react-loader-spinner';
 import Footer from "./Footer";
-import common from "../assets/Commons.gif";
-import epic from "../assets/Epics.gif";
-import Legendary from "../assets/Legendarys.gif";
-import Rare from "../assets/Rares.gif";
+import common from "../assets/Common.gif";
+import epic from "../assets/Epic.gif";
+import Legendary from "../assets/Legendary.gif";
+import Rare from "../assets/Rare.gif";
 
 import Web3 from "web3";
 import axios from "axios";
@@ -1201,7 +1201,7 @@ function Mint() {
 				<div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
 				<button
 
-					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
+					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
 
 					onClick={connect}
 					id="buttonconnect"
@@ -1249,7 +1249,7 @@ function Mint() {
 					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2">
 						<img
 							src={common}
-							className="w-full rounded-lg shadow-xl shadow-green-400/20 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-green-400/20"
 						></img>
 						<h2 className="text-green-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">2 MATIC</h2>
 						<button
@@ -1263,7 +1263,7 @@ function Mint() {
 					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-blue-400/40 border-[1px] border-blue-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
 						<img
 							src={Rare}
-							className="w-full rounded-lg shadow-xl shadow-blue-400/20 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-blue-400/20"
 						></img>
 						<h2 className="text-blue-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">4 MATIC</h2>
 						<button
@@ -1277,7 +1277,7 @@ function Mint() {
 					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-purple-400/40 border-[1px] border-purple-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
 						<img
 							src={epic}
-							className="w-full rounded-lg shadow-xl shadow-purple-400/20 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-purple-400/20"
 						></img>
 						<h2 className="text-purple-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">6 MATIC</h2>
 						<button
@@ -1291,7 +1291,7 @@ function Mint() {
 					<div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
 						<img
 							src={Legendary}
-							className="w-full rounded-lg shadow-xl shadow-yellow-400/20 brightness-150"
+							className="w-full rounded-lg shadow-xl shadow-yellow-400/20"
 						></img>
 						<h2 className="text-yellow-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">8 MATIC</h2>
 						<button

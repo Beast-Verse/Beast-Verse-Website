@@ -7,9 +7,9 @@ function Mob2023() {
 
 
 
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto shadow-blue-500/40 shadow-xl border-2 border-blue-500">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto ">
                 <h3 className="text-blue-300 font-Montserrat font-bold text-[12vw] ml-5 mt-4">Q1</h3>
-                <div className="w-[100%]">
+                <div className="w-[90%]">
                 <p className="font-Montserrat text-[5vw] ml-7 font-semibold text-blue-400 mt-6">Community Building
                 <ul className="list-disc mb-7">
                     <li className="text-[4vw] ml-[1.5vw] mb-5 mt-2 text-white">Announcement trailer and Teaser Release</li>
@@ -31,9 +31,9 @@ function Mob2023() {
 
 
 
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto shadow-blue-500/40 shadow-xl border-2 border-blue-500">
                 <h3 className="text-blue-300 font-Montserrat font-bold text-[12vw] ml-5 mt-4">Q2</h3>
-                <div className="w-[100%]">
+                <div className="w-[90%]">
                 <p className="font-Montserrat text-[5vw] ml-7 font-semibold text-blue-400 mt-6">Community Enhancement
                 <ul className="list-disc mb-7">
                     <li className="text-[4vw] ml-[1.5vw] mt-2 mb-5 text-white">Collaborating with similar projects and companies</li>
@@ -55,7 +55,7 @@ function Mob2023() {
 
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto">
                 <h3 className="text-blue-300 font-Montserrat font-bold text-[12vw] ml-5 mt-4">Q3</h3>
-                <div className="w-[100%]">
+                <div className="w-[90%]">
                 <p className="font-Montserrat text-[5vw] ml-7 font-semibold text-blue-400 mt-6">The Game
                 <ul className="list-disc mb-7">
                     <li className="text-[4vw] ml-[1.5vw] mt-2 mb-5 text-white">Alpha and Beta Testing Phases with people from the Community </li>
@@ -75,7 +75,7 @@ function Mob2023() {
 
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl w-[90%] mx-auto">
                 <h3 className="text-blue-300 font-Montserrat font-bold text-[12vw] ml-5 mt-4">Q4</h3>
-                <div className="w-[100%]">
+                <div className="w-[90%]">
                 <p className="font-Montserrat text-[5vw] ml-7 font-semibold text-blue-400 mt-6">Game Launch
                 <ul className="list-disc mb-7">
                     <li className="text-[4vw] ml-[1.5vw] mt-2 mb-5 text-white">Final testing and Launching the Beast Verse Game on our Website</li>
