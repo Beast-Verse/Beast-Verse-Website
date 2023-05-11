@@ -10,6 +10,12 @@ import Rare from "../assets/Rare.gif";
 
 import Web3 from "web3";
 import axios from "axios";
+
+import {ConnectButton} from "@rainbow-me/rainbowkit";
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { InjectedConnector } from 'wagmi/connectors/injected'
+
+
 const web3 = new Web3(window.ethereum);
 
 // var account = null;
@@ -654,7 +660,12 @@ var ADDRESS = "0xD1fb46b8354d4e6c95C1Bd1009b75cd2f976328b";
 
 const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
 
+
+
+
 function Mint() {
+
+	
 
 	const [isMinting, setIsMinting] = useState(false);
 	const [isLoading, setLoading] = useState(false);
@@ -667,53 +678,66 @@ function Mint() {
 	const [isWhitelisted, setIsWhitelisted] = useState(false);
 	const [userData, setUserData] = useState([]);
 
-	async function connect() {
-		let accounts;
+
+	const { address, isConnected } = useAccount()
+
+	const { connect } = useConnect({
+	  connector: new InjectedConnector(),
+	})
+	const { disconnect } = useDisconnect()
+
+
+	// async function connect() {
+	// 	let accounts;
 	  
-		if (window.ethereum) {
-		  // Modern dapp browsers (including mobile Chrome with MetaMask)
-		  try {
-			await window.ethereum.request({ method: "eth_requestAccounts" });
-			accounts = await window.ethereum.request({ method: "eth_accounts" });
-		  } catch (error) {
-			console.error(error);
-		  }
-		} else if (window.web3) {
-		  // Legacy dapp browsers (e.g., older versions of MetaMask)
-		  const web3 = new Web3(window.web3.currentProvider);
-		  try {
-			accounts = await web3.eth.getAccounts();
-		  } catch (error) {
-			console.error(error);
-		  }
-		} else {
-		  // Non-dapp browsers
-		  console.log("Please install MetaMask or use a dapp browser");
-		  return;
-		}
+	// 	if (window.ethereum) {
+	// 	  // Modern dapp browsers (including mobile Chrome with MetaMask)
+	// 	  try {
+	// 		await window.ethereum.request({ method: "eth_requestAccounts" });
+	// 		accounts = await window.ethereum.request({ method: "eth_accounts" });
+	// 	  } catch (error) {
+	// 		console.error(error);
+	// 	  }
+	// 	} else if (window.web3) {
+	// 	  // Legacy dapp browsers (e.g., older versions of MetaMask)
+	// 	  const web3 = new Web3(window.web3.currentProvider);
+	// 	  try {
+	// 		accounts = await web3.eth.getAccounts();
+	// 	  } catch (error) {
+	// 		console.error(error);
+	// 	  }
+	// 	} else {
+	// 	  // Non-dapp browsers
+	// 	  console.log("Please install MetaMask or use a dapp browser");
+	// 	  return;
+	// 	}
 	  
-		if (accounts && accounts.length > 0) {
-		  localStorage.setItem("account", accounts[0]);
-		  setAccount(accounts[0]);
-		  console.log(typeof account);
-		  console.log(accounts[0]);
-		}
-	  }
+	// 	if (accounts && accounts.length > 0) {
+	// 	  localStorage.setItem("account", accounts[0]);
+	// 	  setAccount(accounts[0]);
+	// 	  console.log(typeof account);
+	// 	  console.log(accounts[0]);
+	// 	}
+	//   }
 	  
 
-	async function disconnect() {
-		console.log("Disconnect");
-		setAccount(null);
-		setIsConnect(false);
-		localStorage.removeItem("account");
+	// async function disconnect() {
+	// 	console.log("Disconnect");
+	// 	setAccount(null);
+	// 	setIsConnect(false);
+	// 	localStorage.removeItem("account");
 	
-	}
+	// }
+
+
+
+
 
 	const connectEth = async () => {
 		setUserData([]);
 		if (window.ethereum) {
 
-			const localAcc = localStorage.getItem("account")
+			const localAcc = address;
 
 			if (localAcc != null) {
 				setIsConnect(true);
@@ -1188,7 +1212,7 @@ function Mint() {
 
 	return (
 		<>
-
+		
 			<div className="bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start p-2">
 				
 				<h1
@@ -1197,7 +1221,7 @@ function Mint() {
 				>
 					MINT YOUR EGGS
 				</h1>
-
+				<ConnectButton/>
 				<div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
 				<button
 
