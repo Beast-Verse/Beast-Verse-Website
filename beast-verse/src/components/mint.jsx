@@ -1331,7 +1331,7 @@ function Mint() {
 									userData.map((data)=> (<tr>
 										<td className={`p-3 border-b-[1px] border-slate-500 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
 										{console.log(data.name[0])}
-										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/0x5d63e3f3b4ef97a3d24504a6dec771ebf97e71d5/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
+										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/0xD1fb46b8354d4e6c95C1Bd1009b75cd2f976328b/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
 										
 
 									</tr>))
