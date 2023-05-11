@@ -1160,11 +1160,11 @@ function Mint() {
 					};
 				}
 
-				// if (account?.toUpperCase() === admin?.toUpperCase()) {
-				// 	document.getElementById("withdraw").onclick = async () => {
-				// 		contract.methods.withdraw().send({ from: account });
-				// 	};
-				// }
+				if (account?.toUpperCase() === admin?.toUpperCase()) {
+					document.getElementById("withdraw").onclick = async () => {
+						contract.methods.withdraw().send({ from: account });
+					};
+				}
 
 				console.log(await contract.methods.totalSupply().call());
 
