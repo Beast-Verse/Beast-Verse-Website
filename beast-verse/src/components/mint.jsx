@@ -14,7 +14,7 @@ import axios from "axios";
 import {ConnectButton} from "@rainbow-me/rainbowkit";
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
-
+// import { useAccount, useConnect } from 'wagmi'
 
 const web3 = new Web3(window.ethereum);
 
@@ -665,7 +665,7 @@ const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
 
 function Mint() {
 
-	
+  
 
 	const [isMinting, setIsMinting] = useState(false);
 	const [isLoading, setLoading] = useState(false);
@@ -680,7 +680,7 @@ function Mint() {
 
 
 	const { address, isConnecting, isDisconnected } = useAccount({
-		onConnect: ({address, isReconnected, connector})=> {
+		onConnect: ({address, isReconnected, connector: activeConnector})=> {
 			console.log("Connected!"+address)
 			setAccount(address);
 			setIsConnect(true);
@@ -691,6 +691,8 @@ function Mint() {
 			setIsConnect(false);
 		  },
 	})
+
+	
 
 	// // if(isConnecting){
 	// // 	setAccount(address);
@@ -743,8 +745,6 @@ function Mint() {
 	// 	localStorage.removeItem("account");
 	
 	// }
-
-
 
 
 
@@ -1225,6 +1225,7 @@ function Mint() {
 
 	useEffect(()=>{
 		connectEth();
+
 	},[account, isConnect]
 	)
 
@@ -1239,8 +1240,108 @@ function Mint() {
 					id="check"
 				>
 					MINT YOUR EGGS
+
 				</h1>
-				<ConnectButton />
+
+
+
+
+				<ConnectButton.Custom>
+      {({
+        account,
+        chain,
+        openAccountModal,
+        openChainModal,
+        openConnectModal,
+        authenticationStatus,
+        mounted,
+      }) => {
+        // Note: If your app doesn't use authentication, you
+        // can remove all 'authenticationStatus' checks
+        const ready = mounted && authenticationStatus !== 'loading';
+        const connected =
+          ready &&
+          account &&
+          chain &&
+          (!authenticationStatus ||
+            authenticationStatus === 'authenticated');
+
+        return (
+          <div
+            {...(!ready && {
+              'aria-hidden': true,
+              'style': {
+                opacity: 0,
+                pointerEvents: 'none',
+                userSelect: 'none',
+              },
+            })}
+          >
+            {(() => {
+              if (!connected) {
+                return (
+                  <button onClick={openConnectModal} type="button" className="text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30 p-4 rounded-xl font-Montserrat font-semibold">
+                    Connect Wallet
+                  </button>
+                );
+              }
+
+              if (chain.unsupported) {
+                return (
+                  <button onClick={openChainModal} type="button" className="bg-red-500  hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 shadow-lg shadow-red-300/40 hover:-translate-y-1 duration-200">
+                    Wrong network
+                  </button>
+                );
+              }
+
+              return (
+                <div style={{ display: 'flex', gap: 12 }}>
+                  <button
+                    onClick={openChainModal}
+                    style={{ display: 'flex', alignItems: 'center' }}
+                    type="button" className="bg-white p-3 rounded-2xl shadow-lg shadow-purple-500/60 hover:-translate-y-1 duration-300 font-Montserrat  font-semibold "
+                  >
+                    {chain.hasIcon && (
+                      <div
+                        style={{
+                          background: chain.iconBackground,
+                          width: 12,
+                          height: 12,
+                          borderRadius: 999,
+                          overflow: 'hidden',
+                          marginRight: 4,
+                        }}
+                      >
+                        {chain.iconUrl && (
+                          <img
+                            alt={chain.name ?? 'Chain icon'}
+                            src={chain.iconUrl}
+                            style={{ width: 12, height: 12 }}
+                          />
+                        )}
+                      </div>
+                    )}
+                    {chain.name}
+                  </button>
+
+                  <button onClick={openAccountModal} type="button" className="bg-white p-3 rounded-2xl  shadow-lg shadow-red-500/60 hover:-translate-y-1 duration-300 font-Montserrat  font-semibold">
+                    {account.displayName}
+                    {account.displayBalance
+                      ? ` (${account.displayBalance})`
+                      : ''}
+                  </button>
+                </div>
+              );
+            })()}
+          </div>
+        );
+      }}
+    </ConnectButton.Custom>
+
+
+
+
+
 				{/* <div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
 				<button
 
