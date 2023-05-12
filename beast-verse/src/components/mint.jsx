@@ -15,7 +15,7 @@ import {ConnectButton} from "@rainbow-me/rainbowkit";
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 // import { useAccount, useConnect } from 'wagmi'
-global.Buffer = global.Buffer || require('buffer').Buffer;
+// global.Buffer = global.Buffer || require('buffer').Buffer;
 const web3 = new Web3(window.ethereum);
 
 // var account = null;
