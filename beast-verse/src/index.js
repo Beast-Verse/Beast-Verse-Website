@@ -11,12 +11,15 @@ import {
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum, polygonMumbai } from 'wagmi/chains';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { alchemyProvider } from 'wagmi/providers/alchemy'
+import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public';
+// import { InjectedConnector } from 'wagmi/connectors/injected'
 
 
 
-const { chains, provider } = configureChains([polygon, polygonMumbai], [publicProvider()]);
+const { chains, provider } = configureChains([polygon, polygonMumbai], [alchemyProvider({ apiKey: 'yourAlchemyApiKey' }),
+infuraProvider({ apiKey: 'yourInfuraApiKey' }), publicProvider()]);
 
 const { connectors } = getDefaultWallets({
   appName: "beastverse",
