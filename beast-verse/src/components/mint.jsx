@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 //import beast from "../assets/beast.jpeg"
 import { MutatingDots } from 'react-loader-spinner';
+import Footer from "./Footer";
 import common from "../assets/Common.gif";
 import epic from "../assets/Epic.gif";
 import Legendary from "../assets/Legendary.gif";
@@ -846,6 +847,13 @@ function Mint() {
 				setIsWhitelisted(true);
 				contract = new web3.eth.Contract(ABI, ADDRESS);
 
+				// console.log(isthere);
+				//   var com = parseInt(await contract.methods.com().call()) + 1;
+				//   var rar = parseInt(await contract.methods.rar().call()) + 1;
+				//   var epi = parseInt(await contract.methods.epi().call()) + 1;
+				//   var leg = parseInt(await contract.methods.leg().call()) + 1;
+
+				//   let url = "https://bv-backend-self.vercel.app/api";
 				let url = "https://bvbackend-production.up.railway.app/api";
 
 				let com = async () => {
@@ -1331,6 +1339,31 @@ function Mint() {
     </ConnectButton.Custom>
 
 
+
+
+
+				{/* <div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
+				<button
+
+					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
+
+					onClick={connect}
+					id="buttonconnect"
+				>
+		
+
+
+					{isConnect ? `${account.substring(0,7)}...${account.substring(38,44)}` : "Connect your wallet"}
+				</button>
+				
+				{isConnect && <button
+					className={`bg-red-500  hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 `}
+					onClick={disconnect}
+					id="buttonconnect">
+					Disconnect
+				</button>}
+				</div> */}
+				
 				
 				{
 				 
