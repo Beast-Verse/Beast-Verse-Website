@@ -644,26 +644,57 @@ var ADDRESS = "0xD1fb46b8354d4e6c95C1Bd1009b75cd2f976328b";
 
 function Leaderboard(){
     const[owner, setOwner] = useState([]);
-    const[totalSupp, setTotal] = useState(null);
+var val = 0;
     contract = new web3.eth.Contract(ABI, ADDRESS)
 
     const hello = async() =>{
     
         var total = await contract.methods.totalSupply().call();
         // console.log(total);
-    setTotal(total);
+    
     const ownerlist = [];
-
-    for(let i=1; i<total; i++){
+        const loopenter = [];
+    for(let i=1; i<=total; i++){
         
         var owners = await contract.methods.ownerOf(i).call();
-        ownerlist[i-1] = owners;
-        
+        var upper = owners.toUpperCase();
+        var balance = await contract.methods.balanceOf(owners).call();
+
+        if(loopenter.includes(upper) === false){
+            val ++;
+            loopenter[i-1] = upper;
+            var points = 0;
+            for(let j=0; j<balance; j++){
+                
+                const tokenURI = await contract.methods.tokenURI(i).call();
+					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
+					const meta = await fetch(metadata);
+					const json = await meta.json();
+					const name = json["name"];
+
+                if(name[0] === "C"){
+                    points = points + 1;
+                }
+                else if(name[0] === "R"){
+                    points = points + 2;
+                }
+                else if(name[0] === "E"){
+                    points = points + 3;
+                }
+                else if(name[0] === "L"){
+                    points = points + 4;
+                }}
+            ownerlist.push({points, upper, balance});
+       
+        }
+ownerlist.sort((a,b) =>{
+    return b.points - a.points;
+});
     }
     // console.log(ownerlist);
-    setOwner(ownerlist);
-    // console.log(owner);
+    
 
+setOwner(ownerlist);
 }
 
 // hello();
@@ -679,20 +710,17 @@ useEffect(()=>{
      <table className="w-[60%] mx-auto mt-10">
         <thead >
             <tr>
-                <th className="rounded-tl-2xl font-Montserrat text-[1.5vw] py-3 text-white bg-blue-600">Address</th>
-                <th className="w-[10vw] font-Montserrat text-[1.5vw] text-white bg-blue-600">Rank</th>
-                <th className=" rounded-tr-2xl w-[15vw] font-Montserrat text-[1.5vw] text-white bg-blue-600">Total Holding</th>
+                <th className="rounded-tl-2xl font-Montserrat text-[1.5vw] py-3 text-white bg-blue-400">Address</th>
+                <th className="w-[10vw] font-Montserrat text-[1.5vw] text-white bg-blue-400">Points</th>
+                <th className=" rounded-tr-2xl w-[15vw] font-Montserrat text-[1.5vw] text-white bg-blue-400">Total Holding</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                {}
-            </tr>
+            
+            {owner.map((data)=>(<tr className="text-[1.2vw] text-center h-[3vw] border-b-[1px] border-white/40 font-bold font-Montserrat text-white"><td>{data.upper}</td><td>{data.points}</td><td>{data.balance}</td></tr>))}
+          
         </tbody>
      </table>
-     <ul>
-        {owner.map((data)=>(<li>{data}</li>))}
-     </ul>
     </div>
 }
 
