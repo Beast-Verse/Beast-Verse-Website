@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/leaderboard" element={<Leaderboard />}/>
         <Route path="/wearemintingfortestpurposesonly" element={<Mint />}/>
-        <Route path="/timer" element={<MintingTimer />}/>
+        <Route path="/mint" element={<MintingTimer />}/>
         <Route path="/" element={<Home />} exact/>
       </Routes>
     </BrowserRouter>
