@@ -965,6 +965,7 @@ function Mint() {
 					};
 				}
 
+
 				if ((await getCountRar()) < 100) {
 					document.getElementById("mint rare").onclick = async () => {
 						setIsMinting(true);

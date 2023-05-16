@@ -47,14 +47,14 @@ function MyTimer({ expiryTimestamp }) {
 }
 
 export default function MintingTimer() {
-  const expiryDate = new Date('2023-05-20');
+  const expiryDate = new Date("May 20, 2023 18:30:00");
   const currentTime = new Date();
 
   // Calculate the time remaining from the current time to the expiry date
   const timeRemaining = expiryDate.getTime() - currentTime.getTime();
 
   // Set the expiry timestamp by adding the time remaining to the current time
-  const expiryTimestamp = new Date(currentTime.getTime() + timeRemaining);
+  const expiryTimestamp = new Date(currentTime.getTime() + timeRemaining );
 
   return (
     <div className='h-[100vh] w-full flex items-center justify-center bg-gradient-to-b from-black to-slate-800'>
