@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/leaderboard" element={<Leaderboard />}/>
+        {/* <Route path="/leaderboard" element={<Leaderboard />}/> */}
         <Route path="/wearemintingfortestpurposesonly" element={<Mint />}/>
         <Route path="/mint" element={<MintingTimer />}/>
         <Route path="/" element={<Home />} exact/>

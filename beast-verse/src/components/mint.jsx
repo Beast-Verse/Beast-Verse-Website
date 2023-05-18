@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 //import beast from "../assets/beast.jpeg"
 import { MutatingDots } from 'react-loader-spinner';
 import Footer from "./Footer";
@@ -10,597 +9,25 @@ import Rare from "../assets/Rare.gif";
 
 import Web3 from "web3";
 import axios from "axios";
-
+import contractABI from "./abi";
+import contractad from "./address"
 import {ConnectButton} from "@rainbow-me/rainbowkit";
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
-// import { useAccount, useConnect } from 'wagmi'
+
 global.Buffer = global.Buffer || require('buffer').Buffer;
 const web3 = new Web3(window.ethereum);
 
-// var account = null;
 var contract = null;
-var ABI = [
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "approved",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Approval",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "ApprovalForAll",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Transfer",
-		"type": "event"
-	},
-	{
-		"inputs": [],
-		"name": "MAX_SUPPLY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "uri",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "commonMint",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "uri",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "epicMint",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getApproved",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "uri",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "legendaryMint",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "mintRate",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ownerOf",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "uri",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "rareMint",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes",
-				"name": "data",
-				"type": "bytes"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "setApprovalForAll",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes4",
-				"name": "interfaceId",
-				"type": "bytes4"
-			}
-		],
-		"name": "supportsInterface",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenByIndex",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenOfOwnerByIndex",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	}
-];
 
-var ADDRESS = "0xcD508effA87cb121c7b64e1CA386461BEC7e2EDA";
+var ADDRESS = contractad;
 
 const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
 
-
+const ABI = contractABI;
 
 
 function Mint() {
-
-  
 
 	const [isMinting, setIsMinting] = useState(false);
 	const [isLoading, setLoading] = useState(false);
@@ -613,13 +40,12 @@ function Mint() {
 	const [isWhitelisted, setIsWhitelisted] = useState(false);
 	const [userData, setUserData] = useState([]);
 
-
 	const { address, isConnecting, isDisconnected } = useAccount({
 		onConnect: ({address, isReconnected, connector: activeConnector})=> {
-			console.log("Connected!"+address)
+
 			setAccount(address);
 			setIsConnect(true);
-			console.log("wow re"+account);
+
 		},
 		onDisconnect() {
 			setAccount(null);
@@ -629,74 +55,8 @@ function Mint() {
 
 	
 
-	// // if(isConnecting){
-	// // 	setAccount(address);
-	// // 	setIsConnect(true);
-	// // }
-
-	// // if(isDisconnected){
-	// // 	setAccount(null);
-	// // 	setIsConnect(false)
-	// }
-
-	// async function connect() {
-	// 	let accounts;
-	  
-	// 	if (window.ethereum) {
-	// 	  // Modern dapp browsers (including mobile Chrome with MetaMask)
-	// 	  try {
-	// 		await window.ethereum.request({ method: "eth_requestAccounts" });
-	// 		accounts = await window.ethereum.request({ method: "eth_accounts" });
-	// 	  } catch (error) {
-	// 		console.error(error);
-	// 	  }
-	// 	} else if (window.web3) {
-	// 	  // Legacy dapp browsers (e.g., older versions of MetaMask)
-	// 	  const web3 = new Web3(window.web3.currentProvider);
-	// 	  try {
-	// 		accounts = await web3.eth.getAccounts();
-	// 	  } catch (error) {
-	// 		console.error(error);
-	// 	  }
-	// 	} else {
-	// 	  // Non-dapp browsers
-	// 	  console.log("Please install MetaMask or use a dapp browser");
-	// 	  return;
-	// 	}
-	  
-	// 	if (accounts && accounts.length > 0) {
-	// 	  localStorage.setItem("account", accounts[0]);
-	// 	  setAccount(accounts[0]);
-	// 	  console.log(typeof account);
-	// 	  console.log(accounts[0]);
-	// 	}
-	//   }
-	  
-
-	// async function disconnect() {
-	// 	console.log("Disconnect");
-	// 	setAccount(null);
-	// 	setIsConnect(false);
-	// 	localStorage.removeItem("account");
-	
-	// }
-
-
-
 	const connectEth = async () => {
 		setUserData([]);
-		
-			// var localAcc = address;
-
-			// if (localAcc != null) {
-			// 	setIsConnect(true);
-			// 	setAccount(localAcc);
-			// }
-
-			// else if(localAcc = null){
-			// 	setIsConnect(false);
-			// 	setAccount(null);
-			// }
 
 			const whitelisted = [
 				"0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
@@ -758,38 +118,26 @@ function Mint() {
 
 			var isthere;
 
-			// console.log("hi");
 
 			for (let i = 0; i < size; i++) {
 				var check = whitelisted[i];
-				// console.log(check);
-				// console.log(account);
 
 				if (account?.toUpperCase() === check?.toUpperCase()) {
-					console.log("hi");
+
 					isthere = true;
-					// console.log(isthere);
+
 					break;
-					// console.log(isthere);
+
 				} else {
 					isthere = false;
 				}
 			}
 
-			console.log(isthere);
-
 			if (isthere === true) {
-				console.log("whitelisted");
+
 				setIsWhitelisted(true);
 				contract = new web3.eth.Contract(ABI, ADDRESS);
 
-				// console.log(isthere);
-				//   var com = parseInt(await contract.methods.com().call()) + 1;
-				//   var rar = parseInt(await contract.methods.rar().call()) + 1;
-				//   var epi = parseInt(await contract.methods.epi().call()) + 1;
-				//   var leg = parseInt(await contract.methods.leg().call()) + 1;
-
-				//   let url = "https://bv-backend-self.vercel.app/api";
 				let url = "https://bvbackend-production.up.railway.app/api";
 
 				let com = async () => {
@@ -859,20 +207,13 @@ function Mint() {
 							total: 250,
 						},
 					});
-					// console.log(res);
+
 					return res.data.count;
 				};
 
 				setLoading(true);
-				console.log(await contract.methods.MAX_SUPPLY().call());
-
-				console.log("Common", await getCountCom())
-				console.log("Rare", await getCountRar())
-				console.log("Epic", await getCountEpi())
-				console.log("Legendary", await getCountLeg())
 
 				var balance = await contract.methods.balanceOf(account).call();
-				console.log("Total held by the account: ", balance);
 
 				
 				const tempData = [];
@@ -892,20 +233,12 @@ function Mint() {
 
 				setUserData(tempData);
 				setLoading(false);
-				// for(let j=0; j<tempData.length; j++){
-				// 	const metadata = tempData.tokenURI?.substr(7);
-				// 	console.log(metadata);
-				// }
-
-
-				// console.log(userData);
-
+				
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
 						setIsMinting(true);
 						let comValue = await com();
 						const comlink = "ipfs://QmbMx9vN1w5Ga9XhKFXu764xmq9QkmYaQbJ8n8V4qLXHPT/" + comValue + ".json";
-						console.log(comlink);
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
@@ -913,20 +246,19 @@ function Mint() {
 
 						contract.methods
 							.commonMint(account, comlink, comValue)
-							.send({ from: account, value: "10000000000000000" })
+							.send({ from: account, value: "20000000000000000" })
 							.then((res) => {
-								console.log(res);
 								axios.put(url + "/pop", {
 									"index": comValue,
 									"rarity": "common"
 								})
 									.then(async (res) => {
-										console.log("hemlo")
+
 										console.log(res)
-										console.log(await getCountCom())
+
 										setIsMinting(false);
 										document.getElementById("wlonly").textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 5 secs`
-										console.log(await contract.methods.totalSupply().call());
+
 										setTimeout(() => {
 											window.location.reload();
 										}
@@ -951,7 +283,6 @@ function Mint() {
 								})
 									.then(async (res) => {
 										console.log(res)
-										console.log(await getCountCom())
 									})
 
 									.catch((err) => console.log(err))
@@ -974,14 +305,13 @@ function Mint() {
 							"ipfs://QmNgz8wJbitXX9bqtQU1527JoF9GAQnN7GFmHiEVESZrEE/" +
 							rarValue +
 							".json";
-						console.log(rarlink);
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
 
 						contract.methods
 							.rareMint(account, rarlink, rarValue)
-							.send({ from: account, value: "20000000000000000" })
+							.send({ from: account, value: "40000000000000000" })
 							.then((res) => {
 								console.log(res);
 								axios.put(url + "/pop", {
@@ -991,7 +321,6 @@ function Mint() {
 									.then(async (res) => {
 										console.log(res)
 										setIsMinting(false);
-										console.log(await getCountRar())
 										document.getElementById("wlonly").textContent = `Successfully minted Rare Egg #${rarValue}! \n Reloading in 5 secs`
 										setTimeout(() => {
 											window.location.reload();
@@ -1009,7 +338,6 @@ function Mint() {
 								})
 									.then(async (res) => {
 										console.log(res)
-										console.log(await getCountRar())
 									})
 									.catch((err) => console.log(err))
 
@@ -1029,7 +357,6 @@ function Mint() {
 							"ipfs://QmSVtYkQ9AkDYjL9sWbdysyPLB8pSJCoQTPSNrvdYyAdV3/" +
 							epiValue +
 							".json";
-						console.log(epilink);
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
@@ -1037,7 +364,7 @@ function Mint() {
 
 						contract.methods
 							.epicMint(account, epilink, epiValue)
-							.send({ from: account, value: "30000000000000000" })
+							.send({ from: account, value: "60000000000000000" })
 							.then((res) => {
 								console.log(res);
 								// document.getElementById("wlonly").textContent = `Wait till the egg is minted`
@@ -1047,7 +374,6 @@ function Mint() {
 								})
 									.then(async (res) => {
 										console.log(res)
-										console.log(await getCountEpi())
 										setIsMinting(false);
 										document.getElementById("wlonly").textContent = `Successfully minted Epic Egg #${epiValue}! \n Reloading in 5 secs`
 										setTimeout(() => {
@@ -1066,7 +392,6 @@ function Mint() {
 								})
 									.then(async (res) => {
 										console.log(res)
-										console.log(await getCountEpi())
 									})
 									.catch((err) => console.log(err))
 
@@ -1080,13 +405,14 @@ function Mint() {
 
 				if ((await getCountLeg()) < 25) {
 					document.getElementById("mint legendary").onclick = async () => {
+						console.log("hello");
 						setIsMinting(true);
 						let legValue = await leg();
 						const leglink =
 							"ipfs://QmQoj6dJwzqHWwuUvNRpwuJVYCdSMgjqDQeeyX4ZDyhsba/" +
 							legValue +
 							".json";
-						console.log(leglink)
+
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
@@ -1094,11 +420,9 @@ function Mint() {
 
 						contract.methods
 							.legendaryMint(account, leglink, legValue)
-							.send({ from: account, value: "40000000000000000" })
+							.send({ from: account, value: "80000000000000000" })
 							.then((res) => {
 								console.log(res);
-
-
 
 
 								axios.put(url + "/pop", {
@@ -1107,7 +431,6 @@ function Mint() {
 								})
 									.then(async (res) => {
 										console.log(res)
-										console.log(await getCountLeg())
 										setIsMinting(false);
 										document.getElementById("wlonly").textContent = `Successfully minted Legendary Egg #${legValue}! \n Reloading in 5 secs`
 										setTimeout(() => {
@@ -1126,7 +449,6 @@ function Mint() {
 								})
 									.then(async (res) => {
 										console.log(res)
-										console.log(await getCountLeg())
 									})
 									.catch((err) => console.log(err))
 								setTimeout(() => {
@@ -1143,13 +465,8 @@ function Mint() {
 					};
 				}
 
-				console.log(await contract.methods.totalSupply().call());
-
 			} else if (isthere === false) {
-				console.log("Not whitelisted!");
-				// document.getElementById("check").textContent ="WALLET IS NOT WHITELISTED!";
-				// document.getElementById("wlonly").textContent ="Your wallet was not whitelisted! \n Please wait for the General Mint to start on 21/05/23! :D";
-				// document.getElementById("noview").classList.add("hidden");
+
 			} else {
 				alert("Install Metamask!");
 			}
@@ -1157,9 +474,11 @@ function Mint() {
 
 	}
 
+
+
+
 	useEffect(()=>{
 		connectEth();
-
 	},[account, isConnect]
 	)
 
@@ -1271,32 +590,6 @@ function Mint() {
         );
       }}
     </ConnectButton.Custom>
-
-
-
-
-
-				{/* <div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
-				<button
-
-					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
-
-					onClick={connect}
-					id="buttonconnect"
-				>
-		
-
-
-					{isConnect ? `${account.substring(0,7)}...${account.substring(38,44)}` : "Connect your wallet"}
-				</button>
-				
-				{isConnect && <button
-					className={`bg-red-500  hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 `}
-					onClick={disconnect}
-					id="buttonconnect">
-					Disconnect
-				</button>}
-				</div> */}
 				
 				
 				{
