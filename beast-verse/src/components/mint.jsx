@@ -9,8 +9,10 @@ import Rare from "../assets/Rare.gif";
 
 import Web3 from "web3";
 import axios from "axios";
-import contractABI from "./abi";
-import contractad from "./address"
+
+// import contractad from "./address";
+// import contractABI from "./abi";
+
 import {ConnectButton} from "@rainbow-me/rainbowkit";
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
@@ -18,14 +20,10 @@ import { InjectedConnector } from 'wagmi/connectors/injected'
 global.Buffer = global.Buffer || require('buffer').Buffer;
 const web3 = new Web3(window.ethereum);
 
+
 var contract = null;
 
-var ADDRESS = contractad;
-
 const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
-
-const ABI = contractABI;
-
 
 function Mint() {
 
@@ -39,7 +37,7 @@ function Mint() {
 	const [isConnect, setIsConnect] = useState(false);
 	const [isWhitelisted, setIsWhitelisted] = useState(false);
 	const [userData, setUserData] = useState([]);
-
+	const [contractad, setContract] = useState("");
 	const { address, isConnecting, isDisconnected } = useAccount({
 		onConnect: ({address, isReconnected, connector: activeConnector})=> {
 
@@ -57,7 +55,12 @@ function Mint() {
 
 	const connectEth = async () => {
 		setUserData([]);
+		let url = "https://bvbackend-production.up.railway.app/api";
+		const contractabi = await axios.get(url + "/getAbiandAddress");
+		const ABI = contractabi.data.contractABI;
+		const ADDRESS = contractabi.data.contractad;
 
+		setContract(ADDRESS);
 			const whitelisted = [
 				"0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
 				"0xa92B24AC60A6B381E0eC2DD17d2a3339Cda24D84",
@@ -140,8 +143,6 @@ function Mint() {
 
 				setIsWhitelisted(true);
 				contract = new web3.eth.Contract(ABI, ADDRESS);
-
-				let url = "https://bvbackend-production.up.railway.app/api";
 
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
@@ -268,13 +269,13 @@ function Mint() {
 											, 5000);
 									})
 									.catch((err) => console.log(err))
-								axios.post(url + "/write" , {
-									walletID: account,
-									nftID: `${comValue}`,
-									rarity:"Common"
-								}).then((res)=>{
-									console.log(res)
-								}).catch((err)=>{console.log(err)})
+								// axios.post(url + "/write" , {
+								// 	walletID: account,
+								// 	nftID: `${comValue}`,
+								// 	rarity:"Common"
+								// }).then((res)=>{
+								// 	console.log(res)
+								// }).catch((err)=>{console.log(err)})
 							})
 							.catch(async (err) => {
 								console.log(err);
@@ -462,11 +463,11 @@ function Mint() {
 					};
 				}
 
-				if (account?.toUpperCase() === admin?.toUpperCase()) {
-					document.getElementById("withdraw").onclick = async () => {
-						contract.methods.withdraw().send({ from: account });
-					};
-				}
+				// if (account?.toUpperCase() === admin?.toUpperCase()) {
+				// 	document.getElementById("withdraw").onclick = async () => {
+				// 		contract.methods.withdraw().send({ from: account });
+				// 	};
+				// }
 
 			} else if (isthere === false) {
 
@@ -676,12 +677,12 @@ function Mint() {
 						</button>
 					</div>
 				</div>
-				<button
+				{/* <button
 					id="withdraw"
 					className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
 				>
 					Withdraw
-				</button>
+				</button> */}
 				{
 					isConnect ? (
 						<div>
@@ -705,7 +706,7 @@ function Mint() {
 									userData.map((data)=> (<tr>
 										<td className={`p-3 border-b-[1px] border-slate-500 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
 										{console.log(data.name[0])}
-										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/${ADDRESS}/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
+										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/${setContract}/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
 										
 
 									</tr>))
