@@ -8,8 +8,6 @@ import MintingTimer from './components/MintingTimer';
 
 
 
-
-
 function App() {
 
   return (

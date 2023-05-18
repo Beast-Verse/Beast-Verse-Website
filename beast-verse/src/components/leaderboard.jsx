@@ -13,6 +13,8 @@ var ADDRESS = contractad;
 function Leaderboard(){
     const[owner, setOwner] = useState([]);
 	const[total, setTotal] = useState();
+
+
 var val = 0;
 var anotherval = 1;
     contract = new web3.eth.Contract(ABI, ADDRESS)
@@ -25,53 +27,62 @@ var anotherval = 1;
 
     const ownerlist = [];
         const loopenter = [];
-    for(let i=1; i<total; i++){
+    for(let i=1; i<=total; i++){
 
         var owners = await contract.methods.ownerOf(i).call();
 
-
-
         if(loopenter.includes(owners) == false){
-            
             loopenter[val] = owners;
+			val++;
+		}
+	}
 
-			var balance = await contract.methods.balanceOf(loopenter[val]).call();
-			var points = 0; 
-            for(let j=0; j<balance; j++){
+	console.log(loopenter);
+
+	for(let j=0; j<=loopenter.length; j++){
+		var balance = await contract.methods.balanceOf(loopenter[j]).call();
+		var points = 0; 
+		var current = loopenter[j];
+console.log(current);
+console.log(balance);
+		for(let k=1; k<=balance; j++){
 				
-                const tokenURI = await contract.methods.tokenURI(anotherval).call();
-					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
+			const tokenURI = await contract.methods.tokenURI(k).call();
+			const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
 
-					const meta = await fetch(metadata);
-					const json = await meta.json();
-					const name = json["name"];
+				const meta = await fetch(metadata);
+				const json = await meta.json();
+				const name = json["name"];
 
-                if(name[0] === "C"){
-                    points = points + 1;
+			if(name[0] === "C"){
+				points = points + 1;
 
-                }
-                else if(name[0] === "R"){
-                    points = points + 2;
+			}
+			else if(name[0] === "R"){
+				points = points + 2;
 
-                }
-                else if(name[0] === "E"){
-                    points = points + 3;
+			}
+			else if(name[0] === "E"){
+				points = points + 3;
 
-                }
-                else if(name[0] === "L"){
-                    points = points + 4;
+			}
+			else if(name[0] === "L"){
+				points = points + 4;
 
-                }
-				anotherval++;}
-            ownerlist.push({points, owners, balance});
+			}
+			anotherval++;}
+			ownerlist.push({points, current , balance});
+	}
+	
+            
        
-        }
+        
 ownerlist.sort((a,b) =>{
     return b.points - a.points;
 });
-val++;
 
-    }
+
+    
     // console.log(ownerlist);
     
 
@@ -98,7 +109,7 @@ useEffect(()=>{
         </thead>
         <tbody>
             
-            {owner.map((data)=>(<tr className="text-[1.2vw] text-center h-[3vw] border-b-[1px] border-white/40 font-bold font-Montserrat text-white"><td>{data.owners}</td><td>{data.points}</td><td>{data.balance}</td></tr>))}
+            {owner.map((data)=>(<tr className="text-[1.2vw] text-center h-[3vw] border-b-[1px] border-white/40 font-bold font-Montserrat text-white"><td>{data.current}</td><td>{data.points}</td><td>{data.balance}</td></tr>))}
           
         </tbody>
      </table>
