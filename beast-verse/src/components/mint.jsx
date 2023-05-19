@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 //import beast from "../assets/beast.jpeg"
 import { MutatingDots } from 'react-loader-spinner';
 import Footer from "./Footer";
@@ -10,22 +11,24 @@ import Rare from "../assets/Rare.gif";
 import Web3 from "web3";
 import axios from "axios";
 
-// import contractad from "./address";
-// import contractABI from "./abi";
-
 import {ConnectButton} from "@rainbow-me/rainbowkit";
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
-
+// import { useAccount, useConnect } from 'wagmi'
 global.Buffer = global.Buffer || require('buffer').Buffer;
 const web3 = new Web3(window.ethereum);
 
-
+// var account = null;
 var contract = null;
 
 const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
 
+
+
+
 function Mint() {
+
+  
 
 	const [isMinting, setIsMinting] = useState(false);
 	const [isLoading, setLoading] = useState(false);
@@ -37,15 +40,12 @@ function Mint() {
 	const [isConnect, setIsConnect] = useState(false);
 	const [isWhitelisted, setIsWhitelisted] = useState(false);
 	const [userData, setUserData] = useState([]);
-	const [contractad, setContract] = useState(" ");
-	const [newcon, setNewcon] = useState([]);
-	const [balance, setBalance] = useState(null);
+const [add, setAddress] = useState(" ");
+
 	const { address, isConnecting, isDisconnected } = useAccount({
 		onConnect: ({address, isReconnected, connector: activeConnector})=> {
-
 			setAccount(address);
 			setIsConnect(true);
-
 		},
 		onDisconnect() {
 			setAccount(null);
@@ -53,17 +53,15 @@ function Mint() {
 		  },
 	})
 
-	
-
 	const connectEth = async () => {
 		setUserData([]);
+
 		let url = "https://bvbackend-production.up.railway.app/api";
+
 		const contractabi = await axios.get(url + "/getAbiandAddress");
 		const ABI = contractabi.data.contractABI;
 		const ADDRESS = contractabi.data.contractad;
-
-
-		setContract(ADDRESS);
+setAddress(ADDRESS);
 			const whitelisted = [
 				"0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
 				"0xa92B24AC60A6B381E0eC2DD17d2a3339Cda24D84",
@@ -117,41 +115,29 @@ function Mint() {
 				"0x7DAC2CE052AD5F39E0380568980220E8dcA26CC3",
 				"0xAaA20CFb686CAe0B0482ad53701618426C8CeB46",
 				"0x632C0480be31fD2234703553020815366A8116F1",
-				"0x668A7ac8F92748499bB2F9813C20ff3278D38121",
-				"0x6f165c4cFAA801dF7959E427094dcA238E5ee3bd",
-				"0xedE39DA6900d8040a4ec6a574F59d89815894482"
-
+				"0x668A7ac8F92748499bB2F9813C20ff3278D38121"
 			];
 
 			const size = whitelisted.length;
 
 			var isthere;
 
-
 			for (let i = 0; i < size; i++) {
 				var check = whitelisted[i];
 
+
 				if (account?.toUpperCase() === check?.toUpperCase()) {
-
 					isthere = true;
-
 					break;
-
 				} else {
 					isthere = false;
 				}
 			}
 
 			if (isthere === true) {
-
 				setIsWhitelisted(true);
 				contract = new web3.eth.Contract(ABI, ADDRESS);
 
-				setNewcon(contract);
-
-				var bal = await contract.methods.balanceOf(account).call();
-				setBalance(bal);
-				console.log(balance);
 
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
@@ -220,10 +206,29 @@ function Mint() {
 							total: 250,
 						},
 					});
-
 					return res.data.count;
 				};
 
+				setLoading(true);
+				var balance = await contract.methods.balanceOf(account).call();
+
+				const tempData = [];
+
+				for(let i=0; i<balance; i++){
+					const userMintedId = parseInt(await contract.methods.tokenOfOwnerByIndex(account, i).call());
+					const tokenURI = await contract.methods.tokenURI(userMintedId).call();
+					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
+					const meta = await fetch(metadata);
+					const json = await meta.json();
+					const name = json["name"];
+
+
+					tempData.push({userMintedId, name, i});
+				}
+				
+
+				setUserData(tempData);
+				setLoading(false);
 				
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
@@ -239,30 +244,28 @@ function Mint() {
 							.commonMint(account, comlink, comValue)
 							.send({ from: account, value: "20000000000000000" })
 							.then((res) => {
+								console.log(res);
 								axios.put(url + "/pop", {
 									"index": comValue,
 									"rarity": "common"
 								})
 									.then(async (res) => {
-
 										console.log(res)
-
 										setIsMinting(false);
-										document.getElementById("wlonly").textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 5 secs`
-
+										document.getElementById("wlonly").textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 5 secs`;
 										setTimeout(() => {
 											window.location.reload();
 										}
 											, 5000);
 									})
 									.catch((err) => console.log(err))
-								// axios.post(url + "/write" , {
-								// 	walletID: account,
-								// 	nftID: `${comValue}`,
-								// 	rarity:"Common"
-								// }).then((res)=>{
-								// 	console.log(res)
-								// }).catch((err)=>{console.log(err)})
+								axios.post(url + "/write" , {
+									walletID: account,
+									nftID: `${comValue}`,
+									rarity:"Common"
+								}).then((res)=>{
+									console.log(res)
+								}).catch((err)=>{console.log(err)})
 							})
 							.catch(async (err) => {
 								console.log(err);
@@ -296,6 +299,7 @@ function Mint() {
 							"ipfs://QmNgz8wJbitXX9bqtQU1527JoF9GAQnN7GFmHiEVESZrEE/" +
 							rarValue +
 							".json";
+
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
@@ -358,7 +362,6 @@ function Mint() {
 							.send({ from: account, value: "60000000000000000" })
 							.then((res) => {
 								console.log(res);
-								// document.getElementById("wlonly").textContent = `Wait till the egg is minted`
 								axios.put(url + "/pop", {
 									"index": epiValue,
 									"rarity": "epic"
@@ -396,14 +399,12 @@ function Mint() {
 
 				if ((await getCountLeg()) < 25) {
 					document.getElementById("mint legendary").onclick = async () => {
-						console.log("hello");
 						setIsMinting(true);
 						let legValue = await leg();
 						const leglink =
 							"ipfs://QmQoj6dJwzqHWwuUvNRpwuJVYCdSMgjqDQeeyX4ZDyhsba/" +
 							legValue +
 							".json";
-
 
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
@@ -414,6 +415,8 @@ function Mint() {
 							.send({ from: account, value: "80000000000000000" })
 							.then((res) => {
 								console.log(res);
+
+
 
 
 								axios.put(url + "/pop", {
@@ -450,34 +453,15 @@ function Mint() {
 					};
 				}
 
-				setLoading(true);
-				
-				const tempData = [];
-
-				for(let i=0; i<balance; i++){
-					const userMintedId = parseInt(await contract.methods.tokenOfOwnerByIndex(account, i).call());
-					const tokenURI = await contract.methods.tokenURI(userMintedId).call();
-					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
-					const meta = await fetch(metadata);
-					const json = await meta.json();
-					const name = json["name"];
-
-
-					tempData.push({userMintedId, name, i});
-				}
-				
-
-				setUserData(tempData);
-				setLoading(false);
-
 				// if (account?.toUpperCase() === admin?.toUpperCase()) {
 				// 	document.getElementById("withdraw").onclick = async () => {
 				// 		contract.methods.withdraw().send({ from: account });
 				// 	};
 				// }
 
-			} else if (isthere === false) {
 
+			} else if (isthere === false) {
+				console.log("Not whitelisted!");
 			} else {
 				alert("Install Metamask!");
 			}
@@ -485,42 +469,11 @@ function Mint() {
 
 	}
 
-	// async function table(){
-	// 	setLoading(true);
-
-	// 			var bal = await newcon.methods.balanceOf(account).call();
-	// 			setBalance(bal);
-				
-	// 			const tempData = [];
-
-	// 			for(let i=0; i<balance; i++){
-	// 				const userMintedId = parseInt(await newcon.methods.tokenOfOwnerByIndex(account, i).call());
-	// 				const tokenURI = await newcon.methods.tokenURI(userMintedId).call();
-	// 				const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
-	// 				const meta = await fetch(metadata);
-	// 				const json = await meta.json();
-	// 				const name = json["name"];
-
-
-	// 				tempData.push({userMintedId, name, i});
-	// 			}
-				
-
-	// 			setUserData(tempData);
-	// 			setLoading(false);
-	// }
-
-
-
 	useEffect(()=>{
 		connectEth();
-	},[account, isConnect, balance]
-	)
 
-	// useEffect(()=>{
-	// 	table();
-	// },[balance]
-	// )
+	},[account, isConnect]
+	)
 
 
 	return (
@@ -630,6 +583,32 @@ function Mint() {
         );
       }}
     </ConnectButton.Custom>
+
+
+
+
+
+				{/* <div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
+				<button
+
+					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
+
+					onClick={connect}
+					id="buttonconnect"
+				>
+		
+
+
+					{isConnect ? `${account.substring(0,7)}...${account.substring(38,44)}` : "Connect your wallet"}
+				</button>
+				
+				{isConnect && <button
+					className={`bg-red-500  hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 `}
+					onClick={disconnect}
+					id="buttonconnect">
+					Disconnect
+				</button>}
+				</div> */}
 				
 				
 				{
@@ -637,7 +616,7 @@ function Mint() {
 				isConnect? <h2
 					id="wlonly"
 					className="my-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw] flex justify-center items-center">
-						{isWhitelisted ? null : "Oops... Seems like you missed the train!"}
+						{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}
 					</h2>: null
 					
 				}
@@ -741,8 +720,8 @@ function Mint() {
 									 !isLoading &&
 									userData.map((data)=> (<tr>
 										<td className={`p-3 border-b-[1px] border-slate-500 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
-										{console.log(data.name[0])}
-										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/${contractad}/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
+
+										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/${add}/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
 										
 
 									</tr>))
