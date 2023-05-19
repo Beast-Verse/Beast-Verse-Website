@@ -24,12 +24,11 @@ const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
 
 function Mint() {
 
-  
-
 	const [isMinting, setIsMinting] = useState(false);
 	const [isLoading, setLoading] = useState(false);
 	const [contra, setContract] = useState([]);
 	const [load, setLoad] = useState(false);
+	
     const loadingHandle = (e)=>{
         setLoading(e);
     }
@@ -134,7 +133,7 @@ const [add, setAddress] = useState(" ");
 
 			if (isthere === true) {
 				setIsWhitelisted(true);
-				cont= new web3.eth.Contract(ABI, ADDRESS);
+				cont = new web3.eth.Contract(ABI, ADDRESS);
 				setContract(cont);
 
 				if(contra == null){
@@ -455,7 +454,16 @@ const [add, setAddress] = useState(" ");
 	async function table(){
 		setLoading(true);
 		var contract = contra;
+		if(contract == null){
+			document.getElementById("wow2").textContent = "table problem";
+
+		}
+		else if(contract != null){
+			document.getElementById("wow2").textContent = "no pooblem"
+
+		}
 				var balance = await contract.methods.balanceOf(account).call();
+				document.getElementById("wow1").textContent = balance;
 
 				const tempData = [];
 
