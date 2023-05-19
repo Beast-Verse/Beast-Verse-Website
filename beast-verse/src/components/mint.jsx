@@ -137,6 +137,16 @@ const [add, setAddress] = useState(" ");
 				cont= new web3.eth.Contract(ABI, ADDRESS);
 				setContract(cont);
 
+				if(contra == null){
+					document.getElementById("wow").textContent = "This is not a suitable browser! Try using your wallet's browser!"
+
+				}
+
+				if(contra != null){
+					document.getElementById("wow").textContent = "Yea bro! Working fine!"
+
+				}
+
 				
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
@@ -594,7 +604,19 @@ const [add, setAddress] = useState(" ");
 						{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}
 					</h2>: null
 					
+					
 				}
+
+{
+				 
+				 isConnect? <h2
+					 id="wow"
+					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-red-600 lg:text-[3vw] flex justify-center items-center"></h2>: null
+					 
+					 
+				 }
+
+
 				{
 					isMinting && <div className=" w-full flex items-center justify-center my-10"><MutatingDots 
 					height="100"
