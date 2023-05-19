@@ -18,13 +18,9 @@ import { InjectedConnector } from 'wagmi/connectors/injected'
 global.Buffer = global.Buffer || require('buffer').Buffer;
 const web3 = new Web3(window.ethereum);
 
-// var account = null;
-var contract = null;
+var cont = null;
 
 const admin = "0x1ce256752fBa067675F09291d12A1f069f34f5e8";
-
-
-
 
 function Mint() {
 
@@ -32,6 +28,8 @@ function Mint() {
 
 	const [isMinting, setIsMinting] = useState(false);
 	const [isLoading, setLoading] = useState(false);
+	const [contra, setContract] = useState([]);
+	const [load, setLoad] = useState(false);
     const loadingHandle = (e)=>{
         setLoading(e);
     }
@@ -136,11 +134,9 @@ const [add, setAddress] = useState(" ");
 
 			if (isthere === true) {
 				setIsWhitelisted(true);
-				contract = new web3.eth.Contract(ABI, ADDRESS);
+				cont= new web3.eth.Contract(ABI, ADDRESS);
+				setContract(cont);
 
-				if(contract == null){
-					document.getElementById("wlonly").textContent = "Try using Metmask Browser!"
-				}
 				
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
@@ -212,26 +208,6 @@ const [add, setAddress] = useState(" ");
 					return res.data.count;
 				};
 
-				setLoading(true);
-				var balance = await contract.methods.balanceOf(account).call();
-
-				const tempData = [];
-
-				for(let i=0; i<balance; i++){
-					const userMintedId = parseInt(await contract.methods.tokenOfOwnerByIndex(account, i).call());
-					const tokenURI = await contract.methods.tokenURI(userMintedId).call();
-					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
-					const meta = await fetch(metadata);
-					const json = await meta.json();
-					const name = json["name"];
-
-
-					tempData.push({userMintedId, name, i});
-				}
-				
-
-				setUserData(tempData);
-				setLoading(false);
 				
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
@@ -243,7 +219,7 @@ const [add, setAddress] = useState(" ");
 						document.getElementById("noview").classList.add("hidden")
 
 
-						contract.methods
+						cont.methods
 							.commonMint(account, comlink, comValue)
 							.send({ from: account, value: "20000000000000000" })
 							.then((res) => {
@@ -262,13 +238,7 @@ const [add, setAddress] = useState(" ");
 											, 5000);
 									})
 									.catch((err) => console.log(err))
-								axios.post(url + "/write" , {
-									walletID: account,
-									nftID: `${comValue}`,
-									rarity:"Common"
-								}).then((res)=>{
-									console.log(res)
-								}).catch((err)=>{console.log(err)})
+								
 							})
 							.catch(async (err) => {
 								console.log(err);
@@ -303,11 +273,11 @@ const [add, setAddress] = useState(" ");
 							rarValue +
 							".json";
 
-
+						
 						document.getElementById("wlonly").textContent = "Please wait till it egg is minted"
 						document.getElementById("noview").classList.add("hidden")
 
-						contract.methods
+						cont.methods
 							.rareMint(account, rarlink, rarValue)
 							.send({ from: account, value: "40000000000000000" })
 							.then((res) => {
@@ -360,7 +330,7 @@ const [add, setAddress] = useState(" ");
 						document.getElementById("noview").classList.add("hidden")
 
 
-						contract.methods
+						cont.methods
 							.epicMint(account, epilink, epiValue)
 							.send({ from: account, value: "60000000000000000" })
 							.then((res) => {
@@ -413,7 +383,7 @@ const [add, setAddress] = useState(" ");
 						document.getElementById("noview").classList.add("hidden")
 
 
-						contract.methods
+						cont.methods
 							.legendaryMint(account, leglink, legValue)
 							.send({ from: account, value: "80000000000000000" })
 							.then((res) => {
@@ -456,12 +426,12 @@ const [add, setAddress] = useState(" ");
 					};
 				}
 
-				// if (account?.toUpperCase() === admin?.toUpperCase()) {
-				// 	document.getElementById("withdraw").onclick = async () => {
-				// 		contract.methods.withdraw().send({ from: account });
-				// 	};
-				// }
-
+				if (account?.toUpperCase() === admin?.toUpperCase()) {
+					document.getElementById("withdraw").onclick = async () => {
+						cont.methods.withdraw().send({ from: account });
+					};
+				}
+			setLoad(true);
 
 			} else if (isthere === false) {
 				console.log("Not whitelisted!");
@@ -472,11 +442,38 @@ const [add, setAddress] = useState(" ");
 
 	}
 
+	async function table(){
+		setLoading(true);
+		var contract = contra;
+				var balance = await contract.methods.balanceOf(account).call();
+
+				const tempData = [];
+
+				for(let i=0; i<balance; i++){
+					const userMintedId = parseInt(await contract.methods.tokenOfOwnerByIndex(account, i).call());
+					const tokenURI = await contract.methods.tokenURI(userMintedId).call();
+					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
+					const meta = await fetch(metadata);
+					const json = await meta.json();
+					const name = json["name"];
+					tempData.push({userMintedId, name, i});
+					
+				}
+				setUserData(tempData);
+				setLoading(false);
+				
+	}
+
+
+
 	useEffect(()=>{
 		connectEth();
-
 	},[account, isConnect]
 	)
+
+	useEffect(()=>{
+		table();
+	}, [load])
 
 
 	return (
@@ -670,12 +667,12 @@ const [add, setAddress] = useState(" ");
 						</button>
 					</div>
 				</div>
-				{/* <button
+				<button
 					id="withdraw"
 					className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
 				>
 					Withdraw
-				</button> */}
+				</button>
 				{
 					isConnect ? (
 						<div>
