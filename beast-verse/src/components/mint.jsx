@@ -344,6 +344,7 @@ const [add, setAddress] = useState(" ");
 							.epicMint(account, epilink, epiValue)
 							.send({ from: account, value: "60000000000000000" })
 							.then((res) => {
+
 								console.log(res);
 								axios.put(url + "/pop", {
 									"index": epiValue,
@@ -399,9 +400,6 @@ const [add, setAddress] = useState(" ");
 							.then((res) => {
 								console.log(res);
 
-
-
-
 								axios.put(url + "/pop", {
 									"index": legValue,
 									"rarity": "legendary"
@@ -436,11 +434,13 @@ const [add, setAddress] = useState(" ");
 					};
 				}
 
-				if (account?.toUpperCase() === admin?.toUpperCase()) {
-					document.getElementById("withdraw").onclick = async () => {
-						cont.methods.withdraw().send({ from: account });
-					};
-				}
+				// if (account?.toUpperCase() === admin?.toUpperCase()) {
+				// 	document.getElementById("withdraw").onclick = async () => {
+				// 		cont.methods.withdraw().send({ from: account });
+				// 	};
+				// }
+
+
 			setLoad(true);
 
 			} else if (isthere === false) {
@@ -467,13 +467,13 @@ const [add, setAddress] = useState(" ");
 					const json = await meta.json();
 					const name = json["name"];
 					tempData.push({userMintedId, name, i});
+					document.getElementById("wow1").textContent = "I am in the table hehe"
 					
 				}
 				setUserData(tempData);
 				setLoading(false);
 				
 	}
-
 
 
 	useEffect(()=>{
@@ -616,6 +616,24 @@ const [add, setAddress] = useState(" ");
 					 
 				 }
 
+{
+				 
+				 isConnect? <h2
+					 id="wow1"
+					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-green-600 lg:text-[3vw] flex justify-center items-center"></h2>: null
+					 
+					 
+				 }
+
+{
+				 
+				 isConnect? <h2
+					 id="wow2"
+					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-blue-600 lg:text-[3vw] flex justify-center items-center"></h2>: null
+					 
+					 
+				 }
+
 
 				{
 					isMinting && <div className=" w-full flex items-center justify-center my-10"><MutatingDots 
@@ -689,12 +707,12 @@ const [add, setAddress] = useState(" ");
 						</button>
 					</div>
 				</div>
-				<button
+				{/* <button
 					id="withdraw"
 					className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
 				>
 					Withdraw
-				</button>
+				</button> */}
 				{
 					isConnect ? (
 						<div>
