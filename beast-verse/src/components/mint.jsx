@@ -16,6 +16,7 @@ import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 // import { useAccount, useConnect } from 'wagmi'
 global.Buffer = global.Buffer || require('buffer').Buffer;
+
 const web3 = new Web3(window.ethereum);
 
 var cont = null;
@@ -28,7 +29,7 @@ function Mint() {
 	const [isLoading, setLoading] = useState(false);
 	const [contra, setContract] = useState([]);
 	const [load, setLoad] = useState(false);
-	
+
     const loadingHandle = (e)=>{
         setLoading(e);
     }
@@ -136,17 +137,17 @@ const [add, setAddress] = useState(" ");
 				cont = new web3.eth.Contract(ABI, ADDRESS);
 				setContract(cont);
 
-				if(contra == null){
+				if(cont == null){
 					document.getElementById("wow").textContent = "This is not a suitable browser! Try using your wallet's browser!"
 
 				}
 
-				if(contra != null){
+				if(cont != null){
 					document.getElementById("wow").textContent = "Yea bro! Working fine!"
 
 				}
 
-				
+
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
 						params: {
@@ -638,6 +639,15 @@ const [add, setAddress] = useState(" ");
 				 isConnect? <h2
 					 id="wow2"
 					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-blue-600 lg:text-[3vw] flex justify-center items-center"></h2>: null
+					 
+					 
+				 }
+
+{
+				 
+				 isConnect? <h2
+					 id="wow3"
+					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-pink-400 lg:text-[3vw] flex justify-center items-center"></h2>: null
 					 
 					 
 				 }
