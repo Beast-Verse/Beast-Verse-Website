@@ -37,7 +37,9 @@ function Mint() {
 	const [isConnect, setIsConnect] = useState(false);
 	const [isWhitelisted, setIsWhitelisted] = useState(false);
 	const [userData, setUserData] = useState([]);
-	const [contractad, setContract] = useState("");
+	const [contractad, setContract] = useState(" ");
+	const [newcon, setNewcon] = useState([]);
+	const [balance, setBalance] = useState(null);
 	const { address, isConnecting, isDisconnected } = useAccount({
 		onConnect: ({address, isReconnected, connector: activeConnector})=> {
 
@@ -59,6 +61,7 @@ function Mint() {
 		const contractabi = await axios.get(url + "/getAbiandAddress");
 		const ABI = contractabi.data.contractABI;
 		const ADDRESS = contractabi.data.contractad;
+
 
 		setContract(ADDRESS);
 			const whitelisted = [
@@ -144,6 +147,12 @@ function Mint() {
 				setIsWhitelisted(true);
 				contract = new web3.eth.Contract(ABI, ADDRESS);
 
+				setNewcon(contract);
+
+				var bal = await contract.methods.balanceOf(account).call();
+				setBalance(bal);
+				console.log(balance);
+
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
 						params: {
@@ -215,28 +224,6 @@ function Mint() {
 					return res.data.count;
 				};
 
-				setLoading(true);
-
-				var balance = await contract.methods.balanceOf(account).call();
-
-				
-				const tempData = [];
-
-				for(let i=0; i<balance; i++){
-					const userMintedId = parseInt(await contract.methods.tokenOfOwnerByIndex(account, i).call());
-					const tokenURI = await contract.methods.tokenURI(userMintedId).call();
-					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
-					const meta = await fetch(metadata);
-					const json = await meta.json();
-					const name = json["name"];
-
-
-					tempData.push({userMintedId, name, i});
-				}
-				
-
-				setUserData(tempData);
-				setLoading(false);
 				
 				if ((await getCountCom()) < 125) {
 					document.getElementById("mint common").onclick = async () => {
@@ -463,6 +450,26 @@ function Mint() {
 					};
 				}
 
+				setLoading(true);
+				
+				const tempData = [];
+
+				for(let i=0; i<balance; i++){
+					const userMintedId = parseInt(await contract.methods.tokenOfOwnerByIndex(account, i).call());
+					const tokenURI = await contract.methods.tokenURI(userMintedId).call();
+					const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
+					const meta = await fetch(metadata);
+					const json = await meta.json();
+					const name = json["name"];
+
+
+					tempData.push({userMintedId, name, i});
+				}
+				
+
+				setUserData(tempData);
+				setLoading(false);
+
 				// if (account?.toUpperCase() === admin?.toUpperCase()) {
 				// 	document.getElementById("withdraw").onclick = async () => {
 				// 		contract.methods.withdraw().send({ from: account });
@@ -478,13 +485,42 @@ function Mint() {
 
 	}
 
+	// async function table(){
+	// 	setLoading(true);
+
+	// 			var bal = await newcon.methods.balanceOf(account).call();
+	// 			setBalance(bal);
+				
+	// 			const tempData = [];
+
+	// 			for(let i=0; i<balance; i++){
+	// 				const userMintedId = parseInt(await newcon.methods.tokenOfOwnerByIndex(account, i).call());
+	// 				const tokenURI = await newcon.methods.tokenURI(userMintedId).call();
+	// 				const metadata = `https://ipfs.io/ipfs/${tokenURI.substr(7)}`;
+	// 				const meta = await fetch(metadata);
+	// 				const json = await meta.json();
+	// 				const name = json["name"];
+
+
+	// 				tempData.push({userMintedId, name, i});
+	// 			}
+				
+
+	// 			setUserData(tempData);
+	// 			setLoading(false);
+	// }
 
 
 
 	useEffect(()=>{
 		connectEth();
-	},[account, isConnect]
+	},[account, isConnect, balance]
 	)
+
+	// useEffect(()=>{
+	// 	table();
+	// },[balance]
+	// )
 
 
 	return (
@@ -601,7 +637,7 @@ function Mint() {
 				isConnect? <h2
 					id="wlonly"
 					className="my-10 text-[3vw] mx-auto w-[70%] font-Montserrat font-medium text-slate-400 lg:text-[3vw] flex justify-center items-center">
-						{isWhitelisted ? null : "You're not whitelisted! Wait till 21/05/23"}
+						{isWhitelisted ? null : "Oops... Seems like you missed the train!"}
 					</h2>: null
 					
 				}
@@ -706,7 +742,7 @@ function Mint() {
 									userData.map((data)=> (<tr>
 										<td className={`p-3 border-b-[1px] border-slate-500 text-center font-Montserrat font-bold ${data.name[0]==='R'? "text-blue-400": data.name[0]==="C"? "text-green-400" : data.name[0]==="L"? "text-yellow-400": data.name[0]==="E"? "text-purple-400": null} `}>{data.name}</td>
 										{console.log(data.name[0])}
-										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/${setContract}/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
+										<td className="p-3 border-b-[1px] border-slate-500 text-white text-center"><a href={`https://testnets.opensea.io/assets/mumbai/${contractad}/${data.userMintedId}`} className=" text-Montserrat hover:text-blue-300">View on OpenSea</a></td>
 										
 
 									</tr>))
