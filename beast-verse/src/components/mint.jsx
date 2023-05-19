@@ -137,17 +137,6 @@ const [add, setAddress] = useState(" ");
 				cont = new web3.eth.Contract(ABI, ADDRESS);
 				setContract(cont);
 
-				if(cont == null){
-					document.getElementById("wow").textContent = "This is not a suitable browser! Try using your wallet's browser!"
-
-				}
-
-				if(cont != null){
-					document.getElementById("wow").textContent = "Yea bro! Working fine!"
-
-				}
-
-
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
 						params: {
@@ -455,16 +444,8 @@ const [add, setAddress] = useState(" ");
 	async function table(){
 		setLoading(true);
 		var contract = contra;
-		if(contract == null){
-			document.getElementById("wow2").textContent = "table problem";
-
-		}
-		else if(contract != null){
-			document.getElementById("wow2").textContent = "no pooblem"
-
-		}
+		
 				var balance = await contract.methods.balanceOf(account).call();
-				document.getElementById("wow1").textContent = balance;
 
 				const tempData = [];
 
@@ -476,7 +457,6 @@ const [add, setAddress] = useState(" ");
 					const json = await meta.json();
 					const name = json["name"];
 					tempData.push({userMintedId, name, i});
-					document.getElementById("wow1").textContent = "I am in the table hehe"
 					
 				}
 				setUserData(tempData);
@@ -616,41 +596,6 @@ const [add, setAddress] = useState(" ");
 					
 				}
 
-{
-				 
-				 isConnect? <h2
-					 id="wow"
-					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-red-600 lg:text-[3vw] flex justify-center items-center"></h2>: null
-					 
-					 
-				 }
-
-{
-				 
-				 isConnect? <h2
-					 id="wow1"
-					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-green-600 lg:text-[3vw] flex justify-center items-center"></h2>: null
-					 
-					 
-				 }
-
-{
-				 
-				 isConnect? <h2
-					 id="wow2"
-					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-blue-600 lg:text-[3vw] flex justify-center items-center"></h2>: null
-					 
-					 
-				 }
-
-{
-				 
-				 isConnect? <h2
-					 id="wow3"
-					 className="my-10 text-[7vw] mx-auto w-[70%] font-Montserrat font-medium text-pink-400 lg:text-[3vw] flex justify-center items-center"></h2>: null
-					 
-					 
-				 }
 
 
 				{
