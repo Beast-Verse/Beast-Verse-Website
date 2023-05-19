@@ -61,7 +61,7 @@ const [add, setAddress] = useState(" ");
 		const contractabi = await axios.get(url + "/getAbiandAddress");
 		const ABI = contractabi.data.contractABI;
 		const ADDRESS = contractabi.data.contractad;
-setAddress(ADDRESS);
+		setAddress(ADDRESS);
 			const whitelisted = [
 				"0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
 				"0xa92B24AC60A6B381E0eC2DD17d2a3339Cda24D84",
@@ -138,7 +138,10 @@ setAddress(ADDRESS);
 				setIsWhitelisted(true);
 				contract = new web3.eth.Contract(ABI, ADDRESS);
 
-
+				if(contract == null){
+					document.getElementById("wlonly").textContent = "Try using Metmask Browser!"
+				}
+				
 				let com = async () => {
 					let res = await axios.get(url + "/getRandom", {
 						params: {
@@ -584,31 +587,6 @@ setAddress(ADDRESS);
       }}
     </ConnectButton.Custom>
 
-
-
-
-
-				{/* <div className={`${isConnect?" flex flex-row gap-4 items-center justify-center ": null}`}>
-				<button
-
-					className={`${isConnect? "text-gray-500 bg-gray-300 col-span-2 max-[768px]:text-[2.5vw]" : "text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30"} p-4 rounded-xl font-Montserrat font-semibold`}
-
-					onClick={connect}
-					id="buttonconnect"
-				>
-		
-
-
-					{isConnect ? `${account.substring(0,7)}...${account.substring(38,44)}` : "Connect your wallet"}
-				</button>
-				
-				{isConnect && <button
-					className={`bg-red-500  hover:bg-red-700 text-white p-4 rounded-xl font-Montserrat font-semibold col-span-1 `}
-					onClick={disconnect}
-					id="buttonconnect">
-					Disconnect
-				</button>}
-				</div> */}
 				
 				
 				{
