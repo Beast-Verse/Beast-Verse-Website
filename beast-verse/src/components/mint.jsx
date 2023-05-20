@@ -58,8 +58,10 @@ function Mint() {
     const contractabi = await axios.get(url + "/getAbiandAddress");
     const ABI = contractabi.data.contractABI;
     const ADDRESS = contractabi.data.contractad;
+
+	console.log(ADDRESS);
     setAddress(ADDRESS);
-	console.log(add);
+
     const whitelisted = [
       "0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
       "0xa92B24AC60A6B381E0eC2DD17d2a3339Cda24D84",
@@ -205,6 +207,11 @@ function Mint() {
         });
         return res.data.count;
       };
+
+	  console.log(await getCountCom());
+	  console.log(await getCountEpi());
+	  console.log(getCountRar());
+	  console.log(getCountLeg());
 
       if ((await getCountCom()) < 125) {
         document.getElementById("mint common").onclick = async () => {
@@ -736,7 +743,7 @@ function Mint() {
 
                       <td className="p-3 border-b-[1px] border-slate-500 text-white text-center">
                         <a
-                          href={`https://testnets.opensea.io/assets/mumbai/${add}/${data.userMintedId}`}
+                          href={`https://opensea.io/assets/mumbai/${add}/${data.userMintedId}`}
                           className=" text-Montserrat hover:text-blue-300"
                         >
                           View on OpenSea
