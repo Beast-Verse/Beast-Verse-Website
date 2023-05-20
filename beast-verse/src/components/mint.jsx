@@ -225,7 +225,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "2000000000000000000" })
+            .send({ from: account, value: "2000000000000000000", gasLimit: 300000 })
             .then((res) => {
               console.log(res);
               axios
@@ -269,6 +269,13 @@ function Mint() {
         };
       }
 
+	  console.log(await getCountCom());
+	  console.log(await getCountRar());
+	  console.log(await getCountEpi());
+	  console.log(await getCountLeg());
+
+
+
       if ((await getCountRar()) < 100) {
         document.getElementById("mint rare").onclick = async () => {
           setIsMinting(true);
@@ -284,7 +291,7 @@ function Mint() {
 
           cont.methods
             .rareMint(account, rarlink, rarValue)
-            .send({ from: account, value: "4000000000000000000" })
+            .send({ from: account, value: "4000000000000000000", gasLimit: 300000 })
             .then((res) => {
               console.log(res);
               axios
@@ -341,7 +348,7 @@ function Mint() {
 
           cont.methods
             .epicMint(account, epilink, epiValue)
-            .send({ from: account, value: "6000000000000000000" })
+            .send({ from: account, value: "6000000000000000000", gasLimit: 300000})
             .then((res) => {
               console.log(res);
               axios
@@ -383,6 +390,7 @@ function Mint() {
         };
       }
 
+
       if ((await getCountLeg()) < 25) {
         document.getElementById("mint legendary").onclick = async () => {
           setIsMinting(true);
@@ -398,7 +406,7 @@ function Mint() {
 
           cont.methods
             .legendaryMint(account, leglink, legValue)
-            .send({ from: account, value: "8000000000000000000" })
+            .send({ from: account, value: "8000000000000000000", gasLimit: 300000 })
             .then((res) => {
               console.log(res);
 
