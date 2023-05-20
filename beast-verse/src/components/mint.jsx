@@ -225,7 +225,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "2000000000000000000", gasLimit: 300000 })
+            .send({ from: account, value: "2000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -291,7 +291,7 @@ function Mint() {
 
           cont.methods
             .rareMint(account, rarlink, rarValue)
-            .send({ from: account, value: "4000000000000000000", gasLimit: 300000 })
+            .send({ from: account, value: "4000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -348,7 +348,7 @@ function Mint() {
 
           cont.methods
             .epicMint(account, epilink, epiValue)
-            .send({ from: account, value: "6000000000000000000", gasLimit: 300000})
+            .send({ from: account, value: "6000000000000000000", gasLimit: 300000, gasPrice: 170000000000})
             .then((res) => {
               console.log(res);
               axios
@@ -406,7 +406,7 @@ function Mint() {
 
           cont.methods
             .legendaryMint(account, leglink, legValue)
-            .send({ from: account, value: "8000000000000000000", gasLimit: 300000 })
+            .send({ from: account, value: "8000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
             .then((res) => {
               console.log(res);
 
