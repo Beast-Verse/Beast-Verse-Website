@@ -210,8 +210,8 @@ function Mint() {
 
 	  console.log(await getCountCom());
 	  console.log(await getCountEpi());
-	  console.log(getCountRar());
-	  console.log(getCountLeg());
+	  console.log(await getCountRar());
+	  console.log(await getCountLeg());
 
       if ((await getCountCom()) < 125) {
         document.getElementById("mint common").onclick = async () => {
