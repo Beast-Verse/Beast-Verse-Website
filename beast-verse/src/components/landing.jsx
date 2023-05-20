@@ -88,7 +88,14 @@ export default function Landing() {
 
         className='absolute flex flex-col justify-center items-center z-0 w-[100vw] h-[100vh]'>
             <img src={logo} alt="bv_logo" className='w-[30%]' />
-            
+            {/* <Link to="/wearemintingfortestpurposesonly" className='flex flex-row gap-4'> */}
+            <Link to="/mint" className='flex flex-row gap-4'>
+                <motion.a
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                href='https://forms.gle/kNn1TArMvbYRc3vj8'
+                className='border-white hover:border-green-900 border-2 shadow-xl hover:shadow-sm font-bold text-2xl bg-gradient-to-br from-green-600 to-lime-400 hover:to-green-600 hover:from-lime-500 text-white py-4 px-16 rounded-lg cursor-pointer'>Mint Now</motion.a>
+            </Link>
         </motion.div>
 
 
