@@ -59,6 +59,7 @@ function Mint() {
     const ABI = contractabi.data.contractABI;
     const ADDRESS = contractabi.data.contractad;
     setAddress(ADDRESS);
+	console.log(add);
     const whitelisted = [
       "0xc9de0a09b6e547cf7e028aabb7b1f2f6941ad53f",
       "0xa92B24AC60A6B381E0eC2DD17d2a3339Cda24D84",
@@ -220,7 +221,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "20000000000000000" })
+            .send({ from: account, value: "2000000000000000" })
             .then((res) => {
               console.log(res);
               axios
@@ -279,7 +280,7 @@ function Mint() {
 
           cont.methods
             .rareMint(account, rarlink, rarValue)
-            .send({ from: account, value: "40000000000000000" })
+            .send({ from: account, value: "4000000000000000" })
             .then((res) => {
               console.log(res);
               axios
@@ -336,7 +337,7 @@ function Mint() {
 
           cont.methods
             .epicMint(account, epilink, epiValue)
-            .send({ from: account, value: "60000000000000000" })
+            .send({ from: account, value: "6000000000000000" })
             .then((res) => {
               console.log(res);
               axios
@@ -393,7 +394,7 @@ function Mint() {
 
           cont.methods
             .legendaryMint(account, leglink, legValue)
-            .send({ from: account, value: "80000000000000000" })
+            .send({ from: account, value: "8000000000000000" })
             .then((res) => {
               console.log(res);
 
