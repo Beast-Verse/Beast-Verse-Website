@@ -4,7 +4,6 @@ import './App.css';
 import Mint from './components/mint';
 import Home from './pages/Home';
 import Leaderboard from './components/leaderboard';
-import MintingTimer from './components/MintingTimer';
 
 
 
@@ -14,8 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path="/leaderboard" element={<Leaderboard />}/> */}
-        <Route path="/wearemintingfortestpurposesonly" element={<Mint />}/>
-        <Route path="/mint" element={<MintingTimer />}/>
+        <Route path="/mint" element={<Mint />}/>
         <Route path="/" element={<Home />} exact/>
       </Routes>
     </BrowserRouter>
