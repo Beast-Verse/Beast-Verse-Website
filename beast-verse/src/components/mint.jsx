@@ -482,10 +482,12 @@ function Mint() {
 
   useEffect(() => {
     connectEth();
+	console.log("Connecteth")
   }, [account, isConnect]);
 
   useEffect(() => {
     table();
+	console.log("table");
   }, [load]);
 
   return (
