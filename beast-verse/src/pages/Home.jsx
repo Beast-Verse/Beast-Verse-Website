@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Landing from '../components/landing'
 import AboutUs from '../components/Aboutus'
@@ -21,16 +21,46 @@ import Mobteams from '../components/Mobteams';
 import Mobnav from '../components/Mobnav';
 import Mobfooter from '../components/Mobfooter';
 import Partners from '../components/Partners';
+import Web3 from "web3";
+import axios from 'axios'
+
+let url = "https://bvbackend-production.up.railway.app/api";
 
 
 export default function Home() {
+
+  const options = {
+    method: 'GET',
+    url: 'https://api.opensea.io/api/v1/collection/beastverse-game'
+  };
+
+  const [data, setData] = React.useState();
+  const getData = async () => {
+    axios
+    .request(options)
+    .then(function (response) {
+      const stats = response.data.collection.stats
+      console.log({total:3000, minted: stats.total_supply, volume: stats.total_volume});
+      setData({total:3000, minted: stats.total_supply, volume: stats.total_volume})
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+  }
+
+  useEffect(() => {
+    getData();
+  }, [])
+
+  
+
   return (
     <div><div className="overflow-x-hidden hidescrollbar max-[768px]:hidden">
         
     <Navbar delay={5}/>
     <Landing/>
     <AboutUs/>
-    <Stats/>
+    <Stats data={data? data:{total:"--", minted:"--", volume:"--"}}/>
     <Roadmap/>
     <Partners/>
     <Team/>
@@ -48,7 +78,7 @@ export default function Home() {
 <Mobland/>
 <Mobabout/>
 <Eggs/>
-<Mobstats/>
+<Mobstats data={data? data:{total:"--", minted:"--", volume:"--"}}/>
 <Mobroadmap/>
 <Partners/>
 <Mobteams/>

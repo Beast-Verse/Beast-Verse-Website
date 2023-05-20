@@ -1,11 +1,11 @@
 import React from 'react'
 import {motion} from "framer-motion"
-function Mobstats() {
-    const data = {
-        supply: "3000",
-        minted: "0",
-        volume: "0",
-      };
+function Mobstats({data}) {
+    // const data = {
+    //     supply: "3000",
+    //     minted: "0",
+    //     volume: "0",
+    //   };
   return (
     <div className='bg-gradient-to-b from-black to-slate-800 text-center py-20 pb-28'>
     <h2 className='text-[12vw] font-Montserrat text-blue-400 font-bold'>STATS</h2>
@@ -24,7 +24,7 @@ function Mobstats() {
                 TOTAL SUPPLY
               </span>
               <h2 className="text-[#7ae2ff] font-Montserrat text-5xl font-extrabold leading-none">
-                {data.supply}
+                {data.total}
               </h2>
             </div>
             <div className="h-[2px] w-36 bg-blue-400"></div>

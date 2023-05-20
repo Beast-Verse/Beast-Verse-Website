@@ -1,13 +1,13 @@
 
 import React from "react";
 import {motion} from "framer-motion"
-const Stats = () => {
+const Stats = ({data}) => {
   //Change Stats Here
-  const data = {
-    supply: "3000",
-    minted: "0",
-    volume: "0",
-  };
+  // const data = {
+  //   supply: "3000",
+  //   minted: "0",
+  //   volume: "0",
+  // };
 
   return (
     <div className="bg-gradient-to-b from-black to-slate-800 text-center py-20 pb-32">
@@ -31,7 +31,7 @@ const Stats = () => {
                     TOTAL SUPPLY
                   </span>
                   <h2 className="text-[#7ae2ff] font-Montserrat text-6xl font-extrabold leading-none  pt-3">
-                    {data.supply}
+                    {data.total}
                   </h2>
                 </div>
                 <div className="w-[2px] h-40 bg-blue-400"></div>
