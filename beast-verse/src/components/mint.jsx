@@ -150,7 +150,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "2000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
+            .send({ from: account, value: "5000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -216,7 +216,7 @@ function Mint() {
 
           cont.methods
             .rareMint(account, rarlink, rarValue)
-            .send({ from: account, value: "4000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
+            .send({ from: account, value: "7000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -273,7 +273,7 @@ function Mint() {
 
           cont.methods
             .epicMint(account, epilink, epiValue)
-            .send({ from: account, value: "6000000000000000000", gasLimit: 300000, gasPrice: 170000000000})
+            .send({ from: account, value: "9000000000000000000", gasLimit: 300000, gasPrice: 170000000000})
             .then((res) => {
               console.log(res);
               axios
@@ -331,7 +331,7 @@ function Mint() {
 
           cont.methods
             .legendaryMint(account, leglink, legValue)
-            .send({ from: account, value: "8000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
+            .send({ from: account, value: "11000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
             .then((res) => {
               console.log(res);
 
@@ -562,7 +562,7 @@ function Mint() {
               className="w-full rounded-lg shadow-xl shadow-green-400/20"
             ></img>
             <h2 className="text-green-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
-              2 MATIC
+              5 MATIC
             </h2>
             <button
               id="mint common"
@@ -578,7 +578,7 @@ function Mint() {
               className="w-full rounded-lg shadow-xl shadow-blue-400/20"
             ></img>
             <h2 className="text-blue-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
-              4 MATIC
+              7 MATIC
             </h2>
             <button
               id="mint rare"
@@ -594,7 +594,7 @@ function Mint() {
               className="w-full rounded-lg shadow-xl shadow-purple-400/20"
             ></img>
             <h2 className="text-purple-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
-              6 MATIC
+              9 MATIC
             </h2>
             <button
               id="mint epic"
@@ -610,7 +610,7 @@ function Mint() {
               className="w-full rounded-lg shadow-xl shadow-yellow-400/20"
             ></img>
             <h2 className="text-yellow-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
-              8 MATIC
+              11 MATIC
             </h2>
             <button
               id="mint legendary"
