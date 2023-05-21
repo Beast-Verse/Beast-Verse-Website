@@ -145,7 +145,7 @@ function Mint() {
             ".json";
 
           document.getElementById("wlonly").textContent =
-            "Please wait till it egg is minted";
+            "Please wait till egg is minted";
           document.getElementById("noview").classList.add("hidden");
 
           cont.methods
@@ -211,7 +211,7 @@ function Mint() {
             ".json";
 
           document.getElementById("wlonly").textContent =
-            "Please wait till it egg is minted";
+            "Please wait till egg is minted";
           document.getElementById("noview").classList.add("hidden");
 
           cont.methods
@@ -268,7 +268,7 @@ function Mint() {
             ".json";
 
           document.getElementById("wlonly").textContent =
-            "Please wait till it egg is minted";
+            "Please wait till egg is minted";
           document.getElementById("noview").classList.add("hidden");
 
           cont.methods
@@ -326,7 +326,7 @@ function Mint() {
             ".json";
 
           document.getElementById("wlonly").textContent =
-            "Please wait till it egg is minted";
+            "Please wait till egg is minted";
           document.getElementById("noview").classList.add("hidden");
 
           cont.methods
