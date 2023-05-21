@@ -10,13 +10,13 @@ import {
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum, polygonMumbai } from 'wagmi/chains';
+import {polygon} from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 
 
-const { chains, provider } = configureChains([polygon, polygonMumbai], [publicProvider()]);
+const { chains, provider } = configureChains([polygon], [publicProvider()]);
 
 const { connectors } = getDefaultWallets({
   appName: "beastverse",
