@@ -436,7 +436,7 @@ function Mint() {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-black to-slate-800 text-center min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start pb-0 p-2">
+      <div className="bg-gradient-to-b from-black to-slate-800 min-h-[100vh] flex flex-col items-center justify-center max-[768px]:pt-10 max-[768px]:justify-start pb-0 p-2">
         <h1
           className="pt-10 text-4xl font-bold text-blue-400  lg:text-6xl mb-10"
           id="check"
@@ -481,7 +481,7 @@ function Mint() {
                       <button
                         onClick={openConnectModal}
                         type="button"
-                        className="text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30 p-4 rounded-xl font-Montserrat font-semibold"
+                        className="mb-10 text-[1.2vw] max-[768px]:text-[5vw] bg-gradient-to-br from-slate-800 to duration-400 transition-all bg-slate-600 text-blue-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/30 p-4 rounded-xl font-Montserrat font-semibold"
                       >
                         Connect Wallet
                       </button>
@@ -585,12 +585,21 @@ function Mint() {
     
         )}
 
+        <div className="bg-blue-500/40 border-2 border-blue-300 max-[768px]:w-[90%] w-[70%] rounded-2xl p-5 mb-10">
+              <h3 className="text-center text-white font-Montserrat font-semibold text-[2.2vw] max-[768px]:text-[6vw]">Holder Benefits</h3>
+              <ul className=" list-disc text-white font-Montserrat text-[1.2vw] max-[768px]:text-[4vw] mt-3 min-[768px]:leading-6 ml-4">
+                <li className="mb-3"><b className="text-blue-400">Powerful in-game characters: </b>Though the game will be free-to-play, these NFTs will grant holders more powerful characters over the free ones!</li>
+                <li className="mb-3"><b className="text-blue-400">Staking: </b>Stake your NFTs and earn the Beast Verse token.</li>
+                <li className="mb-3"><b className="text-blue-400">BV DAO: </b>Top 10 Holders get to join the BV DAO, the governing body for the Project's future!</li>
+              </ul>
+              </div>
         <div
           className={`${
             isConnect ? null : "hidden"
           } flex flex-row  max-[768px]:flex-wrap min-[768px]:mx-10`}
           id="noview"
         >
+          
           <div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2">
             <img
               src={common}
@@ -662,9 +671,9 @@ function Mint() {
 					Withdraw
 				</button> */}
         {isConnect ? (
-          <div>
+          <div className="text-center">
             <h1
-              className="pt-10 text-2xl font-bold text-blue-400  lg:text-4xl mb-10"
+              className="pt-10 text-2xl font-bold text-blue-400  lg:text-4xl mb-10 "
               id="check"
             >
               YOUR MINTS
@@ -727,7 +736,7 @@ function Mint() {
         ) : (
           <div></div>
         )}
-        <div className="mt-40 w-screen py-10 bg-slate-900">
+        <div className="mt-40 w-screen py-10 bg-slate-900 text-center">
           <div
             href="mailto: abc@example.com"
             className="text-white font-Montserrat text-lg "
