@@ -7,6 +7,7 @@ import common from "../assets/Common.gif";
 import epic from "../assets/Epic.gif";
 import Legendary from "../assets/Legendary.gif";
 import Rare from "../assets/Rare.gif";
+import {motion} from 'framer-motion' 
 
 import Web3 from "web3";
 import axios from "axios";
@@ -28,7 +29,8 @@ function Mint() {
   const [isLoading, setLoading] = useState(false);
   const [contra, setContract] = useState([]);
   const [load, setLoad] = useState(false);
-
+  const[isMinted,setIsMinted]=useState(false);
+  const[tweety,setTweet]=useState("");
   const loadingHandle = (e) => {
     setLoading(e);
   };
@@ -134,6 +136,8 @@ function Mint() {
         return res.data.count;
       };
 
+      const hashtags = "hashtags=NFTCommunity,NFTProject,Polygon,BeastVerse";
+      const tweet = "https://twitter.com/intent/tweet?" + hashtags + "&text=";
 
       if ((await getCountCom()) < 125) {
         document.getElementById("mint common").onclick = async () => {
@@ -161,12 +165,17 @@ function Mint() {
                 .then(async (res) => {
                   console.log(res);
                   setIsMinting(false);
+                  var tokenId=await cont.methods.totalSupply().call();
                   document.getElementById(
                     "wlonly"
-                  ).textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 5 secs`;
+                  ).textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 10 secs`;
+                  //let urly="https://res.cloudinary.com/dcugof3zo/video/upload/v1684909381/WhatsApp_Video_2023-05-23_at_18.38.48_wjtyp1.mp4";
+                  const tweetmsg = tweet + "I%20just%20minted%20Common%20Egg%20"+comValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/${addr}/${tokenId}`;
+                  setIsMinted(true);
+                  setTweet(tweetmsg)
                   setTimeout(() => {
                     window.location.reload();
-                  }, 5000);
+                  }, 10000);
                 })
                 .catch((err) => console.log(err));
             })
@@ -227,12 +236,16 @@ function Mint() {
                 .then(async (res) => {
                   console.log(res);
                   setIsMinting(false);
+                  var tokenId=await cont.methods.totalSupply().call();
                   document.getElementById(
                     "wlonly"
-                  ).textContent = `Successfully minted Rare Egg #${rarValue}! \n Reloading in 5 secs`;
+                  ).textContent = `Successfully minted Rare Egg #${rarValue}! \n Reloading in 10 secs`;
+                  const tweetmsg = tweet + "I%20just%20minted%20Rare%20Egg%20"+rarValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/${addr}/${tokenId}`;
+                  setIsMinted(true);
+                  setTweet(tweetmsg)
                   setTimeout(() => {
                     window.location.reload();
-                  }, 5000);
+                  }, 10000);
                 })
                 .catch((err) => console.log(err));
             })
@@ -241,6 +254,7 @@ function Mint() {
               document.getElementById(
                 "wlonly"
               ).textContent = `Transaction for Rare Egg was rejected! \n Reloading in 2s`;
+
               axios
                 .put(url + "/flip", {
                   index: rarValue,
@@ -284,12 +298,16 @@ function Mint() {
                 .then(async (res) => {
                   console.log(res);
                   setIsMinting(false);
+                  var tokenId=await cont.methods.totalSupply().call();
                   document.getElementById(
                     "wlonly"
-                  ).textContent = `Successfully minted Epic Egg #${epiValue}! \n Reloading in 5 secs`;
+                  ).textContent = `Successfully minted Epic Egg #${epiValue}! \n Reloading in 10 secs`;
+                  const tweetmsg = tweet + "I%20just%20minted%20Epic%20Egg%20"+epiValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/${addr}/${tokenId}`;
+                  setIsMinted(true);
+                  setTweet(tweetmsg)
                   setTimeout(() => {
                     window.location.reload();
-                  }, 5000);
+                  }, 10000);
                 })
                 .catch((err) => console.log(err));
             })
@@ -298,6 +316,7 @@ function Mint() {
               document.getElementById(
                 "wlonly"
               ).textContent = `Transaction for Epic Egg was rejected! \n Reloading in 2s`;
+
               axios
                 .put(url + "/flip", {
                   index: epiValue,
@@ -343,12 +362,16 @@ function Mint() {
                 .then(async (res) => {
                   console.log(res);
                   setIsMinting(false);
+                  var tokenId=await cont.methods.totalSupply().call();
                   document.getElementById(
                     "wlonly"
-                  ).textContent = `Successfully minted Legendary Egg #${legValue}! \n Reloading in 5 secs`;
+                  ).textContent = `Successfully minted Legendary Egg #${legValue}! \n Reloading in 10 secs`;
+                  const tweetmsg = tweet + "I%20just%20minted%20Legendary%20Egg%20"+legValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/${addr}/${tokenId}`;
+                  setTweet(tweetmsg);  
+                  setIsMinted(true);
                   setTimeout(() => {
                     window.location.reload();
-                  }, 5000);
+                  }, 10000);
                 })
                 .catch((err) => console.log(err));
             })
@@ -548,6 +571,18 @@ function Mint() {
               visible={true}
             />
           </div>
+        )}
+
+        {isMinted && (
+          <motion.a
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          href={tweety} target="_blank"
+          className=' flex flex-row gap-2 items-center hover:border-blue-900 mt-10 rounded-2xl shadow-xl hover:shadow-sm font-bold text-2xl bg-gradient-to-br from-slate-900 to-blue-500 hover:to-slate-900 hover:from-blue-500 text-white py-4 px-16 cursor-pointer'>
+             <svg xmlns="http://www.w3.org/2000/svg" height="35" width="35" viewBox="-44.7006 -60.54775 387.4052 363.2865"><path fill="#1da1f2" d="M93.719 242.19c112.46 0 173.96-93.168 173.96-173.96 0-2.646-.054-5.28-.173-7.903a124.338 124.338 0 0030.498-31.66c-10.955 4.87-22.744 8.148-35.11 9.626 12.622-7.57 22.313-19.543 26.885-33.817a122.62 122.62 0 01-38.824 14.841C239.798 7.433 223.915 0 206.326 0c-33.764 0-61.144 27.381-61.144 61.132 0 4.798.537 9.465 1.586 13.941-50.815-2.557-95.874-26.886-126.03-63.88a60.977 60.977 0 00-8.279 30.73c0 21.212 10.794 39.938 27.208 50.893a60.685 60.685 0 01-27.69-7.647c-.009.257-.009.507-.009.781 0 29.61 21.075 54.332 49.051 59.934a61.218 61.218 0 01-16.122 2.152 60.84 60.84 0 01-11.491-1.103c7.784 24.293 30.355 41.971 57.115 42.465-20.926 16.402-47.287 26.171-75.937 26.171-4.929 0-9.798-.28-14.584-.846 27.059 17.344 59.189 27.464 93.722 27.464"/></svg>
+            <span> Tweet Now </span>
+          </motion.a>
+    
         )}
 
         <div
