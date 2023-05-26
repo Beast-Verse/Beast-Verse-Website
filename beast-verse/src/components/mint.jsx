@@ -144,7 +144,7 @@ function Mint() {
           setIsMinting(true);
           let comValue = await com();
           const comlink =
-            "ipfs://QmbMx9vN1w5Ga9XhKFXu764xmq9QkmYaQbJ8n8V4qLXHPT/" +
+            "ipfs://QmWEmzBFNVEvMirVVG36fuTN3umnte9eaMqurEyVgfYK1S/" +
             comValue +
             ".json";
 
@@ -215,7 +215,7 @@ function Mint() {
           setIsMinting(true);
           let rarValue = await rar();
           const rarlink =
-            "ipfs://QmNgz8wJbitXX9bqtQU1527JoF9GAQnN7GFmHiEVESZrEE/" +
+            "ipfs://QmdZmNhSV5Zpz5M9nP1YtBaMUffbNqX5r8E8qpWYwHhEZF/" +
             rarValue +
             ".json";
 
@@ -277,7 +277,7 @@ function Mint() {
           setIsMinting(true);
           let epiValue = await epi();
           const epilink =
-            "ipfs://QmSVtYkQ9AkDYjL9sWbdysyPLB8pSJCoQTPSNrvdYyAdV3/" +
+            "ipfs://QmQ3gXuXzNQCJrH2yuSfQABS6CvvjiPfWt3JTsZijAZNo9/" +
             epiValue +
             ".json";
 
@@ -340,7 +340,7 @@ function Mint() {
           setIsMinting(true);
           let legValue = await leg();
           const leglink =
-            "ipfs://QmQoj6dJwzqHWwuUvNRpwuJVYCdSMgjqDQeeyX4ZDyhsba/" +
+            "ipfs://Qmah8t9xMMN8LshRX1R6W737swdWods8i3Pdm3nB1aa7T2/" +
             legValue +
             ".json";
 
