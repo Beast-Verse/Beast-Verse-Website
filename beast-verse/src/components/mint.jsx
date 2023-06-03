@@ -395,7 +395,9 @@ function Mint() {
             });
         };
       }
-
+      // document.getElementById("withdraw").onclick = async () => {
+      //   await cont.methods.withdraw().send({ from: account });
+      // };
       setLoad(true);
   
   };
@@ -707,7 +709,7 @@ function Mint() {
 
                       <td className="p-3 border-b-[1px] border-slate-500 text-white text-center">
                         <a
-                          href={`https://opensea.io/assets/mumbai/${addr}/${data.userMintedId}`}
+                          href={`https://opensea.io/assets/matic/${addr}/${data.userMintedId}`}
                           className=" text-Montserrat hover:text-blue-300"
                         >
                           View on OpenSea
