@@ -18,7 +18,7 @@ function Team(){
             position: "Founder & Marketing",
             github: "https://github.com/Risav03",
             linkedin: "https://www.linkedin.com/in/risavdeb-patra-703971227/",
-            twitter: "https://twitter.com/risavdebpatra",
+            twitter: "https://twitter.com/Risavdeb03",
             img: mem1
         },
         {

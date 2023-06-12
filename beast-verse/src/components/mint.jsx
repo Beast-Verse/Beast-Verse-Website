@@ -31,6 +31,10 @@ function Mint() {
   const [load, setLoad] = useState(false);
   const[isMinted,setIsMinted]=useState(false);
   const[tweety,setTweet]=useState("");
+  const[com, setCom] = useState(null);
+  const[rar, setRar] = useState(null);
+  const[epi, setEpi] = useState(null);
+  const[leg, setLeg] = useState(null);
   const loadingHandle = (e) => {
     setLoading(e);
   };
@@ -140,6 +144,7 @@ function Mint() {
       const tweet = "https://twitter.com/intent/tweet?" + hashtags + "&text=";
 
       if ((await getCountCom()) < 125) {
+        setCom(await getCountCom());
         document.getElementById("mint common").onclick = async () => {
           setIsMinting(true);
           let comValue = await com();
@@ -154,7 +159,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "5000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
+            .send({ from: account, value: "50000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -211,6 +216,7 @@ function Mint() {
 
 
       if ((await getCountRar()) < 100) {
+        setRar(await getCountRar());
         document.getElementById("mint rare").onclick = async () => {
           setIsMinting(true);
           let rarValue = await rar();
@@ -273,6 +279,7 @@ function Mint() {
       }
 
       if ((await getCountEpi()) < 50) {
+        setEpi(await getCountEpi());
         document.getElementById("mint epic").onclick = async () => {
           setIsMinting(true);
           let epiValue = await epi();
@@ -336,6 +343,7 @@ function Mint() {
 
 
       if ((await getCountLeg()) < 25) {
+        setLeg(await getCountLeg());
         document.getElementById("mint legendary").onclick = async () => {
           setIsMinting(true);
           let legValue = await leg();
@@ -366,7 +374,7 @@ function Mint() {
                   document.getElementById(
                     "wlonly"
                   ).textContent = `Successfully minted Legendary Egg #${legValue}! \n Reloading in 10 secs`;
-                  const tweetmsg = tweet + "I%20just%20minted%20Legendary%20Egg%20"+legValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/${addr}/${tokenId}`;
+                  const tweetmsg = tweet + "I%20just%20minted%20Legendary%20Egg%20"+legValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/matic/0xe51f9dD4681F1bdB7fe2C52e5193457c784f25d6/${tokenId}`;
                   setTweet(tweetmsg);  
                   setIsMinted(true);
                   setTimeout(() => {
@@ -398,6 +406,7 @@ function Mint() {
       // document.getElementById("withdraw").onclick = async () => {
       //   await cont.methods.withdraw().send({ from: account });
       // };
+
       setLoad(true);
   
   };
@@ -602,65 +611,65 @@ function Mint() {
           id="noview"
         >
           
-          <div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2">
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${com>125? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 "}rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={common}
-              className="w-full rounded-lg shadow-xl shadow-green-400/20"
+              className={`${com>125? "shadow-gray-400/20" : "shadow-green-400/20"} w-full rounded-lg shadow-xl `}
             ></img>
-            <h2 className="text-green-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
+            <h2 className={`${com>125? "text-gray-300 ":"text-green-200 " }font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               5 MATIC
             </h2>
             <button
               id="mint common"
-              className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-green-600 text-green-200 border-green-300"
+              className={`${com>125? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-green-600 text-green-200 border-green-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
               MINT
             </button>
           </div>
 
-          <div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-blue-400/40 border-[1px] border-blue-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${rar>100? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-blue-400/40 border-[1px] border-blue-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={Rare}
-              className="w-full rounded-lg shadow-xl shadow-blue-400/20"
+              className={`${rar>100? "shadow-gray-400/20" : "shadow-blue-400/20"} w-full rounded-lg shadow-xl `}
             ></img>
-            <h2 className="text-blue-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
+            <h2 className={`${rar>100? "text-gray-300 ":"text-blue-200 " }font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               7 MATIC
             </h2>
             <button
               id="mint rare"
-              className="font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4  bg-[#007DBB] text-[#b4edff] border-[#93E5FF]"
+              className={`${rar>100? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-blue-600 text-blue-200 border-blue-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
               MINT
             </button>
           </div>
 
-          <div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-purple-400/40 border-[1px] border-purple-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${epi>50? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-purple-400/40 border-[1px] border-purple-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={epic}
-              className="w-full rounded-lg shadow-xl shadow-purple-400/20"
+              className={`w-full rounded-lg shadow-xl ${epi>50? "shadow-gray-400/20" : "shadow-purple-400/20 "}`}
             ></img>
-            <h2 className="text-purple-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
+            <h2 className={` ${epi>50? "text-gray-300" : "text-purple-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               9 MATIC
             </h2>
             <button
               id="mint epic"
-              className="text-3xl max-[768px]:w-[80%] max-[768px]:py-3 max-[768px]:text-[5.5vw]  border-2 rounded-xl px-10 py-4 font-bold  bg-[#9124CB] text-[#e8b2fd] border-[#E093FF]"
+              className={`${epi>50? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-purple-600 text-purple-200 border-purple-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
               MINT
             </button>
           </div>
 
-          <div className="flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 rounded-lg pb-6 px-2 pt-2 max-[768px]:w-[45%] max-[360px]:w-full m-2">
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${leg>25? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={Legendary}
-              className="w-full rounded-lg shadow-xl shadow-yellow-400/20"
+              className={`w-full rounded-lg shadow-xl ${leg>25? "shadow-gray-400/20" : "shadow-yellow-400/20 "}`}
             ></img>
-            <h2 className="text-yellow-200 font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]">
+            <h2 className={` ${leg>25? "text-gray-300" : "text-yellow-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               11 MATIC
             </h2>
             <button
               id="mint legendary"
-              className="text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 font-bold  bg-[#D8D600] text-[#feffcc] border-[#FEFFB6]"
+              className={`${leg>25? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-yellow-500 text-yellow-100 border-yellow-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
               MINT
             </button>
