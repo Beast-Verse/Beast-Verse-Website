@@ -403,9 +403,9 @@ function Mint() {
             });
         };
       }
-      document.getElementById("withdraw").onclick = async () => {
-        await cont.methods.withdraw().send({ from: account });
-      };
+      // document.getElementById("withdraw").onclick = async () => {
+      //   await cont.methods.withdraw().send({ from: account });
+      // };
 
       setLoad(true);
   
@@ -676,12 +676,12 @@ function Mint() {
           </div>
         </div>
 
-        <button
+        {/* <button
 					id="withdraw"
 					className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
 				>
 					Withdraw
-				</button>
+				</button> */}
         
         {isConnect ? (
           <div className="text-center">
