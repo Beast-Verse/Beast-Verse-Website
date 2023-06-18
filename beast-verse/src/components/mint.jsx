@@ -159,7 +159,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "50000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
+            .send({ from: account, value: "5000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -231,7 +231,7 @@ function Mint() {
 
           cont.methods
             .rareMint(account, rarlink, rarValue)
-            .send({ from: account, value: "7000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
+            .send({ from: account, value: "7000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -294,7 +294,7 @@ function Mint() {
 
           cont.methods
             .epicMint(account, epilink, epiValue)
-            .send({ from: account, value: "9000000000000000000", gasLimit: 300000, gasPrice: 170000000000})
+            .send({ from: account, value: "9000000000000000000", gasLimit: 300000, gasPrice: 300000000000})
             .then((res) => {
               console.log(res);
               axios
@@ -358,7 +358,7 @@ function Mint() {
 
           cont.methods
             .legendaryMint(account, leglink, legValue)
-            .send({ from: account, value: "11000000000000000000", gasLimit: 300000, gasPrice: 170000000000 })
+            .send({ from: account, value: "11000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
 
@@ -403,9 +403,9 @@ function Mint() {
             });
         };
       }
-      // document.getElementById("withdraw").onclick = async () => {
-      //   await cont.methods.withdraw().send({ from: account });
-      // };
+      document.getElementById("withdraw").onclick = async () => {
+        await cont.methods.withdraw().send({ from: account });
+      };
 
       setLoad(true);
   
@@ -675,12 +675,14 @@ function Mint() {
             </button>
           </div>
         </div>
-        {/* <button
+
+        <button
 					id="withdraw"
 					className="bg-white rounded-xl font-Montserrat text-2xl p-3 font-semibold border-2 border-blue-400"
 				>
 					Withdraw
-				</button> */}
+				</button>
+        
         {isConnect ? (
           <div className="text-center">
             <h1
