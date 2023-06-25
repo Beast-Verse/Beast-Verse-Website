@@ -600,6 +600,7 @@ function Mint() {
               <h3 className="text-center text-white font-Montserrat font-semibold text-[2.2vw] max-[768px]:text-[6vw]">Holder Benefits</h3>
               <ul className=" list-disc text-white font-Montserrat text-[1.2vw] max-[768px]:text-[4vw] mt-3 min-[768px]:leading-6 ml-4">
                 <li className="mb-3"><b className="text-blue-400">Powerful in-game characters: </b>Though the game will be free-to-play, these NFTs will grant holders more powerful characters over the free ones!</li>
+                <li className="mb-3"><b className="text-blue-400">Carnival: </b>Eggs grant you Tickets to the Beast Verse Carnival happening <a href="https://park.beastversegame.com" className="text-red-400 font-bold">Here</a>. Play the mini-games, win some Runes and get your entry in the weekly MATIC raffles!</li>
                 <li className="mb-3"><b className="text-blue-400">Staking: </b>Stake your NFTs and earn the Beast Verse token.</li>
                 <li className="mb-3"><b className="text-blue-400">BV DAO: </b>Top 10 Holders get to join the BV DAO, the governing body for the Project's future!</li>
               </ul>
