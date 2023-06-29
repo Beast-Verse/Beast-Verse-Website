@@ -143,8 +143,10 @@ function Mint() {
       const hashtags = "hashtags=NFTCommunity,NFTProject,Polygon,BeastVerse";
       const tweet = "https://twitter.com/intent/tweet?" + hashtags + "&text=";
 
+      setCom(await getCountCom());
+
       if ((await getCountCom()) < 125) {
-        setCom(await getCountCom());
+    
         document.getElementById("mint common").onclick = async () => {
           setIsMinting(true);
           let comValue = await com();
@@ -214,9 +216,9 @@ function Mint() {
 	  console.log(await getCountLeg());
 
 
-
+    setRar(await getCountRar());
       if ((await getCountRar()) < 100) {
-        setRar(await getCountRar());
+        
         document.getElementById("mint rare").onclick = async () => {
           setIsMinting(true);
           let rarValue = await rar();
@@ -277,9 +279,9 @@ function Mint() {
             });
         };
       }
-
+      setEpi(await getCountEpi());
       if ((await getCountEpi()) < 50) {
-        setEpi(await getCountEpi());
+      
         document.getElementById("mint epic").onclick = async () => {
           setIsMinting(true);
           let epiValue = await epi();
@@ -340,10 +342,9 @@ function Mint() {
             });
         };
       }
-
+      setLeg(await getCountLeg());
 
       if ((await getCountLeg()) < 25) {
-        setLeg(await getCountLeg());
         document.getElementById("mint legendary").onclick = async () => {
           setIsMinting(true);
           let legValue = await leg();
@@ -612,67 +613,67 @@ function Mint() {
           id="noview"
         >
           
-          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${com>125? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 "}rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${com>124? " saturate-0 bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-green-400/40 border-[1px] border-green-400 "}rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={common}
-              className={`${com>125? "shadow-gray-400/20" : "shadow-green-400/20"} w-full rounded-lg shadow-xl `}
+              className={`${com>124? "shadow-gray-400/20" : "shadow-green-400/20"} w-full rounded-lg shadow-xl `}
             ></img>
-            <h2 className={`${com>125? "text-gray-300 ":"text-green-200 " }font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
+            <h2 className={`${com>124? "text-gray-300 ":"text-green-200 " }font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               5 MATIC
             </h2>
             <button
               id="mint common"
-              className={`${com>125? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-green-600 text-green-200 border-green-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
+              className={`${com>124? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-green-600 text-green-200 border-green-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
-              MINT
+              {com>124? "SOLD OUT": "MINT"}
             </button>
           </div>
 
-          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${rar>100? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-blue-400/40 border-[1px] border-blue-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${rar>99? " saturate-0 bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-blue-400/40 border-[1px] border-blue-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={Rare}
-              className={`${rar>100? "shadow-gray-400/20" : "shadow-blue-400/20"} w-full rounded-lg shadow-xl `}
+              className={`${rar>99? "shadow-gray-400/20" : "shadow-blue-400/20"} w-full rounded-lg shadow-xl `}
             ></img>
-            <h2 className={`${rar>100? "text-gray-300 ":"text-blue-200 " }font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
+            <h2 className={`${rar>99? "text-gray-300 ":"text-blue-200 " }font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               7 MATIC
             </h2>
             <button
               id="mint rare"
-              className={`${rar>100? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-blue-600 text-blue-200 border-blue-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
+              className={`${rar>99? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-blue-600 text-blue-200 border-blue-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
-              MINT
+              {rar>99? "SOLD OUT": "MINT"}
             </button>
           </div>
 
-          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${epi>50? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-purple-400/40 border-[1px] border-purple-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${epi>49? "saturate-0 bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-purple-400/40 border-[1px] border-purple-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={epic}
-              className={`w-full rounded-lg shadow-xl ${epi>50? "shadow-gray-400/20" : "shadow-purple-400/20 "}`}
+              className={`w-full rounded-lg shadow-xl ${epi>49? "shadow-gray-400/20" : "shadow-purple-400/20 "}`}
             ></img>
-            <h2 className={` ${epi>50? "text-gray-300" : "text-purple-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
+            <h2 className={` ${epi>49? "text-gray-300" : "text-purple-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               9 MATIC
             </h2>
             <button
               id="mint epic"
-              className={`${epi>50? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-purple-600 text-purple-200 border-purple-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
+              className={`${epi>49? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-purple-600 text-purple-200 border-purple-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
-              MINT
+              {epi>49? "SOLD OUT": "MINT"}
             </button>
           </div>
 
-          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${leg>25? "bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${leg>24? " saturate-0 bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={Legendary}
-              className={`w-full rounded-lg shadow-xl ${leg>25? "shadow-gray-400/20" : "shadow-yellow-400/20 "}`}
+              className={`w-full rounded-lg shadow-xl ${leg>24? "saturate-0 shadow-gray-400/20" : "shadow-yellow-400/20 "}`}
             ></img>
-            <h2 className={` ${leg>25? "text-gray-300" : "text-yellow-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
+            <h2 className={` ${leg>24? "text-gray-300" : "text-yellow-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               11 MATIC
             </h2>
             <button
               id="mint legendary"
-              className={`${leg>25? " bg-gray-600 text-gray-200 border-gray-300 ": " bg-yellow-500 text-yellow-100 border-yellow-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
+              className={`${leg>24? " cursor-not-allowed bg-gray-600 text-gray-200 border-gray-300 ": " bg-yellow-500 text-yellow-100 border-yellow-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
-              MINT
+              {leg>24? "SOLD OUT": "MINT"}
             </button>
           </div>
         </div>
