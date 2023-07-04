@@ -359,7 +359,7 @@ function Mint() {
 
           cont.methods
             .legendaryMint(account, leglink, legValue)
-            .send({ from: account, value: "11000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
+            .send({ from: account, value: "13000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
 
@@ -667,7 +667,7 @@ function Mint() {
               className={`w-full rounded-lg shadow-xl ${leg>51? "saturate-0 shadow-gray-400/20" : "shadow-yellow-400/20 "}`}
             ></img>
             <h2 className={` ${leg>51? "text-gray-300" : "text-yellow-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
-              11 MATIC
+              13 MATIC
             </h2>
             <button
               id="mint legendary"
