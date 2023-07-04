@@ -161,7 +161,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "5000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
+            .send({ from: account, value: "5000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -344,7 +344,7 @@ function Mint() {
       }
       setLeg(await getCountLeg());
 
-      if ((await getCountLeg()) < 25) {
+      if ((await getCountLeg()) < 50) {
         document.getElementById("mint legendary").onclick = async () => {
           setIsMinting(true);
           let legValue = await leg();
@@ -661,19 +661,19 @@ function Mint() {
             </button>
           </div>
 
-          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${leg>24? " saturate-0 bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
+          <div className={`flex flex-col justify-center items-center min-[768px]:gap-16 max-[768px]:gap-5 max-[768px]:w-[45%] ${leg>51? " saturate-0 bg-gray-500 border-[1px] border-gray-400 ": "bg-gradient-to-b from-yellow-400/40 border-[1px] border-yellow-400 "} rounded-lg pb-6 px-2 pt-2 max-[360px]:w-full m-2`}>
             <img
               src={Legendary}
-              className={`w-full rounded-lg shadow-xl ${leg>24? "saturate-0 shadow-gray-400/20" : "shadow-yellow-400/20 "}`}
+              className={`w-full rounded-lg shadow-xl ${leg>51? "saturate-0 shadow-gray-400/20" : "shadow-yellow-400/20 "}`}
             ></img>
-            <h2 className={` ${leg>24? "text-gray-300" : "text-yellow-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
+            <h2 className={` ${leg>51? "text-gray-300" : "text-yellow-200"} font-Montserrat font-bold text-2xl min-[768px]:text-[2rem] min-[1024px]:text-[2.5rem]`}>
               11 MATIC
             </h2>
             <button
               id="mint legendary"
-              className={`${leg>24? " cursor-not-allowed bg-gray-600 text-gray-200 border-gray-300 ": " bg-yellow-500 text-yellow-100 border-yellow-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
+              className={`${leg>51? " cursor-not-allowed bg-gray-600 text-gray-200 border-gray-300 ": " bg-yellow-500 text-yellow-100 border-yellow-300 "}font-bold text-3xl max-[768px]:w-[80%] max-[768px]:text-[5.5vw]  max-[768px]:py-3  border-2 rounded-xl px-10 py-4 `}
             >
-              {leg>24? "SOLD OUT": "MINT"}
+              {leg>51? "SOLD OUT": "MINT"}
             </button>
           </div>
         </div>
