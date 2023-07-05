@@ -161,7 +161,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "5000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
+            .send({ from: account, value: "5000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
               axios
