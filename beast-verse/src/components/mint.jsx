@@ -161,7 +161,7 @@ function Mint() {
 
           cont.methods
             .commonMint(account, comlink, comValue)
-            .send({ from: account, value: "5000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
+            .send({ from: account, value: "5000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
               axios
@@ -209,6 +209,9 @@ function Mint() {
             });
         };
       }
+
+
+
 
 	  console.log(await getCountCom());
 	  console.log(await getCountRar());
@@ -359,7 +362,7 @@ function Mint() {
 
           cont.methods
             .legendaryMint(account, leglink, legValue)
-            .send({ from: account, value: "13000000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
+            .send({ from: account, value: "13000000000000000", gasLimit: 300000, gasPrice: 300000000000 })
             .then((res) => {
               console.log(res);
 
@@ -435,6 +438,23 @@ function Mint() {
     setUserData(tempData);
     setLoading(false);
   }
+
+//  // Comment this shit
+//   async function Leaderboard(){
+//     var contract = contra;
+
+//     var supp = contract.methods.totalSupply().call();
+
+//     for(i=0; i<supp; i++){
+
+//     }
+//   }
+      
+
+
+
+
+
 
 
 
