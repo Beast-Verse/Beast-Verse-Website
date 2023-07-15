@@ -177,7 +177,7 @@ function Mint() {
                     "wlonly"
                   ).textContent = `Successfully minted Common Egg #${comValue}! \n Reloading in 10 secs`;
                   //let urly="https://res.cloudinary.com/dcugof3zo/video/upload/v1684909381/WhatsApp_Video_2023-05-23_at_18.38.48_wjtyp1.mp4";
-                  const tweetmsg = tweet + "I%20just%20minted%20Common%20Egg%20"+comValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/0xe51f9dd4681f1bdb7fe2c52e5193457c784f25d6/${tokenId}`;
+                  const tweetmsg = tweet + "I%20just%20minted%20Common%20Egg%20"+comValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/matic/0xe51f9dd4681f1bdb7fe2c52e5193457c784f25d6/${tokenId}`;
                   setIsMinted(true);
                   setTweet(tweetmsg)
                   setTimeout(() => {
@@ -251,7 +251,7 @@ function Mint() {
                   document.getElementById(
                     "wlonly"
                   ).textContent = `Successfully minted Rare Egg #${rarValue}! \n Reloading in 10 secs`;
-                  const tweetmsg = tweet + "I%20just%20minted%20Rare%20Egg%20"+rarValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/0xe51f9dd4681f1bdb7fe2c52e5193457c784f25d6/${tokenId}`;
+                  const tweetmsg = tweet + "I%20just%20minted%20Rare%20Egg%20"+rarValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/matic/0xe51f9dd4681f1bdb7fe2c52e5193457c784f25d6/${tokenId}`;
                   setIsMinted(true);
                   setTweet(tweetmsg)
                   setTimeout(() => {
@@ -314,7 +314,7 @@ function Mint() {
                   document.getElementById(
                     "wlonly"
                   ).textContent = `Successfully minted Epic Egg #${epiValue}! \n Reloading in 10 secs`;
-                  const tweetmsg = tweet + "I%20just%20minted%20Epic%20Egg%20"+epiValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/mumbai/0xe51f9dd4681f1bdb7fe2c52e5193457c784f25d6/${tokenId}`;
+                  const tweetmsg = tweet + "I%20just%20minted%20Epic%20Egg%20"+epiValue+"%20You%20can%20do%20it%20too%20https://www.beastversegame.com/mint%20%20"+`https://opensea.io/assets/matic/0xe51f9dd4681f1bdb7fe2c52e5193457c784f25d6/${tokenId}`;
                   setIsMinted(true);
                   setTweet(tweetmsg)
                   setTimeout(() => {
