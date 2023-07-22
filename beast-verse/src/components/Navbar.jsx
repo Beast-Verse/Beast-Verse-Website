@@ -26,7 +26,7 @@ export default function Navbar({delay}) {
             <ul className='flex flex-row gap-5 font-Monstserrat font-bold text-blue-400 items-center'>
 
                 <li className='hover:text-blue-300 cursor-pointer'><HLink to="/waitlist" smooth> <Link to="/"> Home </Link> </HLink></li>
-            <li className='hover:text-blue-300 cursor-pointer'><HLink to="https://drive.google.com/file/d/1s7H0uSHBkJJZISJE-9LrZkQThxoUTB8k/view?usp=share_link" smooth>Whitepaper</HLink></li>
+            <li className='hover:text-blue-300 cursor-pointer'><HLink to="https://drive.google.com/file/d/1XArKw7O6Vf4cB0ldGHYymNuYcbU5wdzm/view" smooth>Whitepaper</HLink></li>
                 <li className='text-gray-400 cursor-pointer'>MarketPlace <br /><span className='text-sm text-red-500'></span></li>
                 <li className='text-gray-400 cursor-pointer'>Buy Eggs</li>
                 <li className='text-blue-400 cursor-pointer'><a href="https://linktr.ee/realbeastverse">Socials</a></li>
