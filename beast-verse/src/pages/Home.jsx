@@ -61,7 +61,7 @@ export default function Home() {
     <Navbar delay={5}/>
     <Landing/>
     <AboutUs/>
-    <Stats data={data? data:{total:"--", minted:"--", volume:"--"}}/>
+    <Stats data={data? data:{total:"3000", minted:"195", volume:"--"}}/>
     <Roadmap/>
     <Partners/>
     <Faq/>
@@ -80,7 +80,7 @@ export default function Home() {
 <Mobland/>
 <Mobabout/>
 <Eggs/>
-<Mobstats data={data? data:{total:"--", minted:"--", volume:"--"}}/>
+<Mobstats data={data? data:{total:"3000", minted:"195", volume:"--"}}/>
 <Mobroadmap/>
 <Partners/>
 <Faq/>
