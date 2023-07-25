@@ -23,6 +23,7 @@ import Mobfooter from '../components/Mobfooter';
 import Partners from '../components/Partners';
 import Web3 from "web3";
 import axios from 'axios'
+import Faq from '../components/Faq'
 
 let url = "https://bvbackend-production.up.railway.app/api";
 
@@ -63,6 +64,7 @@ export default function Home() {
     <Stats data={data? data:{total:"--", minted:"--", volume:"--"}}/>
     <Roadmap/>
     <Partners/>
+    <Faq/>
     <Team/>
     {/* <Domains/> */}
     {/* <HowToPlay/> */}
@@ -81,6 +83,7 @@ export default function Home() {
 <Mobstats data={data? data:{total:"--", minted:"--", volume:"--"}}/>
 <Mobroadmap/>
 <Partners/>
+<Faq/>
 <Mobteams/>
 <Mobfooter/>
 </div>
